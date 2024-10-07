@@ -525,7 +525,7 @@ a) Caso o sistema detecte um erro na inclusão de uma nova preferência (ex: dad
 
 ---
 
-#### Gerenciar usuários seguidos(CSU14)
+#### Gerenciar usuários seguidos (CSU14)
 
 Sumário: Permitir que o usuário gerencie a lista de outros usuários que ele segue no aplicativo, podendo (incluir, excluir e consultar) os perfis seguidos para personalizar seu feed de receitas.
 
@@ -537,32 +537,35 @@ O usuário deve ter acesso à funcionalidade de seguir outros perfis.
 Fluxo Principal(1):
 
 Inclusão de Usuário Seguido:
-1 O usuário acessa o perfil de outro usuário dentro do app.
-2 O sistema exibe a opção "Seguir".
-3 O usuário seleciona a opção "Seguir".
-4 O sistema processa a solicitação, verifica se o usuário já não está sendo seguido.
-5 O sistema adiciona o usuário à lista de seguidos.
-6 Uma mensagem de confirmação é exibida ao usuário: "Usuário seguido com sucesso."
+1) O usuário acessa o perfil de outro usuário dentro do app.
+2) O sistema exibe a opção "Seguir".
+3) O usuário seleciona a opção "Seguir".
+4) O sistema processa a solicitação, verifica se o usuário já não está sendo seguido.
+5) O sistema adiciona o usuário à lista de seguidos.
+6) Uma mensagem de confirmação é exibida ao usuário: "Usuário seguido com sucesso."
 
 Exclusão de Usuário Seguido:
-1 O usuário acessa sua lista de usuários seguidos através do menu de gerenciamento de seguidos.
-2 O sistema exibe a lista de perfis seguidos.
-3 O usuário seleciona a opção "Deixar de Seguir" para o perfil desejado.
-4 O sistema processa a solicitação e remove o usuário da lista de seguidos.
-5 Uma mensagem de confirmação é exibida: "Usuário removido da lista de seguidos."
+1) O usuário acessa sua lista de usuários seguidos através do menu de gerenciamento de seguidos.
+2) O sistema exibe a lista de perfis seguidos.
+3) O usuário seleciona a opção "Deixar de Seguir" para o perfil desejado.
+4) O sistema processa a solicitação e remove o usuário da lista de seguidos.
+5) Uma mensagem de confirmação é exibida: "Usuário removido da lista de seguidos."
 
 Consulta de Usuários Seguidos:
-1 O usuário acessa sua lista de perfis seguidos através de seu perfil ou menu específico.
-2 O sistema exibe a lista de todos os usuários que o usuário está seguindo.
-3 O usuário pode visualizar as informações dos perfis seguidos, como nome, foto, e receitas compartilhadas.
-4 Caso o usuário não esteja seguindo ninguém, o sistema exibe uma mensagem: "Você ainda não segue ninguém."
+1) O usuário acessa sua lista de perfis seguidos através de seu perfil ou menu específico.
+2) O sistema exibe a lista de todos os usuários que o usuário está seguindo.
+3) O usuário pode visualizar as informações dos perfis seguidos, como nome, foto, e receitas compartilhadas.
+4) Caso o usuário não esteja seguindo ninguém, o sistema exibe uma mensagem: "Você ainda não segue ninguém."
 
 Fluxo Alternativo (2):
-1 Usuário já está seguindo o perfil: Se o usuário tentar seguir alguém que já está na sua lista de seguidos, o sistema exibe uma mensagem de erro: "Você já segue esse usuário."
+1) Usuário já está seguindo o perfil: Se o usuário tentar seguir alguém que já está na sua lista de seguidos, o sistema exibe uma mensagem de erro: "Você já segue esse usuário."
 
 Pós-condições: 
-1 A lista de usuários seguidos é atualizada corretamente.
-2 O feed de receitas do usuário é ajustado com base nos perfis seguidos, exibindo conteúdos novos.
+1) A lista de usuários seguidos é atualizada corretamente.
+2) O feed de receitas do usuário é ajustado com base nos perfis seguidos, exibindo conteúdos novos.
+
+---
+
 ### Gerar relatório de vendas (CSU16)
 
 Sumário: Este caso de uso permite ao Administrador gerar relatórios de vendas com base em períodos de tempo específicos, como diário, semanal, mensal ou personalizado.
