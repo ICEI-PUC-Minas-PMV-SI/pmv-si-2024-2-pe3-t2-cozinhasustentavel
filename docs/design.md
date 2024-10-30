@@ -45,6 +45,9 @@ Mapa da Empatia é um material utilizado para conhecer melhor o seu cliente. A p
    - Conseguir manter uma alimentação nutritiva com receitas rápidas e práticas;
    - Sentir que está contribuindo para o meio ambiente ao reduzir desperdício de alimentos;
    - Aumentar a disposição para os treinos e o estágio, com refeições equilibradas e fáceis de preparar.
+  
+     ![Black and White Simple Empathy Map Brainstorm](https://github.com/user-attachments/assets/1e646d2f-1061-4dc7-a556-60568d441bab)
+
 ---
 
 ## 4.3 Protótipos das Interfaces
