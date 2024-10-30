@@ -18,6 +18,9 @@ Mapa da Empatia é um material utilizado para conhecer melhor o seu cliente. A p
 
 ---
 
+![image](https://github.com/user-attachments/assets/6bc51fc1-f412-454c-ab75-395a01d230dc)
+
+
 ### Mapa da persona Diego Almeida:
 1. O que VÊ?
    - Artigos sobre rotinas de treino e suplementos;
