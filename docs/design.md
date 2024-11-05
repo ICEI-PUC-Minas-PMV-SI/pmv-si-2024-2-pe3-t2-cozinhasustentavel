@@ -17,3 +17,22 @@ Mapa da Empatia é um material utilizado para conhecer melhor o seu cliente. A p
 ## 4.3 Protótipos das Interfaces
 Apresente nesta seção os protótipos de alta fidelidade do sistema proposto. A fidelidade do protótipo refere-se ao nível de detalhes e funcionalidades incorporadas a ele. Assim, um protótipo de alta fidelidade é uma representação interativa do produto, baseada no computador ou em dispositivos móveis. Esse protótipo já apresenta maior semelhança com o design final em termos de detalhes e funcionalidades. No desenvolvimento dos protótipos, devem ser considerados os princípios gestálticos, as recomendações ergonômicas e as regras de design (como as 8 regras de ouro). É importante descrever no texto do relatório como os princípios gestálticos e as regras de ouro foram seguidas no projeto das interfaces. Nesta etapa deve-se dar uma ênfase na implementação do software de modo que possam ser realizados os testes com usuários na etapa seguinte.
 
+### Página Inicial:
+A página inicial da Cozinha Sustentável apresenta a lista de receitas ordenada por data de criação. Está página possue um cabeçalho no qual o usuário pode fazer a busca de uma receita pelo título da receita ou utilizar o filtro. Os princípios gestálticos utilizados nessa página são os seguintes:
+- Boa continuidade: Todos os componentes do cabeçalho estão seguindo o mesmo alinhamento horizontal.
+- Proximidade: A barra de pesquisa, botão de buscar e botão de filtrar estão todos próximos criando uma unidade de busca de receitas
+
+As regras de ouro usadas nessa página são:
+- Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos na página inteira
+- Reduzir a carga de memória de trabalho: A página não contém muitos componentes e seus ícones facilitam a busca de receitas e acesso à outras páginas.
+
+![Página Inicial](https://github.com/user-attachments/assets/f30e1f3a-9dc1-4642-9ba8-7ed55f79e204)
+
+Essa página contém um botão que abre um menu com 3 opções, a primeira redireciona o usuário à página de perfil, a segunda abre um modal de preferências e a terceira faz o logout da conta.
+
+![Página Inicial - Menu aberto](https://github.com/user-attachments/assets/99ac0f79-6ddc-409d-8312-c09af92437fb)
+
+Outra funcionalidade da página é o filtro da lista de receitas que tem duas opções, filtrar por ingredientes utilizados nas receitas ou filtrar por categorias de receitas.
+
+![Página Inicial - Filtro aberto](https://github.com/user-attachments/assets/f4d4ec13-668d-489e-bcdf-a11c0c999e81)
+
