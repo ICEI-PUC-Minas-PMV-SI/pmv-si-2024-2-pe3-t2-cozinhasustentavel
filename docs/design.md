@@ -32,7 +32,12 @@ Essa página contém um botão que abre um menu com 3 opções, a primeira redir
 
 ![Página Inicial - Menu aberto](https://github.com/user-attachments/assets/99ac0f79-6ddc-409d-8312-c09af92437fb)
 
-Outra funcionalidade da página é o filtro da lista de receitas que tem duas opções, filtrar por ingredientes utilizados nas receitas ou filtrar por categorias de receitas.
+Outra funcionalidade da página é o filtro da lista de receitas que tem três opções, filtrar por ingredientes utilizados nas receitas, filtrar por categorias de receitas ou filtrar por categorias de ingredientes.
 
 ![Página Inicial - Filtro aberto](https://github.com/user-attachments/assets/f4d4ec13-668d-489e-bcdf-a11c0c999e81)
+
+O modal de preferências é onde o usuário consegue escolher quais são as categorias e ingredientes das receitas quais ele gostaria de receber notificações e sugestões sobre.
+
+![Página Inicial - Modal de preferências](https://github.com/user-attachments/assets/8a803b3c-bc23-46ee-b214-066db9da8745)
+
 
