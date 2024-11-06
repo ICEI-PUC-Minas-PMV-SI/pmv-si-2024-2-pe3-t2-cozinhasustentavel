@@ -33,7 +33,7 @@ Plataforma de compartilhamento de receitas com uso integral de alimentos.
 
 # Código
 
-<li><a href="src/index.md"> Código Fonte</a></li>
+<li><a href="src/index.html"> Código Fonte</a></li>
 
 # Apresentação
 
