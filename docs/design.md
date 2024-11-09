@@ -45,6 +45,35 @@ O modal de preferências é onde o usuário consegue escolher quais são as cate
 
 ![Página Inicial - Modal de preferências](https://github.com/user-attachments/assets/8a803b3c-bc23-46ee-b214-066db9da8745)
 
+### Página de Detalhes da Receita
+
+A página de detalhes da receita apresenta os detalhes da receita como nome, imagem, ingredientes, modo de preparo, criador, duração da receita, nota da receita, categorias e comentários.
+Além de botões para favoritar e avaliar/comentar receita.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+Simetria: Os dois lados da tela estão sendo utilizados de forma simétrica.
+Região comum: Os ingredientes e modo de preparo estão confinados e uma mesma região e são percebidos como um grupo.
+Similaridade: As categorias estão próximas umas das outras como um grupo.
+Boa continuidade: Os comentários ficam todos alinhados um abaixo do outro.
+
+As regras de ouro usadas nessa página são:
+
+Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos na página inteira.
+Reduzir a carga de memória de trabalho: A página de detalhes da receita só apresenta informações necessárias.
+
+![Captura de tela 2024-11-08 214914](https://github.com/user-attachments/assets/b02e190d-80db-4e63-b1f1-8149e95e5914)
+![Captura de tela 2024-11-08 214936](https://github.com/user-attachments/assets/4adc8410-f88d-42de-8108-ddfa6a01fa18)
+![Captura de tela 2024-11-08 215002](https://github.com/user-attachments/assets/f4bfb159-9066-4cf5-9996-33e193b0df87)
+![Captura de tela 2024-11-08 220259](https://github.com/user-attachments/assets/bc59ab64-352d-435a-8d9d-ed87ca84ca3b)
+
+Essa página mostra que quando uma receita é favoritada o ícone de coração fica vermelho:
+
+![Captura de tela 2024-11-08 215056](https://github.com/user-attachments/assets/2bfc28f7-5822-4189-84fc-142df5ba24ba)
+![Captura de tela 2024-11-08 215112](https://github.com/user-attachments/assets/1a648170-eb51-4fa3-a86a-6c72771c661f)
+![Captura de tela 2024-11-08 215127](https://github.com/user-attachments/assets/a8cf894b-ca5f-4e04-83c1-1fda0f6c9c42)
+![Captura de tela 2024-11-08 220327](https://github.com/user-attachments/assets/6fef6506-711b-4265-b19a-b8a6706b6a9d)
+
 ### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
 Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
 - Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
