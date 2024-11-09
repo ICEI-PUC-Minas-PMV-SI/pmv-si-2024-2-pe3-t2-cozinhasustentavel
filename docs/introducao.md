@@ -8,7 +8,7 @@ Apesar de o Brasil ser um dos principais produtores de alimentos do mundo, ele t
 
 ## 1.1. Problema
 
-O desperdício de alimentos se deve, entre diversas causas, pelo fato de a maioria das pessoas desconhecer sobre como manuseá-los e prepará-los adequadamente e sobre como aproveitar, ao máximo, o valor nutricional e a variedade de usos que os ingredientes oferecem.
+O desperdício de alimentos se deve, entre diversas causas, pelo fato de a maioria das pessoas desconhecer sobre como manuseá-los e prepará-los adequadamente e sobre como aproveitar ao máximo, o valor nutricional e a variedade de usos que os ingredientes oferecem.
 
 Diversos ítens, como cascas de alimentos, não são utilizados devido à falta de conhecimento das possibilidades de consumo.
 

@@ -76,6 +76,43 @@ Essa página mostra que quando uma receita é favoritada o ícone de coração f
 ![Captura de tela 2024-11-08 215127](https://github.com/user-attachments/assets/a8cf894b-ca5f-4e04-83c1-1fda0f6c9c42)
 ![Captura de tela 2024-11-08 220327](https://github.com/user-attachments/assets/6fef6506-711b-4265-b19a-b8a6706b6a9d)
 
+### Tela de Comentar/Avaliar Receita
+
+Na tela da "Detalhes Receita", é permitido que o usuário escreva um comentário sobre a receita e avalie-a com uma nota de 1 a 5, dessa forma, facilita a interação e incentiva o feedback e a troca de experiências. 
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Os elementos de avaliar e comentar a receita estão próximos, isso indica ao usuário que eles fazem parte de um mesmo processo de interação.
+- Similaridade: Uso de cores para os botões de "Salvar" e "Cancelar", permitindo ao usuário reconhecer rapidamente a função de cada botão com base nas cores.
+Figura e Fundo: Definição entre conteúdo da receita e área de interação com usuário.
+
+As regras de ouro usadas nessa página são:
+
+- Consistência: Padrão de design, em termos de cores, fontes e ícones. As cores dos botões "Cancelar" e "Salvar" seguem o mesmo padrão.
+- Facilidade de Usabilidade: O campo de comentário é espaçoso, permitindo escrita confortável e o sistema de avaliação por estrelas é intuitivo.
+
+![avaliar_receita](https://github.com/user-attachments/assets/5d8d5c05-35af-4839-b32a-33112323e5b6)
+
+### Tela Gerenciamento de Favoritos
+
+Na tela da "Gerenciar Receitas Favoritadas", é permitido que o usuário visualize as receitas favoritas, permitindo acessá-las e removê-las da lista de favoritos. Dessa forma, facilita o acesso rápido às receitas preferidas e permite uma navegação eficiente. 
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Organização das receitas favoritadas em uma grade, criando um agrupamento visual, facilitando a navegação e identificação.
+- Similaridade: Padrão visual com o mesmo layout de imagens, nomes e botões.
+- Pregnância: Disposição simples e organizada das receitas, tela fácil e intuitiva.
+- Continuidade: Facilidade da navegação de uma receita para outra.
+
+As regras de ouro usadas nessa página são:
+
+- Consistência: Padrão de design, em termos de cores, fontes e ícones.
+- Flexibilidade e Eficiência de uso: Visualização rápida das receitas favoritas em uma grade e uso intuitivo do botão de desfavoritar.
+- Controle e Liberdade para o Usuário: O usuário é capaz de reverter facilmente o botão de favoritar a receita, permitindo um gerenciamento flexível.
+- Reconhecimento e Não Lembrança: Apresentação das receitas com imagens e títulos, facilitando identificação visual.
+
+![favoritos](https://github.com/user-attachments/assets/2e6f0a8c-281a-4a52-9476-68c334536c70)
+
 ### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
 Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
 - Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
