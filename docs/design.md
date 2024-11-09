@@ -52,15 +52,15 @@ Além de botões para favoritar e avaliar/comentar receita.
 
 Os princípios gestálticos utilizados nessa página são os seguintes:
 
-Simetria: Os dois lados da tela estão sendo utilizados de forma simétrica.
-Região comum: Os ingredientes e modo de preparo estão confinados e uma mesma região e são percebidos como um grupo.
-Similaridade: As categorias estão próximas umas das outras como um grupo.
-Boa continuidade: Os comentários ficam todos alinhados um abaixo do outro.
+- Simetria: Os dois lados da tela estão sendo utilizados de forma simétrica.
+- Região comum: Os ingredientes e modo de preparo estão confinados e uma mesma região e são percebidos como um grupo.
+- Similaridade: As categorias estão próximas umas das outras como um grupo.
+- Boa continuidade: Os comentários ficam todos alinhados um abaixo do outro.
 
 As regras de ouro usadas nessa página são:
 
-Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos na página inteira.
-Reduzir a carga de memória de trabalho: A página de detalhes da receita só apresenta informações necessárias.
+- Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos na página inteira.
+- Reduzir a carga de memória de trabalho: A página de detalhes da receita só apresenta informações necessárias.
 
 ![Captura de tela 2024-11-08 214914](https://github.com/user-attachments/assets/b02e190d-80db-4e63-b1f1-8149e95e5914)
 ![Captura de tela 2024-11-08 214936](https://github.com/user-attachments/assets/4adc8410-f88d-42de-8108-ddfa6a01fa18)
