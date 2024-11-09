@@ -7,7 +7,6 @@ Nesta seção você deve detalhar as personas do seu projeto. Deve-se documentar
 ![image](https://github.com/user-attachments/assets/0dbf4c37-9f1e-4af8-97cd-4fb465c53efe)
 ![image](https://github.com/user-attachments/assets/6c723cc3-017c-42c6-8e0e-b6db2ecfcade)
 ![persona_Isabela](https://github.com/user-attachments/assets/94b7003d-0a26-4a72-9cfe-5c1cfdd58945)
-![mapa empatia_Isabela](https://github.com/user-attachments/assets/3e133fd2-4dbb-4d30-b692-5f55563bf760)
 ![page_7662_638664472863753622_page-0001](https://github.com/user-attachments/assets/b96efd12-6128-4426-b790-f4480c1a5243)
 
 
@@ -18,6 +17,7 @@ Mapa da Empatia é um material utilizado para conhecer melhor o seu cliente. A p
 ![image](https://github.com/user-attachments/assets/426cc07f-469f-4d2d-b818-ba9cf3bfe6c7)
 <img width="683" alt="image" src="https://github.com/user-attachments/assets/d889b941-2418-459d-9374-3941525b7b04">
 ![Black and White Simple Empathy Map Brainstorm](https://github.com/user-attachments/assets/e89b539a-a0be-4e0a-92b8-3d766a187b75)
+![mapa empatia_Isabela](https://github.com/user-attachments/assets/3e133fd2-4dbb-4d30-b692-5f55563bf760)
 
 ---
 
