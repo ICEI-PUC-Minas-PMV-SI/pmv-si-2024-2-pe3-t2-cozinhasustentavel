@@ -6,6 +6,8 @@ Nesta seção você deve detalhar as personas do seu projeto. Deve-se documentar
 ![image](https://github.com/user-attachments/assets/6bc51fc1-f412-454c-ab75-395a01d230dc)
 ![image](https://github.com/user-attachments/assets/0dbf4c37-9f1e-4af8-97cd-4fb465c53efe)
 ![image](https://github.com/user-attachments/assets/6c723cc3-017c-42c6-8e0e-b6db2ecfcade)
+![persona_Isabela](https://github.com/user-attachments/assets/94b7003d-0a26-4a72-9cfe-5c1cfdd58945)
+![mapa empatia_Isabela](https://github.com/user-attachments/assets/3e133fd2-4dbb-4d30-b692-5f55563bf760)
 ![page_7662_638664472863753622_page-0001](https://github.com/user-attachments/assets/b96efd12-6128-4426-b790-f4480c1a5243)
 
 
