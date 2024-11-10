@@ -46,6 +46,7 @@ form > button {
   border: solid 1px #3f463c;
   margin: 12px 0;
   border-radius: 8px;
+  padding: 0 12px;
 }
 
 a {
