@@ -17,13 +17,36 @@
       "senha": "senha",
       "papel": "admin",
       "receitasFavoritas": []
+    },
+    {
+      "id": "532523525235",
+      "nome": "Teste Teste",
+      "telefone": "3333 4444",
+      "papel": "normal",
+      "receitasFavoritas": [],
+      "email": "teste@email.com",
+      "senha": "teste"
     }
   ],
   "receitas": [
     {
-      "id": "Bolo de casca de banana",
-      "titulo": "string",
+      "id": "id-0.643634745856",
+      "titulo": "Bolo de casca de banana",
       "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "imagem": "",
+      "avaliacao": [
+        3.5,
+        4,
+        5
+      ],
+      "categorias": [],
+      "ingredientes": [],
+      "idDoAutor": "id-0.1564564123435"
+    },
+    {
+      "id": "id-0.645648463786",
+      "titulo": "Teste 1234",
+      "descricao": "Descrição da receita teste",
       "imagem": "",
       "avaliacao": [
         3.5,
@@ -35,6 +58,37 @@
       "idDoAutor": "id-0.1564564123435"
     }
   ],
-  "categorias": [],
-  "ingredientes": []
+  "categorias": [
+    {
+      "id": "id-0.4564655313",
+      "nome": "Frutas",
+      "tipo": "ingrediente"
+    },
+    {
+      "id": "id-0.45908908745",
+      "nome": "Carnes",
+      "tipo": "ingrediente"
+    },
+    {
+      "nome": "Vegetais",
+      "tipo": "ingrediente",
+      "id": "id-0.053819505902"
+    }
+  ],
+  "ingredientes": [
+    {
+      "id": "id-0.7589235723985",
+      "nome": "Casca de banana",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.64525364565",
+      "nome": "Talo de couve",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    }
+  ]
 }

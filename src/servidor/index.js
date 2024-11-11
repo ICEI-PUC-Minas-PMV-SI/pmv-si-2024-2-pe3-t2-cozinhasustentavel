@@ -1,7 +1,11 @@
 import http from "http";
 import express from "express";
 import cors from "cors";
-import { performLogin, writeOneEntity } from "./utilities.js";
+import { userRouter } from "./rotas/rotasDeUsuario.js";
+import { recipeRouter } from "./rotas/rotasDeReceita.js";
+import { ingredientsRouter } from "./rotas/rotasDeIngredientes.js";
+import { categoriesRouter } from "./rotas/rotasDeCategorias.js";
+import { performLogin } from "./utilities.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -18,20 +22,18 @@ server.listen(port, async () => {
   }
 });
 
+app.use("/usuarios", userRouter);
+app.use("/receitas", recipeRouter);
+app.use("/categorias", categoriesRouter);
+app.use("/ingredientes", ingredientsRouter);
+
 // endpoint de login
 app.post("/login", async (req, res) => {
   const login = req.body;
-  const user = await performLogin(login, "usuarios");
+  const usuario = await performLogin(login, "usuarios");
 
-  if (!user) res.send({ message: "Usuário não encontrado" });
+  if (!usuario) res.send("Usuário não encontrado");
 
-  if (login.senha === user.senha) res.send({ user });
-  else res.send({ message: "Senha incorreta" });
-});
-
-// endpoint de cadastro do usuário
-app.post("/usuario", (req, res) => {
-  const user = req.body;
-  writeOneEntity(user);
-  res.send("Usuário adicionado com sucesso");
+  if (login.senha === usuario.senha) res.send({ usuario });
+  else res.send("Senha incorreta");
 });

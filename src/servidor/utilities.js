@@ -93,7 +93,7 @@ export const editOneEntity = (id, newEntity, entityArray) => {
       return entity.id !== id;
     });
 
-    obj[entityArray] = [...newEntitiesArray, newEntity];
+    obj[entityArray] = [...newEntitiesArray, { ...newEntity, id }];
     const updatedJson = JSON.stringify(obj, null, 2);
 
     fs.writeFile("./database.json", updatedJson, "utf8", (err) => {
