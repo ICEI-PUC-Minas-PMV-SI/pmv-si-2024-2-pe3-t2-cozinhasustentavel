@@ -7,6 +7,7 @@
 ![image](https://github.com/user-attachments/assets/6c723cc3-017c-42c6-8e0e-b6db2ecfcade)
 ![persona_Isabela](https://github.com/user-attachments/assets/94b7003d-0a26-4a72-9cfe-5c1cfdd58945)
 ![page_7662_638664472863753622_page-0001](https://github.com/user-attachments/assets/b96efd12-6128-4426-b790-f4480c1a5243)
+![image](https://github.com/user-attachments/assets/1549ff86-6c37-49fc-adcc-d3d9903c1f55)
 
 
 ## 4.2 Mapa de Empatia
@@ -177,6 +178,7 @@ As regras de ouro usadas nessa página são:
 - Consistência: Padrão de design, em termos de cores, fontes e ícones.
 - Flexibilidade e Eficiência de uso: A forma em que os botões e os campos se formam torna cada ação mais simples.
 - Controle e Liberdade para o Usuário: O usuário é capaz de adicionar e apagar um ingrediente e uma categoria, assim como adicionar uma descrição completa.
+
 ![image](https://github.com/user-attachments/assets/7ce1ab93-ee1e-4c36-9f05-f54b5480f5b5)
 
 ### Tela de Gerenciar Receita - Editar Receita
