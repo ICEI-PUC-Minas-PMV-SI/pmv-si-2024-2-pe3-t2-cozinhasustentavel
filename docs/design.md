@@ -126,23 +126,6 @@ As regras de ouro usadas nessa página são:
 
 ![favoritos](https://github.com/user-attachments/assets/2e6f0a8c-281a-4a52-9476-68c334536c70)
 
-### Tela de Gerenciar Usuario - Minhas Receitas
-
-Nesta tela é possível visualizar todas as receitas criadas pelo usuário e ter total contrele sobre todas assim como uma visualização ampla.
-
-Os princípios gestálticos utilizados nessa página são os seguintes:
-
-- Proximidade: Cada receita criada ocupam uniformemente os espaços visuais tranzendo contrele para o usuário.
-- Similaridade: Padrão visual com o mesmo layout de imagens, nomes e botões.
-- Continuidade: Facilidade da navegação de uma receita para outra.
-
-As regras de ouro usadas nessa página são:
-
-- Consistência: Padrão de design, em termos de cores, fontes e ícones.
-- Controle e Liberdade para o Usuário: O usuário é capaz editar, visualizar, deletar e adicionar uma nova receita.
-- Flexibilidade e Eficiência de uso: A forma em que os botões e as informações visuais são apresentadas tornam todos o processo intuitivo.
-
-![image](https://github.com/user-attachments/assets/eb9298ba-40d3-42a6-8758-74cefdb3d211)
 
 ### Tela de Gerenciar Usuario - Minhas Receitas
 
