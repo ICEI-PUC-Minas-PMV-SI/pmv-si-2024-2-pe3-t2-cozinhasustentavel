@@ -142,3 +142,39 @@ As regras de ouro usadas nessa página são:
 - Flexibilidade e Eficiência de uso: A forma em que os botões e as informações visuais são apresentadas tornam todos o processo intuitivo.
 
 ![image](https://github.com/user-attachments/assets/eb9298ba-40d3-42a6-8758-74cefdb3d211)
+
+### Tela de Gerenciar Usuario - Minhas Receitas
+
+Nesta tela é possível visualizar todas as receitas criadas pelo usuário e ter total contrele sobre todas assim como uma visualização ampla.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Cada receita criada ocupam uniformemente os espaços visuais tranzendo contrele para o usuário.
+- Similaridade: Padrão visual com o mesmo layout de imagens, nomes e botões.
+- Continuidade: Facilidade da navegação de uma receita para outra.
+
+As regras de ouro usadas nessa página são:
+
+- Consistência: Padrão de design, em termos de cores, fontes e ícones.
+- Controle e Liberdade para o Usuário: O usuário é capaz de editar, visualizar, deletar e adicionar uma nova receita.
+- Flexibilidade e Eficiência de uso: A forma em que os botões e as informações visuais são apresentadas tornam todos o processo intuitivo.
+
+![image](https://github.com/user-attachments/assets/eb9298ba-40d3-42a6-8758-74cefdb3d211)
+
+
+### Tela de Gerenciar Receita - Adicionar Receita
+
+Nesta tela é possível elaborar a receita de forma prática baseando-se na forma que os campos foram estruturados com suas informações visuais.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Organização dos campos assim como suas informações visuais e textuais torna o processo intuitivo.
+- Similaridade: Padrão visual de cada etapa do processo processo para se estuturar uma receita torna as ações do usuário objetiva.
+- Continuidade: Facilidade da navegação de entre cada componente e seus atributos.
+
+As regras de ouro usadas nessa página são:
+
+- Consistência: Padrão de design, em termos de cores, fontes e ícones.
+- Flexibilidade e Eficiência de uso: A forma em que os botões e os campos se formam torna cada ação mais simples.
+- Controle e Liberdade para o Usuário: O usuário é capaz de adicionar e apagar um ingrediente e uma categoria, assim como adicionar uma descrição completa.
+![image](https://github.com/user-attachments/assets/7ce1ab93-ee1e-4c36-9f05-f54b5480f5b5)
