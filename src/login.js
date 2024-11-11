@@ -17,7 +17,7 @@ button.addEventListener("click", () => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: login,
+    body: JSON.stringify(login),
   })
     .then((response) => response.json())
     .then((data) => localStorage.setItem("user", JSON.stringify(data)))

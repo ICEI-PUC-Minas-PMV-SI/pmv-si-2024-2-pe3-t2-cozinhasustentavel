@@ -17,7 +17,7 @@ button.addEventListener("click", () => {
     receitasFavoritas: [],
   };
 
-  fetch("http://localhost:3003/usuario", {
+  fetch("http://localhost:3003/usuarios", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
