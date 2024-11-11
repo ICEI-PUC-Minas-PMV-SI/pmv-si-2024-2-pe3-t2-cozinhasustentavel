@@ -1,28 +1,28 @@
 # 4. PROJETO DO DESIGN DE INTERAÇÃO
 
 ## 4.1 Personas
-Nesta seção você deve detalhar as personas do seu projeto. Deve-se documentar uma persona por integrante do projeto. Sugere-se a utilização do gerador de personas disponibilizado ao final da página https://www.rdstation.com/blog/marketing/persona-o-que-e/.
 
 ![image](https://github.com/user-attachments/assets/6bc51fc1-f412-454c-ab75-395a01d230dc)
 ![image](https://github.com/user-attachments/assets/0dbf4c37-9f1e-4af8-97cd-4fb465c53efe)
 ![image](https://github.com/user-attachments/assets/6c723cc3-017c-42c6-8e0e-b6db2ecfcade)
 ![persona_Isabela](https://github.com/user-attachments/assets/94b7003d-0a26-4a72-9cfe-5c1cfdd58945)
 ![page_7662_638664472863753622_page-0001](https://github.com/user-attachments/assets/b96efd12-6128-4426-b790-f4480c1a5243)
+![image](https://github.com/user-attachments/assets/1549ff86-6c37-49fc-adcc-d3d9903c1f55)
 
 
 ## 4.2 Mapa de Empatia
-Mapa da Empatia é um material utilizado para conhecer melhor o seu cliente. A partir do mapa da empatia é possível detalhar a personalidade do cliente e compreendê-la melhor. O objetivo é obter um nível mais profundo de compreensão de uma persona. A seguir um exemplo de template que pode ser usado para o mapa de empatia. Para cada persona deverá ser apresentado o seu respectivo mapa de empatia. Sugere-se a utilização do template apresentado em https://www.rdstation.com/blog/marketing/mapa-da-empatia/.
 
-![Black and White Simple Empathy Map Brainstorm](https://github.com/user-attachments/assets/1e646d2f-1061-4dc7-a556-60568d441bab)
+![Black and White Simple Empathy Map Brainstorm (1)](https://github.com/user-attachments/assets/194463e6-f786-4424-9ead-cee5701965df)
 ![image](https://github.com/user-attachments/assets/426cc07f-469f-4d2d-b818-ba9cf3bfe6c7)
 <img width="683" alt="image" src="https://github.com/user-attachments/assets/d889b941-2418-459d-9374-3941525b7b04">
 ![Black and White Simple Empathy Map Brainstorm](https://github.com/user-attachments/assets/e89b539a-a0be-4e0a-92b8-3d766a187b75)
 ![mapa empatia_Isabela](https://github.com/user-attachments/assets/3e133fd2-4dbb-4d30-b692-5f55563bf760)
+![image](https://github.com/user-attachments/assets/cbcc2867-a90c-44f8-9d20-094454ede243)
+
 
 ---
 
 ## 4.3 Protótipos das Interfaces
-Apresente nesta seção os protótipos de alta fidelidade do sistema proposto. A fidelidade do protótipo refere-se ao nível de detalhes e funcionalidades incorporadas a ele. Assim, um protótipo de alta fidelidade é uma representação interativa do produto, baseada no computador ou em dispositivos móveis. Esse protótipo já apresenta maior semelhança com o design final em termos de detalhes e funcionalidades. No desenvolvimento dos protótipos, devem ser considerados os princípios gestálticos, as recomendações ergonômicas e as regras de design (como as 8 regras de ouro). É importante descrever no texto do relatório como os princípios gestálticos e as regras de ouro foram seguidas no projeto das interfaces. Nesta etapa deve-se dar uma ênfase na implementação do software de modo que possam ser realizados os testes com usuários na etapa seguinte.
 
 ### Página Inicial:
 A página inicial da Cozinha Sustentável apresenta a lista de receitas ordenada por data de criação. Está página possue um cabeçalho no qual o usuário pode fazer a busca de uma receita pelo título da receita ou utilizar o filtro. Os princípios gestálticos utilizados nessa página são os seguintes:
@@ -46,6 +46,53 @@ Outra funcionalidade da página é o filtro da lista de receitas que tem três o
 O modal de preferências é onde o usuário consegue escolher quais são as categorias e ingredientes das receitas quais ele gostaria de receber notificações e sugestões sobre.
 
 ![Página Inicial - Modal de preferências](https://github.com/user-attachments/assets/8a803b3c-bc23-46ee-b214-066db9da8745)
+
+### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
+Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
+- Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
+- Similaridade: Todos os cards de solicitações formam um grupo de solitações.
+
+As regras de ouro usadas nessa página são:
+- Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos no resto do site e as palavras para as ações a serem feitas são as mesmas em todas as abas.
+- Reduzir a carga de memória de trabalho: A aba de gerenciar solitações e modal de abrir solicitação são intuitivos para o usuário, exibindo textos claros das ações que ele pode tomar.
+  
+![Gerenciar Usuario - Solicitações (admin)](https://github.com/user-attachments/assets/47d8e0e9-963e-4d6b-b464-c4ea11eb3b1a)
+
+![Solicitar ingrediente ou categoria](https://github.com/user-attachments/assets/6a4454bd-ff12-4e9f-a7cd-4f383e6686ed)
+
+### Login
+Tela utilizada para realizar autenticação de usuários.
+
+Princípios Gestálticos Utilizados:
+- Proximidade: Os campos estão próximos, assim como o botão de login e o de criar conta. Isso facilita a percepção de que esses elementos são do mesmo grupo.
+- Similaridade: O estilo dos campos é o mesmo, mantendo a familiaridade e facilitando o preenchimento.
+- Pregnância: Layout simples e limpo, com foco nos elementos essenciais para o login.
+- Continuidade: A sequência dos campos flui de cima para baixo, facilitando a navegação.
+
+Regras de Ouro Utilizadas:
+- Consistência: O design é consistente com cores, fontes e espaçamento, tornando a experiência visual coesa.
+- Reconhecimento e Não Lembrança: Os campos de e-mail e senha são claros, e o botão de login é destacado, logo o usuário não precisa se lembrar da ordem.
+- Controle e Liberdade para o Usuário: O botão "Criar conta" oferece ao usuário a possibilidade de ir para a tela de cadastro caso ele não tenha uma conta.
+- Flexibilidade e Eficiência de Uso: A interface é intuitiva e focada na eficiência, facilitando o login rápido do usuário.
+
+<img width="657" alt="image" src="https://github.com/user-attachments/assets/5a7a54a8-50c6-4294-8891-7b95be423d58">
+
+### Cadastro
+Tela utilizada para realizar o cadastro de novos usuários.
+
+Princípios Gestálticos Utilizados:
+- Proximidade: Os campos estão agrupados, ajudando o usuário a entender que são as informações necessárias para o cadastro.
+- Similaridade: Todos os campos têm o mesmo estilo, mantendo a familiaridade e facilitando o preenchimento.
+- Pregnância: Layout simples e limpo, com foco nos campos essenciais para o cadastro.
+- Continuidade: A sequência dos campos flui de cima para baixo, guiando o usuário de forma intuitiva.
+
+Regras de Ouro Utilizadas:
+- Consistência: Mantém o mesmo padrão visual da tela de login, utilizando as mesmas cores, fontes e estilos para os campos e botões.
+- Flexibilidade e Eficiência de Uso: Os campos são claros, facilitando o preenchimento rápido e eficiente.
+- Controle e Liberdade para o Usuário: O botão "Login" permite que o usuário volte para a tela de login.
+- Reconhecimento e Não Lembrança: A apresentação dos campos de cadastro é clara e direta, facilitando o reconhecimento dos dados a serem preenchidos.
+
+<img width="657" alt="image" src="https://github.com/user-attachments/assets/bc74783d-8ec8-423f-8d62-dd60140ccbe7">
 
 ### Página de Detalhes da Receita
 
@@ -113,17 +160,53 @@ As regras de ouro usadas nessa página são:
 
 ![favoritos](https://github.com/user-attachments/assets/2e6f0a8c-281a-4a52-9476-68c334536c70)
 
-### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
-Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
-- Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
-- Similaridade: Todos os cards de solicitações formam um grupo de solitações.
+
+### Tela de Gerenciar Usuario - Minhas Receitas
+
+Nesta tela é possível visualizar todas as receitas criadas pelo usuário e ter total contrele sobre todas assim como uma visualização ampla.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Cada receita criada ocupam uniformemente os espaços visuais tranzendo contrele para o usuário.
+- Similaridade: Padrão visual com o mesmo layout de imagens, nomes e botões.
+- Continuidade: Facilidade da navegação de uma receita para outra.
 
 As regras de ouro usadas nessa página são:
-- Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos no resto do site e as palavras para as ações a serem feitas são as mesmas em todas as abas.
-- Reduzir a carga de memória de trabalho: A aba de gerenciar solitações e modal de abrir solicitação são intuitivos para o usuário, exibindo textos claros das ações que ele pode tomar.
-  
-![Gerenciar Usuario - Solicitações (admin)](https://github.com/user-attachments/assets/47d8e0e9-963e-4d6b-b464-c4ea11eb3b1a)
 
-![Solicitar ingrediente ou categoria](https://github.com/user-attachments/assets/6a4454bd-ff12-4e9f-a7cd-4f383e6686ed)
+- Consistência: Padrão de design, em termos de cores, fontes e ícones.
+- Controle e Liberdade para o Usuário: O usuário é capaz de editar, visualizar, deletar e adicionar uma nova receita.
+- Flexibilidade e Eficiência de uso: A forma em que os botões e as informações visuais são apresentadas tornam todos o processo intuitivo.
 
+![image](https://github.com/user-attachments/assets/eb9298ba-40d3-42a6-8758-74cefdb3d211)
+
+
+### Tela de Gerenciar Receita - Adicionar Receita
+
+Nesta tela é possível elaborar a receita de forma prática baseando-se na forma que os campos foram estruturados com suas informações visuais.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Organização dos campos assim como suas informações visuais e textuais torna o processo intuitivo.
+- Similaridade: Padrão visual de cada etapa do processo processo para se estuturar uma receita torna as ações do usuário objetiva.
+- Continuidade: Facilidade da navegação de entre cada componente e seus atributos.
+
+As regras de ouro usadas nessa página são:
+
+- Consistência: Padrão de design, em termos de cores, fontes e ícones.
+- Flexibilidade e Eficiência de uso: A forma em que os botões e os campos se formam torna cada ação mais simples.
+- Controle e Liberdade para o Usuário: O usuário é capaz de adicionar e apagar um ingrediente e uma categoria, assim como adicionar uma descrição completa.
+
+![image](https://github.com/user-attachments/assets/7ce1ab93-ee1e-4c36-9f05-f54b5480f5b5)
+
+### Tela de Gerenciar Receita - Editar Receita
+
+Nesta tela é possível editar uma receita existente adiconando ou removendo componentes da mesma, ou reformulando a descrição.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Organização dos campos assim como suas informações visuais e textuais torna o processo intuitivo.
+- Similaridade: Padrão visual de cada etapa do processo processo para se estuturar uma receita torna as ações do usuário objetiva.
+- Continuidade: Facilidade da navegação de entre cada componente e seus atributos.
+
+![image](https://github.com/user-attachments/assets/bfa024ea-cc25-48f0-95dd-b8b1acfadbb1)
 
