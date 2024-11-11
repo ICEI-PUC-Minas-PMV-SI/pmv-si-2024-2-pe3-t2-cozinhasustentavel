@@ -178,3 +178,16 @@ As regras de ouro usadas nessa página são:
 - Flexibilidade e Eficiência de uso: A forma em que os botões e os campos se formam torna cada ação mais simples.
 - Controle e Liberdade para o Usuário: O usuário é capaz de adicionar e apagar um ingrediente e uma categoria, assim como adicionar uma descrição completa.
 ![image](https://github.com/user-attachments/assets/7ce1ab93-ee1e-4c36-9f05-f54b5480f5b5)
+
+### Tela de Gerenciar Receita - Editar Receita
+
+Nesta tela é possível editar uma receita existente adiconando ou removendo componentes da mesma, ou reformulando a descrição.
+
+Os princípios gestálticos utilizados nessa página são os seguintes:
+
+- Proximidade: Organização dos campos assim como suas informações visuais e textuais torna o processo intuitivo.
+- Similaridade: Padrão visual de cada etapa do processo processo para se estuturar uma receita torna as ações do usuário objetiva.
+- Continuidade: Facilidade da navegação de entre cada componente e seus atributos.
+
+![image](https://github.com/user-attachments/assets/bfa024ea-cc25-48f0-95dd-b8b1acfadbb1)
+
