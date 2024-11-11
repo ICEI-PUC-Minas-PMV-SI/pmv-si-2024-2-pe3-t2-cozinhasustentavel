@@ -47,6 +47,19 @@ O modal de preferências é onde o usuário consegue escolher quais são as cate
 
 ![Página Inicial - Modal de preferências](https://github.com/user-attachments/assets/8a803b3c-bc23-46ee-b214-066db9da8745)
 
+### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
+Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
+- Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
+- Similaridade: Todos os cards de solicitações formam um grupo de solitações.
+
+As regras de ouro usadas nessa página são:
+- Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos no resto do site e as palavras para as ações a serem feitas são as mesmas em todas as abas.
+- Reduzir a carga de memória de trabalho: A aba de gerenciar solitações e modal de abrir solicitação são intuitivos para o usuário, exibindo textos claros das ações que ele pode tomar.
+  
+![Gerenciar Usuario - Solicitações (admin)](https://github.com/user-attachments/assets/47d8e0e9-963e-4d6b-b464-c4ea11eb3b1a)
+
+![Solicitar ingrediente ou categoria](https://github.com/user-attachments/assets/6a4454bd-ff12-4e9f-a7cd-4f383e6686ed)
+
 ### Login
 Tela utilizada para realizar autenticação de usuários.
 
@@ -80,19 +93,6 @@ Regras de Ouro Utilizadas:
 - Reconhecimento e Não Lembrança: A apresentação dos campos de cadastro é clara e direta, facilitando o reconhecimento dos dados a serem preenchidos.
 
 <img width="657" alt="image" src="https://github.com/user-attachments/assets/bc74783d-8ec8-423f-8d62-dd60140ccbe7">
-
-### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
-Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
-- Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
-- Similaridade: Todos os cards de solicitações formam um grupo de solitações.
-
-As regras de ouro usadas nessa página são:
-- Perserguir a consistência: A fonte dos textos e estilo e cores dos ícones são os mesmos no resto do site e as palavras para as ações a serem feitas são as mesmas em todas as abas.
-- Reduzir a carga de memória de trabalho: A aba de gerenciar solitações e modal de abrir solicitação são intuitivos para o usuário, exibindo textos claros das ações que ele pode tomar.
-  
-![Gerenciar Usuario - Solicitações (admin)](https://github.com/user-attachments/assets/47d8e0e9-963e-4d6b-b464-c4ea11eb3b1a)
-
-![Solicitar ingrediente ou categoria](https://github.com/user-attachments/assets/6a4454bd-ff12-4e9f-a7cd-4f383e6686ed)
 
 ### Página de Detalhes da Receita
 
