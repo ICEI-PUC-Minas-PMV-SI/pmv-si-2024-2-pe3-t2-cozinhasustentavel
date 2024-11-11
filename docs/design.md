@@ -47,6 +47,40 @@ O modal de preferências é onde o usuário consegue escolher quais são as cate
 
 ![Página Inicial - Modal de preferências](https://github.com/user-attachments/assets/8a803b3c-bc23-46ee-b214-066db9da8745)
 
+### Login
+Tela utilizada para realizar autenticação de usuários.
+
+Princípios Gestálticos Utilizados:
+- Proximidade: Os campos estão próximos, assim como o botão de login e o de criar conta. Isso facilita a percepção de que esses elementos são do mesmo grupo.
+- Similaridade: O estilo dos campos é o mesmo, mantendo a familiaridade e facilitando o preenchimento.
+- Pregnância: Layout simples e limpo, com foco nos elementos essenciais para o login.
+- Continuidade: A sequência dos campos flui de cima para baixo, facilitando a navegação.
+
+Regras de Ouro Utilizadas:
+- Consistência: O design é consistente com cores, fontes e espaçamento, tornando a experiência visual coesa.
+- Reconhecimento e Não Lembrança: Os campos de e-mail e senha são claros, e o botão de login é destacado, logo o usuário não precisa se lembrar da ordem.
+- Controle e Liberdade para o Usuário: O botão "Criar conta" oferece ao usuário a possibilidade de ir para a tela de cadastro caso ele não tenha uma conta.
+- Flexibilidade e Eficiência de Uso: A interface é intuitiva e focada na eficiência, facilitando o login rápido do usuário.
+
+<img width="657" alt="image" src="https://github.com/user-attachments/assets/5a7a54a8-50c6-4294-8891-7b95be423d58">
+
+### Cadastro
+Tela utilizada para realizar o cadastro de novos usuários.
+
+Princípios Gestálticos Utilizados:
+- Proximidade: Os campos estão agrupados, ajudando o usuário a entender que são as informações necessárias para o cadastro.
+- Similaridade: Todos os campos têm o mesmo estilo, mantendo a familiaridade e facilitando o preenchimento.
+- Pregnância: Layout simples e limpo, com foco nos campos essenciais para o cadastro.
+- Continuidade: A sequência dos campos flui de cima para baixo, guiando o usuário de forma intuitiva.
+
+Regras de Ouro Utilizadas:
+- Consistência: Mantém o mesmo padrão visual da tela de login, utilizando as mesmas cores, fontes e estilos para os campos e botões.
+- Flexibilidade e Eficiência de Uso: Os campos são claros, facilitando o preenchimento rápido e eficiente.
+- Controle e Liberdade para o Usuário: O botão "Login" permite que o usuário volte para a tela de login.
+- Reconhecimento e Não Lembrança: A apresentação dos campos de cadastro é clara e direta, facilitando o reconhecimento dos dados a serem preenchidos.
+
+<img width="657" alt="image" src="https://github.com/user-attachments/assets/bc74783d-8ec8-423f-8d62-dd60140ccbe7">
+
 ### Telas de Solicitação de Ingrediente/Categoria e Gerenciar Solicitações
 Na página de perfil do usuário ele é capaz de abrir solicitações ao clicar o botão com o mesmo nome, no qual abre um modal que pede o tipo de solicitação (categoria ou ingrediente) e o nome da categoria ou ingrediente. O usuário administrador recebe essa solicitação na sua aba de solicitações e pode aceitar ou rejeitar a solicitação. Os princípios gestálticos utilizados nessas página são os seguintes:
 - Simetria: Os cards das solicitações são simétricos contendo conteudo em ambos os lados da tela.
