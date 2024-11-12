@@ -1,0 +1,133 @@
+body {
+    background-color: #F7FFF7;
+}
+
+a {
+    color: inherit; /* Herda a cor do elemento pai, removendo a cor azul padrão */
+    text-decoration: none; /* Remove o sublinhado padrão */
+  }
+
+/* cabecalho: */
+
+header {
+    background-color: #1D8844;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.div-cabecalho {
+    display: flex;
+    justify-content: center;
+}
+
+/* menu de hamburguer: */
+
+.menu {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+.menu a {
+    text-decoration: none;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container-menu {
+    position: absolute;
+    right: 100px;
+    background-color: #F7FFF7;
+    border-radius: 10px;
+}
+
+/* fim menu de hamburguer */
+
+/* fim cabecalho */
+
+/* editar informações do usuario: */
+
+.form-edit-usuario {
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+.area-dados-usuario {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.fotoUsuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* fim editar informações do usuario */
+
+/* botões padroes do site: */
+
+.btn-laranja {
+    background-color: #FF7F85;
+    width: 100%
+}
+
+.btn-verde {
+    background-color: #1D8844;
+    width: 100%
+}
+
+.btn {
+    color: #ffffff
+}
+
+.btn-modal {
+    margin-left: -6px;
+}
+
+/* fim botões padroes do site */
+
+/* menu de abas: */
+.linha-menu {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+}
+
+.nav-item {
+    border: 1px solid black;
+}
+
+.nav-link {
+    font-size: x-large;
+}
+
+/* fim menu de abas */
+
+/* esconde a barra de rolagem lateral caso algum item pule para fora do site */
+body, html {
+    overflow-x: hidden;
+}
+
+footer {
+    background-color: #1D8844;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+/* modal: */
+.separador {
+    border: 1px solid;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* fim modal */
