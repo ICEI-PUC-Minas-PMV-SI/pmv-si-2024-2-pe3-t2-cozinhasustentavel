@@ -1,5 +1,5 @@
 const currentUrl = window.location.href;
-const slashWherePathBegins = currentUrl.lastIndexOf("/");
+const slashWherePathBegins = currentUrl.indexOf("/");
 const baseUrl = currentUrl.slice(0, slashWherePathBegins);
 
 const inputs = document.getElementsByTagName("input");
