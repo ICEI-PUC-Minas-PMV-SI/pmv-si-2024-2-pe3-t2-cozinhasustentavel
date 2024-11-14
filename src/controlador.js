@@ -21,6 +21,26 @@ let ingredientes = [
     "Tomate seco", "Acelga", "Manga", "Mamão", "Maracuja", "Pêssego", "Cabelos de lentilhas"
 ]
 
+// estrutura do jQuery:
+// $('seletor do elemnto').funçãoParaExecutar('parametro quando necessario')
+// ex.:
+// $('#idDeUmBotao').click((event)=>{
+//     conteudo a ser executado
+// })
+
+// seletores:
+/*
+. class
+# id
+'input' elemento
+*/
+
+// condições para seleção
+// $('input[type="number"]'): pega todos os inputs que tenham o type number
+// estrutura: $('elemento[atribulto="valor"]')
+// $('input:not(input[type="number"])'): pega todos os inputs que não tenham o type number
+// estrutura: $('elemento:função(elemento[atribulto="valor"])')
+
 // exeplo para admin e usuario comum
 // alterne entre "adm" e "usuario"
 let usuario = "adm"
@@ -39,15 +59,23 @@ $(document).ready(function () {
     });
     
     $('#addIngrediente').click((e)=>{
+        // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
         const btn = e.target
         let option = ""
 
+        // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
         ingredientes.forEach((ingrediente)=>{
             option += `
             <option value="${ingrediente}">${ingrediente}</option>
             `
         })
 
+        // navega ate a div que recebera os ingredientes e adiciona os inputs necessarios para preenchimento
+        // $(btn): localiza quem recebeu o clik para rodar a função
+        // .parent(): pega o pai do elemento selecionado
+        // .next(): pega o proximo irmão do elemento selecionado
+        // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
+        // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
         $(btn).parent().parent().next().find('.containerIngredientes').append(`
             <div class="row">
                 <div class="col-md-7">
@@ -99,6 +127,7 @@ $(document).ready(function () {
         `)
     })
 
+    // maneira correta de manipular o click do botão quando sabemos que ele não existira quando o navegador carregar a pag
     $(document).on('click', '.deleteRow', (e)=>{
         const btn = e.target
 
@@ -107,15 +136,16 @@ $(document).ready(function () {
 
     // controlador do menu
     $('#seguindoMenu').click(()=>{
-        $('.nav-link').removeAttr('style')
-        $('#seguindo').show()
-        $('#seguidores').hide()
+        $('.nav-link').removeAttr('style') // remove o atribulto passado como parametro
+        $('#seguindo').show() // mostra o elemento removendo o "display: none" no style
+        $('#seguidores').hide() // esconde o elemento inserindo o "display: none" no style
         $('#minhasReceitas').hide()
         $('#categoriaReceita').hide()
         $('#categoriasIngredientes').hide()
         $('#ingredientes').hide()
         $('#solicitacoes').hide()
-        $('#seguindoMenu').attr('style', 'text-decoration: underline;')
+        // adiciona uma linha abaixo do escrito do elemnto
+        $('#seguindoMenu').attr('style', 'text-decoration: underline;') // adiciona no atribulto passado como primeiro parametro o conteudo passado no segundo parametro
     })
     $('#seguidoresMenu').click(()=>{
         $('.nav-link').removeAttr('style')
@@ -206,3 +236,5 @@ $(document).ready(function () {
 //         }
 //     });
 // });
+
+// ala 
