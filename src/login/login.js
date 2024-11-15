@@ -8,7 +8,7 @@ const button = document.getElementsByTagName("button")[0];
 
 button.addEventListener("click", () => {
   const login = {
-    email: inputs[0].value,
+    userEmailOrName: inputs[0].value,
     senha: inputs[1].value,
   };
 
@@ -20,7 +20,7 @@ button.addEventListener("click", () => {
     body: JSON.stringify(login),
   })
     .then((response) => response.json())
-    .then((data) => localStorage.setItem("user", JSON.stringify(data)))
+    .then((data) => localStorage.setItem("user", JSON.stringify(data.usuario)))
     .then(() => (window.location.href = `${baseUrl}/index.html`))
     .catch((error) => console.error("Erro ao logar:", error));
 });
