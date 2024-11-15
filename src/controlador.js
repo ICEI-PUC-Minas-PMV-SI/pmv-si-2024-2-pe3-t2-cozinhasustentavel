@@ -42,12 +42,12 @@ let ingredientes = [
 // estrutura: $('elemento:função(elemento[atribulto="valor"])')
 
 // exeplo para admin e usuario comum
-// alterne entre "adm" e "usuario"
-let usuario = "adm"
+// alterne entre "admin" e "normal"
+let usuario = "admin"
 
 // Quando o document estiver totalmente carregado ele executara
 $(document).ready(function () {
-    if(usuario == "adm"){
+    if(usuario == "admin"){
         $('.onlyAdm').show()
     }else{
         $('.onlyAdm').hide()
@@ -57,6 +57,12 @@ $(document).ready(function () {
         // Alterna a exibição da lista
         $('.container-menu').toggle();
     });
+
+    $('#modalAddReceita').click(()=>{
+        // função para carregar os itens e as categorias
+
+        
+    })
     
     $('#addIngrediente').click((e)=>{
         // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
@@ -126,9 +132,48 @@ $(document).ready(function () {
             </div>
         `)
     })
+    
+    $('#addCategoria').click((e)=>{
+        // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
+        const btn = e.target
+        let option = ""
+
+        // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
+        ingredientes.forEach((ingrediente)=>{
+            option += `
+            <option value="${ingrediente}">${ingrediente}</option>
+            `
+        })
+
+        // navega ate a div que recebera os ingredientes e adiciona os inputs necessarios para preenchimento
+        // $(btn): localiza quem recebeu o clik para rodar a função
+        // .parent(): pega o pai do elemento selecionado
+        // .next(): pega o proximo irmão do elemento selecionado
+        // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
+        // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
+        $(btn).parent().parent().next().find('.containerCategoria').append(`
+            <div class="row">
+                <div class="col-md-11">
+                    <label for="categoria">Categoria:</label>
+                    <select name="categoria" class="form-control categoria">
+                        <option value=""></option>
+                        ${option}
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <button class="btn btn-danger deleteRow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        `)
+    })
 
     // maneira correta de manipular o click do botão quando sabemos que ele não existira quando o navegador carregar a pag
-    $(document).on('click', '.deleteRow', (e)=>{
+    $(document).on('click', '.deleteRow', (e)=>{ // serve tanto para ingrediente quanto para categoria, pois tem a mesma estrutura
         const btn = e.target
 
         $(btn).parents('.row').first().remove()
