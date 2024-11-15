@@ -26,6 +26,15 @@
       "receitasFavoritas": [],
       "email": "teste@email.com",
       "senha": "teste"
+    },
+    {
+      "id": "id-0.9554798696675348",
+      "nome": "cassio",
+      "email": "cassio@gmail.com",
+      "telefone": "(31)9 7178-5971",
+      "senha": "1234",
+      "papel": "normal",
+      "receitasFavoritas": []
     }
   ],
   "receitas": [

@@ -1,6 +1,7 @@
 const currentUrl = window.location.href;
-const slashWherePathBegins = currentUrl.indexOf("/");
-const baseUrl = currentUrl.slice(0, slashWherePathBegins);
+let arrayUrl = currentUrl.split(/(?<=\/)/)
+arrayUrl = arrayUrl.slice(0, arrayUrl.length - 2)
+const baseUrl = arrayUrl.join().replaceAll(',', '')
 
 const inputs = document.getElementsByTagName("input");
 
