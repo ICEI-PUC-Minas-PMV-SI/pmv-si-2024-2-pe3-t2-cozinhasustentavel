@@ -1,0 +1,50 @@
+/* cabecalho: */
+
+header {
+    background-color: #1D8844;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.div-cabecalho {
+    display: flex;
+    justify-content: center;
+}
+
+/* menu de hamburguer: */
+
+.menu {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container-menu {
+    position: absolute;
+    right: 100px;
+    background-color: #F7FFF7;
+    border-radius: 10px;
+}
+
+/* fim menu de hamburguer */
+
+/* fim cabecalho */
+
+footer {
+    background-color: #1D8844;
+    /* display: flex;
+    justify-content: space-between; */
+}
