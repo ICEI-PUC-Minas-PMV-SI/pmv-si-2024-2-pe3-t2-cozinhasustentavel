@@ -1,48 +1,36 @@
 
 
 async function getIngredientes() {
-    let response = await fetch("http://localhost:3003/ingredientes", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        }
-    });
+  let response = await fetch("http://localhost:3003/ingredientes", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
 
-    return await response.json();
+  return await response.json();
 }
 
 async function getCategorias() {
 
-    let response = await fetch("http://localhost:3003/categorias", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        }
+  let response = await fetch("http://localhost:3003/categorias", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
     }
-    )
-    let data = await response.json()
+  }
+  )
+  let data = await response.json()
 
-    return{
-        ingredientCategories : data.length > 0 && data.filter(categoria => {
-            return categoria.tipo === "ingrediente"
-        }),
-    
-        recipeCategories : data.length > 0 && data.filter(categoria => {
-            return categoria.tipo === "Receita"
-        })
-    }
+  return {
+    ingredientCategories: data.length > 0 && data.filter(categoria => {
+      return categoria.tipo === "ingrediente"
+    }),
 
-    // console.log("ingr", ingredientCategories)
-    // console.log("recipe", recipeCategories)
-
-    // const recipeCategoriesDiv = document.getElementById("categoriaReceita")
-    // const noItemsDiv = recipeCategoriesDiv.getElementsByClassName("text-center");
-    // noItemsDiv[0].style.display = "none";
-
-    // const recipeCategoriesContent = recipeCategoriesDiv.getElementsByClassName("conteudo-categoriaReceita");
-    // recipeCategoriesContent[0].style.display = "block";
-
-    // recipeCategoriesContent[0].innerHTML = mapListData(recipeCategories, "editarCategoriaReceita", "deletarCategoriaReceita");
+    recipeCategories: data.length > 0 && data.filter(categoria => {
+      return categoria.tipo === "Receita"
+    })
+  }
 }
 const currentUrl = window.location.href;
 let arrayUrl = currentUrl.split(/(?<=\/)/)
@@ -79,52 +67,52 @@ console.log(usuario)
 // Quando o document estiver totalmente carregado ele executara
 $(document).ready(async function () {
 
-    if (!usuario) {
-        window.location.href = `${baseUrl}/login/login.html`
-    }
+  if (!usuario) {
+    window.location.href = `${baseUrl}/login/login.html`
+  }
 
-    if (usuario.papel == "admin") {
-        $(".onlyAdmin").show();
-    } else {
-        $(".onlyAdmin").hide();
-    }
-    // Quando o botão de menu (hamburger) for clicado
-    $("#menu-toggle").click(function () {
-        // Alterna a exibição da lista
-        $(".container-menu").toggle();
-    });
+  if (usuario.papel == "admin") {
+    $(".onlyAdmin").show();
+  } else {
+    $(".onlyAdmin").hide();
+  }
+  // Quando o botão de menu (hamburger) for clicado
+  $("#menu-toggle").click(function () {
+    // Alterna a exibição da lista
+    $(".container-menu").toggle();
+  });
 
-    $("#adicionarReceita").click(() => {
+  $("#adicionarReceita").click(() => {
 
-    })
+  })
 
-    // Logout:
-    $("#menu").click(() => {
-        localStorage.removeItem("user");
-        window.location.href = `${baseUrl}/login/login.html`;
-    })
+  // Logout:
+  $("#menu").click(() => {
+    localStorage.removeItem("user");
+    window.location.href = `${baseUrl}/login/login.html`;
+  })
 
-    $("#addIngrediente").click(async (e) => {
-        // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
-        const btn = e.target;
-        let option = "";
+  $("#addIngrediente").click(async (e) => {
+    // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
+    const btn = e.target;
+    let option = "";
 
-        let ingredientes = await getIngredientes()
+    let ingredientes = await getIngredientes()
 
-        // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
-        ingredientes.forEach((ingrediente) => {
-            option += `
+    // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
+    ingredientes.forEach((ingrediente) => {
+      option += `
             <option value="${ingrediente.id}">${ingrediente.nome}</option>
             `;
-        });
+    });
 
-        // navega ate a div que recebera os ingredientes e adiciona os inputs necessarios para preenchimento
-        // $(btn): localiza quem recebeu o clik para rodar a função
-        // .parent(): pega o pai do elemento selecionado
-        // .next(): pega o proximo irmão do elemento selecionado
-        // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
-        // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
-        $(btn).parent().parent().next().find(".containerIngredientes").append(`
+    // navega ate a div que recebera os ingredientes e adiciona os inputs necessarios para preenchimento
+    // $(btn): localiza quem recebeu o clik para rodar a função
+    // .parent(): pega o pai do elemento selecionado
+    // .next(): pega o proximo irmão do elemento selecionado
+    // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
+    // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
+    $(btn).parent().parent().next().find(".containerIngredientes").append(`
             <div class="row">
                 <div class="col-md-7">
                     <label for="ingrediente">Ingrediente:</label>
@@ -173,28 +161,28 @@ $(document).ready(async function () {
                 </div>
             </div>
         `)
-    })
+  })
 
-    $('#addCategoria').click(async (e) => {
-        // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
-        const btn = e.target
-        let option = ""
+  $('#addCategoria').click(async (e) => {
+    // pega o "e" do parametro passado no arrow function e localiza qualbotão foi clicado
+    const btn = e.target
+    let option = ""
 
-        let categorias = (await getCategorias()).recipeCategories
-        // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
-        categorias.forEach((categoria) => {
-            option += `
+    let categorias = (await getCategorias()).recipeCategories
+    // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
+    categorias.forEach((categoria) => {
+      option += `
             <option value="${categoria.id}">${categoria.nome}</option>
             `
-        })
+    })
 
-        // navega ate a div que recebera os categorias e adiciona os inputs necessarios para preenchimento
-        // $(btn): localiza quem recebeu o clik para rodar a função
-        // .parent(): pega o pai do elemento selecionado
-        // .next(): pega o proximo irmão do elemento selecionado
-        // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
-        // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
-        $(btn).parent().parent().next().find('.containerCategoria').append(`
+    // navega ate a div que recebera os categorias e adiciona os inputs necessarios para preenchimento
+    // $(btn): localiza quem recebeu o clik para rodar a função
+    // .parent(): pega o pai do elemento selecionado
+    // .next(): pega o proximo irmão do elemento selecionado
+    // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
+    // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
+    $(btn).parent().parent().next().find('.containerCategoria').append(`
             <div class="row">
                 <div class="col-md-11">
                     <label for="categoria">Categoria:</label>
@@ -213,97 +201,104 @@ $(document).ready(async function () {
                 </div>
             </div>
         `)
-    })
+  })
 
-    // maneira correta de manipular o click do botão quando sabemos que ele não existira quando o navegador carregar a pag
-    $(document).on('click', '.deleteRow', (e) => { // serve tanto para ingrediente quanto para categoria, pois tem a mesma estrutura
-        const btn = e.target
+  // maneira correta de manipular o click do botão quando sabemos que ele não existira quando o navegador carregar a pag
+  $(document).on('click', '.deleteRow', (e) => { // serve tanto para ingrediente quanto para categoria, pois tem a mesma estrutura
+    const btn = e.target
 
-        $(btn).parents(".row").first().remove();
-    });
+    $(btn).parents(".row").first().remove();
+  });
 
-    // controlador do menu
-    $("#seguindoMenu").click(() => {
-        $(".nav-link").removeAttr("style"); // remove o atribulto passado como parametro
-        $("#seguindo").show(); // mostra o elemento removendo o "display: none" no style
-        $("#seguidores").hide(); // esconde o elemento inserindo o "display: none" no style
-        $("#minhasReceitas").hide();
-        $("#categoriaReceita").hide();
-        $("#categoriasIngredientes").hide();
-        $("#ingredientes").hide();
-        $("#solicitacoes").hide();
-        // adiciona uma linha abaixo do escrito do elemnto
-        $("#seguindoMenu").attr("style", "text-decoration: underline;"); // adiciona no atribulto passado como primeiro parametro o conteudo passado no segundo parametro
-    });
-    $("#seguidoresMenu").click(() => {
-        $(".nav-link").removeAttr("style");
-        $("#seguindo").hide();
-        $("#seguidores").show();
-        $("#minhasReceitas").hide();
-        $("#categoriaReceita").hide();
-        $("#categoriasIngredientes").hide();
-        $("#ingredientes").hide();
-        $("#solicitacoes").hide();
-        $("#seguidoresMenu").attr("style", "text-decoration: underline;");
-    });
-    $("#minhasReceitasMenu").click(() => {
-        $(".nav-link").removeAttr("style");
-        $("#seguindo").hide();
-        $("#seguidores").hide();
-        $("#minhasReceitas").show();
-        $("#categoriaReceita").hide();
-        $("#categoriasIngredientes").hide();
-        $("#ingredientes").hide();
-        $("#solicitacoes").hide();
-        $("#minhasReceitasMenu").attr("style", "text-decoration: underline;");
-    });
-    $("#categoriaReceitaMenu").click(() => {
-        $(".nav-link").removeAttr("style");
-        $("#seguindo").hide();
-        $("#seguidores").hide();
-        $("#minhasReceitas").hide();
-        $("#categoriaReceita").show();
-        $("#categoriasIngredientes").hide();
-        $("#ingredientes").hide();
-        $("#solicitacoes").hide();
-        $("#categoriaReceitaMenu").attr("style", "text-decoration: underline;");
-    });
-    $("#categoriasIngredientesMenu").click(() => {
-        $(".nav-link").removeAttr("style");
-        $("#seguindo").hide();
-        $("#seguidores").hide();
-        $("#minhasReceitas").hide();
-        $("#categoriaReceita").hide();
-        $("#categoriasIngredientes").show();
-        $("#ingredientes").hide();
-        $("#solicitacoes").hide();
-        $("#categoriasIngredientesMenu").attr(
-            "style",
-            "text-decoration: underline;"
-        );
-    });
-    $("#ingredientesMenu").click(() => {
-        $(".nav-link").removeAttr("style");
-        $("#seguindo").hide();
-        $("#seguidores").hide();
-        $("#minhasReceitas").hide();
-        $("#categoriaReceita").hide();
-        $("#categoriasIngredientes").hide();
-        $("#ingredientes").show();
-        $("#solicitacoes").hide();
-        $("#ingredientesMenu").attr("style", "text-decoration: underline;");
-    });
-    $("#solicitacoesMenu").click(() => {
-        $(".nav-link").removeAttr("style");
-        $("#seguindo").hide();
-        $("#seguidores").hide();
-        $("#minhasReceitas").hide();
-        $("#categoriaReceita").hide();
-        $("#categoriasIngredientes").hide();
-        $("#ingredientes").hide();
-        $("#solicitacoes").show();
-        $("#solicitacoesMenu").attr("style", "text-decoration: underline;");
-    });
+  // mostrar listagem de categorias de receitas
+  $("#categoriaReceita").find("#categoriaReceitaVazio").hide();
+  const categoriaReceitasConteudo = $(".conteudo-categoriaReceita").show();
+  let categoriasReceita = (await getCategorias()).recipeCategories
+
+  categoriaReceitasConteudo.append(mapListData(categoriasReceita, "editarCategoriaReceita", "deletarCategoriaReceita"))
+
+  // controlador do menu
+  $("#seguindoMenu").click(() => {
+    $(".nav-link").removeAttr("style"); // remove o atribulto passado como parametro
+    $("#seguindo").show(); // mostra o elemento removendo o "display: none" no style
+    $("#seguidores").hide(); // esconde o elemento inserindo o "display: none" no style
+    $("#minhasReceitas").hide();
+    $("#categoriaReceita").hide();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").hide();
+    $("#solicitacoes").hide();
+    // adiciona uma linha abaixo do escrito do elemnto
+    $("#seguindoMenu").attr("style", "text-decoration: underline;"); // adiciona no atribulto passado como primeiro parametro o conteudo passado no segundo parametro
+  });
+  $("#seguidoresMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").show();
+    $("#minhasReceitas").hide();
+    $("#categoriaReceita").hide();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").hide();
+    $("#solicitacoes").hide();
+    $("#seguidoresMenu").attr("style", "text-decoration: underline;");
+  });
+  $("#minhasReceitasMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").hide();
+    $("#minhasReceitas").show();
+    $("#categoriaReceita").hide();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").hide();
+    $("#solicitacoes").hide();
+    $("#minhasReceitasMenu").attr("style", "text-decoration: underline;");
+  });
+  $("#categoriaReceitaMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").hide();
+    $("#minhasReceitas").hide();
+    $("#categoriaReceita").show();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").hide();
+    $("#solicitacoes").hide();
+    $("#categoriaReceitaMenu").attr("style", "text-decoration: underline;");
+  });
+  $("#categoriasIngredientesMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").hide();
+    $("#minhasReceitas").hide();
+    $("#categoriaReceita").hide();
+    $("#categoriasIngredientes").show();
+    $("#ingredientes").hide();
+    $("#solicitacoes").hide();
+    $("#categoriasIngredientesMenu").attr(
+      "style",
+      "text-decoration: underline;"
+    );
+  });
+  $("#ingredientesMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").hide();
+    $("#minhasReceitas").hide();
+    $("#categoriaReceita").hide();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").show();
+    $("#solicitacoes").hide();
+    $("#ingredientesMenu").attr("style", "text-decoration: underline;");
+  });
+  $("#solicitacoesMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").hide();
+    $("#minhasReceitas").hide();
+    $("#categoriaReceita").hide();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").hide();
+    $("#solicitacoes").show();
+    $("#solicitacoesMenu").attr("style", "text-decoration: underline;");
+  });
 });
 
 // document.addEventListener('DOMContentLoaded', function () {
@@ -325,8 +320,8 @@ $(document).ready(async function () {
 
 function mapListData(array, editButtonId, deleteButtonId) {
 
-    const list = array.map((item) => {
-        return `<li>
+  const list = array.map((item) => {
+    return `<li>
         <p>${item.nome}</p>
         <div>
           <button id="${editButtonId}" class="btn btn-verde btn-modal" data-bs-toggle="modal"
@@ -339,10 +334,10 @@ function mapListData(array, editButtonId, deleteButtonId) {
           </button>
         </div>
       </li> `
-    });
+  });
 
-    // transformar array em string e remover a virgula entre os <li>
-    const strigifiedList = list.join().replaceAll(",", "")
+  // transformar array em string e remover a virgula entre os <li>
+  const strigifiedList = list.join().replaceAll(",", "")
 
-    return ` <ul class="lista-conteudo-sem-imagem">${strigifiedList}</ul>`;
+  return ` <ul class="lista-conteudo-sem-imagem">${strigifiedList}</ul>`;
 }
