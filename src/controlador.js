@@ -1,3 +1,9 @@
+// pega o caminho da url
+const currentUrl = window.location.href;
+const slashWherePathBegins = currentUrl.indexOf("/");
+const baseUrl = currentUrl.slice(0, slashWherePathBegins);
+
+
 // array de itens auxiliar
 let ingredientes = [
     "Casca de banana", "Sementes de abóbora", "Cascas de batata", "Folhas de beterraba", 
