@@ -3,9 +3,11 @@ body {
 }
 
 a {
-    color: inherit; /* Herda a cor do elemento pai, removendo a cor azul padrão */
-    text-decoration: none; /* Remove o sublinhado padrão */
-  }
+    color: inherit;
+    /* Herda a cor do elemento pai, removendo a cor azul padrão */
+    text-decoration: none;
+    /* Remove o sublinhado padrão */
+}
 
 /* cabecalho: */
 
@@ -27,6 +29,7 @@ header {
     list-style-type: none;
     padding: 0;
 }
+
 .menu a {
     text-decoration: none;
 }
@@ -111,7 +114,8 @@ header {
 /* fim menu de abas */
 
 /* esconde a barra de rolagem lateral caso algum item pule para fora do site */
-body, html {
+body,
+html {
     overflow-x: hidden;
 }
 
@@ -130,4 +134,33 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
 }
+
 /* fim modal */
+
+.lista-conteudo-sem-imagem {
+    list-style-type: none;
+
+    li {
+        padding: 12px;
+        margin: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: black 1px solid;
+        border-radius: 8px;
+
+        p {
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            min-width: 300px;
+
+            button {
+                width: 140px;
+            }
+        }
+    }
+}

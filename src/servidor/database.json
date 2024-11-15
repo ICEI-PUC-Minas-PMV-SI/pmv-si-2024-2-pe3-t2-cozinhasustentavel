@@ -73,6 +73,61 @@
       "nome": "Vegetais",
       "tipo": "ingrediente",
       "id": "id-0.053819505902"
+    },
+    {
+      "nome": "Sementes",
+      "tipo": "ingrediente",
+      "id": "id-0.78927987692"
+    },
+    {
+      "nome": "Castanhas",
+      "tipo": "ingrediente",
+      "id": "id-0.453456465878"
+    },
+    {
+      "nome": "Frutos do Mar",
+      "tipo": "ingrediente",
+      "id": "id-0.456453135484641"
+    },
+    {
+      "nome": "Temperos e Condimentos",
+      "tipo": "ingrediente",
+      "id": "id-0.786529376238774"
+    },
+    {
+      "nome": "Bebidas",
+      "tipo": "ingrediente",
+      "id": "id-0.75829376296726"
+    },
+    {
+      "nome": "Massas",
+      "tipo": "Receita",
+      "id": "id-0.4564564864563"
+    },
+    {
+      "nome": "Sobremesas",
+      "tipo": "Receita",
+      "id": "id-0.476843976376315"
+    },
+    {
+      "nome": "Salgados",
+      "tipo": "Receita",
+      "id": "id-0.6579236578265"
+    },
+    {
+      "nome": "Saladas",
+      "tipo": "Receita",
+      "id": "id-0.758293672893629"
+    },
+    {
+      "nome": "Carnes",
+      "tipo": "Receita",
+      "id": "id-0.78950175199613"
+    },
+    {
+      "nome": "Petiscos",
+      "tipo": "Receita",
+      "id": "id-0.659165782165871"
     }
   ],
   "ingredientes": [
@@ -84,10 +139,350 @@
       ]
     },
     {
-      "id": "id-0.64525364565",
-      "nome": "Talo de couve",
+      "id": "id-0.7589235723986",
+      "nome": "Sementes de abóbora",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235723987",
+      "nome": "Cascas de batata",
       "categoria": [
         "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235723988",
+      "nome": "Folhas de beterraba",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235723989",
+      "nome": "Folhas de cenoura",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235723990",
+      "nome": "Talos de brócolis",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235723991",
+      "nome": "Sementes de chia",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235723992",
+      "nome": "Alga marinha",
+      "categoria": [
+        "id-0.456453135484641"
+      ]
+    },
+    {
+      "id": "id-0.7589235723993",
+      "nome": "Cogumelos comestíveis",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235723994",
+      "nome": "Bambu",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235723995",
+      "nome": "Sementes de girassol",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235723996",
+      "nome": "Feijão-mexicano",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235723997",
+      "nome": "Farinha de grilo",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235723998",
+      "nome": "Tapioca",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235723999",
+      "nome": "Frutas maduras",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724000",
+      "nome": "Coco",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724001",
+      "nome": "Laranja",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724002",
+      "nome": "Acelga",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724003",
+      "nome": "Couve-flor",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724004",
+      "nome": "Cabelos de milho",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724005",
+      "nome": "Alho-poró",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724006",
+      "nome": "Sementes de linhaça",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235724007",
+      "nome": "Arroz integral",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724008",
+      "nome": "Ervilhas",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724009",
+      "nome": "Amendoim",
+      "categoria": [
+        "id-0.453456465878"
+      ]
+    },
+    {
+      "id": "id-0.7589235724010",
+      "nome": "Mandioca",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724011",
+      "nome": "Cactos comestíveis",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724012",
+      "nome": "Cabelos de trigo",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724013",
+      "nome": "Tomate",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724014",
+      "nome": "Abobrinha",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724015",
+      "nome": "Melado de cana",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724016",
+      "nome": "Grão-de-bico",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724017",
+      "nome": "Feijão preto",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724018",
+      "nome": "Gergelim",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235724019",
+      "nome": "Açúcar mascavo",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724020",
+      "nome": "Pepino",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724021",
+      "nome": "Nabo",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724022",
+      "nome": "Maçã",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724023",
+      "nome": "Cenoura",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724024",
+      "nome": "Chá verde",
+      "categoria": [
+        "id-0.75829376296726"
+      ]
+    },
+    {
+      "id": "id-0.7589235724025",
+      "nome": "Sementes de melancia",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235724026",
+      "nome": "Salgados de abóbora",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724027",
+      "nome": "Sementes de pepino",
+      "categoria": [
+        "id-0.78927987692"
+      ]
+    },
+    {
+      "id": "id-0.7589235724028",
+      "nome": "Quiabo",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724029",
+      "nome": "Açaí",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724030",
+      "nome": "Abacate",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724031",
+      "nome": "Moringa",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724032",
+      "nome": "Leite de amêndoas",
+      "categoria": [
+        "id-0.453456465878"
+      ]
+    },
+    {
+      "id": "id-0.7589235724033",
+      "nome": "Castanha de caju",
+      "categoria": [
+        "id-0.453456465878"
+      ]
+    },
+    {
+      "id": "id-0.7589235724034",
+      "nome": "Cabelos de arroz",
+      "categoria": []
+    },
+    {
+      "id": "id-0.7589235724035",
+      "nome": "Batata-doce",
+      "categoria": [
+        "id-0.053819505902"
+      ]
+    },
+    {
+      "id": "id-0.7589235724036",
+      "nome": "Framboesa",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724037",
+      "nome": "Morango",
+      "categoria": [
+        "id-0.4564655313"
+      ]
+    },
+    {
+      "id": "id-0.7589235724038",
+      "nome": "Kiwi",
+      "categoria": [
+        "id-0.4564655313"
       ]
     }
   ]

@@ -2,399 +2,527 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.5.2.js"></script>
-    <!-- CSS do Bootstrap (sem atributo integrity) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.5.2.js"></script>
+  <!-- CSS do Bootstrap (sem atributo integrity) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
+  <link rel="stylesheet" href="../style.css" />
+  <title>Document</title>
 </head>
 <!--  -->
+
 <body>
-    <header> <!-- cabeçalho -->
-        <div class="row align-items-center"> <!-- linha para organizar o conteudo do cabeçalho em linhas e colunas -->
-            <div class="col-2 div-cabecalho"> <!-- coluna da imagem -->
-                <img src="../imgs/logo.png" alt="imagem da logo" class="rounded mx-auto d-block"> <!-- imagem da logo -->
-            </div>
-            <div class="col-7 div-cabecalho">  <!-- coluna do input -->
-                <input type="text" name="procurarReceita" id="procurarReceita" placeholder="Procurar Receita" class="form-control"> <!-- campo input para pesquisar receitas -->
-            </div>
-            <div class="col-1 div-cabecalho"> <!-- coluna para posicionar a lupa -->
-                <button class="btn"> <!-- botão para ação de clicar na lupa -->
-                    <!-- imagem da lupa -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg>
-                </button>
-            </div>
-            <div class="col-1 div-cabecalho"> <!-- coluna do botão filtrar -->
-                <button class="btn btn-laranja" id="btn-fltrar"> <!-- botão filtrar -->
-                    Filtrar 
-                    <!-- icone de filtro -->
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
-                    </svg>
-                </button>
-            </div>
-            <div class="col-1 div-cabecalho"> <!-- coluna do menu de hamburguer -->
-                <button class="btn hamburger" id="menu-toggle"> <!-- botão para mostrar o menu -->
-                    <!-- icone de menu de hamburguer -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                </button>
-                <!-- conteudo mostrado pelo menu de hamburguer -->
-                <div class="container-menu" style="display: none;"> <!-- o display none deixa ele invisivel ate receber um click no menu e remover o style -->
-                    <ul id="menu" class="menu"> <!-- lista para montar as opções do menu -->
-                        <!-- itens da lista -->
-                        <li> <!-- agrupa o item de uma lista -->
-                            <a href="#"> <!-- link de redirecionamento quando receber um click -->
-                                <!-- &nbsp; nem sempre o html entendera o espaço como algo a si colocar no site, nesse 
+  <header>
+    <!-- cabeçalho -->
+    <div class="row align-items-center">
+      <!-- linha para organizar o conteudo do cabeçalho em linhas e colunas -->
+      <div class="col-2 div-cabecalho">
+        <!-- coluna da imagem -->
+        <img src="../imgs/logo.png" alt="imagem da logo" class="rounded mx-auto d-block" />
+        <!-- imagem da logo -->
+      </div>
+      <div class="col-7 div-cabecalho">
+        <!-- coluna do input -->
+        <input type="text" name="procurarReceita" id="procurarReceita" placeholder="Procurar Receita"
+          class="form-control" />
+        <!-- campo input para pesquisar receitas -->
+      </div>
+      <div class="col-1 div-cabecalho">
+        <!-- coluna para posicionar a lupa -->
+        <button class="btn">
+          <!-- botão para ação de clicar na lupa -->
+          <!-- imagem da lupa -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </button>
+      </div>
+      <div class="col-1 div-cabecalho">
+        <!-- coluna do botão filtrar -->
+        <button class="btn btn-laranja" id="btn-fltrar">
+          <!-- botão filtrar -->
+          Filtrar
+          <!-- icone de filtro -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
+          </svg>
+        </button>
+      </div>
+      <div class="col-1 div-cabecalho">
+        <!-- coluna do menu de hamburguer -->
+        <button class="btn hamburger" id="menu-toggle">
+          <!-- botão para mostrar o menu -->
+          <!-- icone de menu de hamburguer -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+          </svg>
+        </button>
+        <!-- conteudo mostrado pelo menu de hamburguer -->
+        <div class="container-menu" style="display: none">
+          <!-- o display none deixa ele invisivel ate receber um click no menu e remover o style -->
+          <ul id="menu" class="menu">
+            <!-- lista para montar as opções do menu -->
+            <!-- itens da lista -->
+            <li>
+              <!-- agrupa o item de uma lista -->
+              <a href="#">
+                <!-- link de redirecionamento quando receber um click -->
+                <!-- &nbsp; nem sempre o html entendera o espaço como algo a si colocar no site, nesse 
                                  caso utiliza uma tag para dar espaço sem necessidade de utilizar o css (gambiarra) -->
-                                &nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                    fill="currentColor" color="#FF7F85" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                </svg> &nbsp;&nbsp; Perfil
-                            </a>
-                        </li>
-                        <li class="nav-item nav-divider"></li> <!-- item de uma lista com essa classe vira uma linha separadora -->
-                        <li>
-                            <a href="#">
-                                &nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                    fill="currentColor" color="#FF7F85" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                </svg> &nbsp;&nbsp; Preferências &nbsp;&nbsp;
-                            </a>
-                        </li>
-                        <li class="nav-item nav-divider"></li>
-                        <li>
-                            <a href="#">
-                                &nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                    fill="currentColor" color="#FF7F85" class="bi bi-box-arrow-right"
-                                    viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-                                    <path fill-rule="evenodd"
-                                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-                                </svg> &nbsp; Sair
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </header>
-
-    <section> <!-- seção para editar o usuario -->
-        <div class="row aling-items-center area-dados-usuario"> <!-- linha para separar a imagem ao lado dos inputs -->
-            <div class="col-md-5 fotoUsuario"> <!-- div que ocupa 5 espaços de 12 -->
-                <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block"> <!-- imagem de usuario sem foto -->
-            </div>
-            <div class="col-md-7 d-flex flex-column justify-content-center"> <!-- div que ocupa 7 espaços de 12 para organizar os inputs -->
-                <div class="row form-edit-usuario"> <!-- dentro da coluna de inputs, é separado por linhas para cada label e input -->
-                    <div class="col-12"> <!-- cria uma coluna que ocupa todo o espaço da row para a label e o input -->
-                        <label for="nomeUsuario">Nome: </label>
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control">
-                    </div>
-                </div>
-                <div class="row form-edit-usuario">
-                    <div class="col-12">
-                        <label for="emailUsuario">E-mail: </label>
-                        <input type="text" name="emailUsuario" id="emailUsuario" class="form-control">
-                    </div>
-                </div>
-                <div class="row form-edit-usuario">
-                    <div class="col-12">
-                        <label for="telefoneUsuario">Telefone: </label>
-                        <input type="text" name="telefoneUsuario" id="telefoneUsuario" class="form-control">
-                    </div>
-                </div>
-                <div class="row form-edit-usuario">
-                    <div class="col-12"> <!-- cria uma coluna que ocupa todo o espaço da linha para o botão -->
-                        <button class="btn btn-laranja">Editar Dados</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section> <!-- seção para o menu de paginação -->
-        <nav class="navbar navbar-expand-lg navbar-light "> <!-- elemento que mostra que dentro dele tera elementos de navegação de pag -->
-            <div class="container-fluid linha-menu"> <!-- div para estilizar e agrupar as pags do menu -->
-                <ul class="navbar-nav mx-auto"> <!-- abre uma lista para cada opção do menu -->
-                    <li class="nav-item"> <!-- item da lista -->
-                        <a class="nav-link" id="seguindoMenu" href="#" style="text-decoration: underline;">Seguindo</a> <!-- titulo e link da lista -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="seguidoresMenu" href="#">Seguidores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="minhasReceitasMenu" href="#">Minhas Receitas</a>
-                    </li>
-                    <li class="nav-item onlyAdm"> <!-- item que sera mostrado apenas para o adm como sujere a classe -->
-                        <a class="nav-link" id="categoriaReceitaMenu" href="#">Categoria Receita</a>
-                    </li>
-                    <li class="nav-item onlyAdm">
-                        <a class="nav-link" id="categoriasIngredientesMenu" href="#">Categorias Ingredientes</a>
-                    </li>
-                    <li class="nav-item onlyAdm">
-                        <a class="nav-link" id="ingredientesMenu" href="#">Ingredientes</a>
-                    </li>
-                    <li class="nav-item onlyAdm">
-                        <a class="nav-link" id="solicitacoesMenu" href="#">Solicitações</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-
-    <!-- SEÇÃO DE SEGUINDO -->
-    <section id="seguindo">
-        <div class="text-center m-5 p-5"> <!-- esconda essa div caso essa aba tenha algum conteudo -->
-            <h1>Você não esta seguindo ninguem</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                viewBox="0 0 16 16">
-                <path
-                    d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-            </svg>
-        </div>
-        <div class="conteudo-seguindo" style="display: none;">
-            <!-- conteudo de seguindo -->
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE SEGUIDORES -->
-    <section id="seguidores" style="display: none">
-        <div class="text-center m-5 p-5"> <!-- esconda essa div caso essa aba tenha algum conteudo -->
-            <h1>Nem um seguidor encontrada</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                viewBox="0 0 16 16">
-                <path
-                    d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-            </svg>
-        </div>
-        <div class="conteudo-seguidores" style="display: none;">
-            <!-- conteudo de seguidores -->
-            <!-- remova o style caso o conteudo seja diferente de vazio -->
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE MINHAS RECEITAS -->
-    <section id="minhasReceitas" style="display: none">
-        <div class="row">
-            <!-- div para gastar espaço -->
-            <div class="col-md-8"></div>
-            <div class="col-md-2"> <!-- coluna para o botão de solicitação -->
-                <!-- botão para abrir o modal de solicitação -->                                                <!-- ↓ essa aqui -->
-                <button id="abriSolicitacao" class="btn btn-verde btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">Abrir Solicitação</button>
-            </div>
-            <div class="col-md-2"> <!-- coluna para o botão de solicitação -->
-                <!-- botão para abrir o modal de solicitação -->  
-                <button id="adicionarReceita" class="btn btn-verde btn-modal" data-bs-toggle="modal" data-bs-target="#modalAddReceita">Adicionar Receita</button>
-            </div>
-        </div>
-        <div class="receitas"> <!-- div para quando não tiver receitas -->
-            <div class="text-center m-5 p-5">
-                <h1>Nem uma receita encontrada</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+                &nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                  color="#FF7F85" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                 </svg>
-            </div>
+                &nbsp;&nbsp; Perfil
+              </a>
+            </li>
+            <li class="nav-item nav-divider"></li>
+            <!-- item de uma lista com essa classe vira uma linha separadora -->
+            <li>
+              <a href="#">
+                &nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                  color="#FF7F85" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+                &nbsp;&nbsp; Preferências &nbsp;&nbsp;
+              </a>
+            </li>
+            <li class="nav-item nav-divider"></li>
+            <li>
+              <a href="#">
+                &nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                  color="#FF7F85" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                  <path fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                </svg>
+                &nbsp; Sair
+              </a>
+            </li>
+          </ul>
         </div>
-        <div style="display: none;"> <!-- div para quando tiver receitas -->
-            <!-- conteudo aqui -->
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE CATEGORIAS DE RECEITAS -->
-    <section id="categoriaReceita" style="display: none">
-        <div class="text-center m-5 p-5"> <!-- esconda essa div caso essa aba tenha algum conteudo -->
-            <h1>Nem uma categoria de receita encontrada</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                viewBox="0 0 16 16">
-                <path
-                    d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-            </svg>
-        </div>
-        <div class="conteudo-categoriaReceita" style="display: none;">
-            <!-- conteudo de categoriaReceita -->
-            <!-- remova o style caso o conteudo seja diferente de vazio -->
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE CATEGORIAS DE INGREDIENTES -->
-    <section id="categoriasIngredientes" style="display: none">
-        <div class="text-center m-5 p-5"> <!-- esconda essa div caso essa aba tenha algum conteudo -->
-            <h1>Nem uma categoria de ingrediente encontrada</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                viewBox="0 0 16 16">
-                <path
-                    d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-            </svg>
-        </div>
-        <div class="conteudo-categoriasIngredientes" style="display: none;">
-            <!-- conteudo de categoriasIngredientes -->
-            <!-- remova o style caso o conteudo seja diferente de vazio -->
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE INGREDIENTES -->
-    <section id="ingredientes" style="display: none">
-        <div class="text-center m-5 p-5"> <!-- esconda essa div caso essa aba tenha algum conteudo -->
-            <h1>Nem um ingrediente encontrado</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                viewBox="0 0 16 16">
-                <path
-                    d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-            </svg>
-        </div>
-        <div class="conteudo-ingredientes" style="display: none;">
-            <!-- conteudo de ingredientes -->
-            <!-- remova o style caso o conteudo seja diferente de vazio -->
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE SOLICITAÇÕES -->
-    <section id="solicitacoes" style="display: none">
-        <div class="text-center m-5 p-5"> <!-- esconda essa div caso essa aba tenha algum conteudo -->
-            <h1>Nem uma solicitação encontrada</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
-                viewBox="0 0 16 16">
-                <path
-                    d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-            </svg>
-        </div>
-        <div class="conteudo-solicitacoes" style="display: none;">
-            <!-- conteudo de solicitacoes -->
-            <!-- remova o style caso o conteudo seja diferente de vazio -->
-        </div>
-    </section>
-<!--  -->
-    <footer> <!-- roda pé -->
-        <div class="row d-flex justify-content-between"> <!-- div alinha os itens um ao lado do outro -->
-            <div class="col text-start"> <!-- coluna para a imagem do titulo -->
-                <img src="../imgs/cozinhaSustentavel.png" alt="Titulo de cozinha sustentavel">
-            </div>
-            <div class="col text-center"> <!-- coluna para a imagem da colher de oregano -->
-                <img src="../imgs/colherComOregano.png" alt="Colher de oregano">
-            </div>
-            <div class="col text-end"> <!-- coluna para a imagem dos alhos -->
-                <img src="../imgs/cebolas.png" alt="Dois alhos">
-            </div>
-        </div>
-    </footer>
-
-    <!-- importa o arquivo do js (../ significa volta uma pasta) -->
-    <script src="../controlador.js"></script>
-     <!-- importa o arquivo do js do bootstrap (necessario para o modal funcionar) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- modals -->
-
-    <!-- Iniciar Solicitação -->
-                                                                                 <!-- ↓ essa  -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">            <!-- ↓ e essa devem ter o mesmo nome que (aperte CTRL F e procure por "essa aqui") -->
-                    <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Conteúdo do modal...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Add Receita -->
-    <div class="modal fade" id="modalAddReceita" tabindex="-1" aria-labelledby="modalAddReceita" aria-hidden="true"> <!-- div que inicia o modal -->
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalAddReceita">Adicionar Receita</h5> <!-- titulo do modal -->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
-                    <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
-                        <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
-                            <div class="separadorIngredientes separador"> <!-- div para delimitar a area do adicionador de ingredientes -->
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>Lista de Ingredientes</h3> <!-- titulo do separador -->
-                                    </div>
-                                    <div class="col-md-5"></div> <!-- div para dar espaço vazio com o tamanho de 5 colunas -->
-                                    <div class="col-md-3"> 
-                                        <!-- botão interativo para adicionar linhas para o ingrediente -->
-                                        <button class="btn btn-verde" id="addIngrediente">Adicionar Igrediente</button> 
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <!-- container vazio para receber a lista dinamica de ingredientes -->
-                                        <div class="containerIngredientes"> <!-- div vazia para receber os ingredientes quando o botão addIngrediente receber um click -->
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2 mb-3">
-                        <div class="col-md-12">
-                            <label for="modoPreparo">Modo de Preparo</label>
-                            <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
-                            <textarea name="modoPreparo" id="modoPreparo" cols="20" class="form-control"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12"> <!-- mesmo esquema do addIngrediente, mas dessa vez para adicionar categorias para a receita -->
-                            <div class="separadorCategoria separador">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>Lista de Categoria</h3>
-                                    </div>
-                                    <div class="col-md-5"></div>
-                                    <div class="col-md-3">
-                                        <button class="btn btn-verde">Adicionar Categoria</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <!-- container vazio para receber a lista dinamica de Categoria -->
-                                        <div class="containerCategoria">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Adicionar Receita</button>
-                </div>
-            </div>
+  <section>
+    <!-- seção para editar o usuario -->
+    <div class="row aling-items-center area-dados-usuario">
+      <!-- linha para separar a imagem ao lado dos inputs -->
+      <div class="col-md-5 fotoUsuario">
+        <!-- div que ocupa 5 espaços de 12 -->
+        <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block" />
+        <!-- imagem de usuario sem foto -->
+      </div>
+      <div class="col-md-7 d-flex flex-column justify-content-center">
+        <!-- div que ocupa 7 espaços de 12 para organizar os inputs -->
+        <div class="row form-edit-usuario">
+          <!-- dentro da coluna de inputs, é separado por linhas para cada label e input -->
+          <div class="col-12">
+            <!-- cria uma coluna que ocupa todo o espaço da row para a label e o input -->
+            <label for="nomeUsuario">Nome: </label>
+            <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" />
+          </div>
         </div>
+        <div class="row form-edit-usuario">
+          <div class="col-12">
+            <label for="emailUsuario">E-mail: </label>
+            <input type="text" name="emailUsuario" id="emailUsuario" class="form-control" />
+          </div>
+        </div>
+        <div class="row form-edit-usuario">
+          <div class="col-12">
+            <label for="telefoneUsuario">Telefone: </label>
+            <input type="text" name="telefoneUsuario" id="telefoneUsuario" class="form-control" />
+          </div>
+        </div>
+        <div class="row form-edit-usuario">
+          <div class="col-12">
+            <!-- cria uma coluna que ocupa todo o espaço da linha para o botão -->
+            <button class="btn btn-laranja">Editar Dados</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section>
+    <!-- seção para o menu de paginação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- elemento que mostra que dentro dele tera elementos de navegação de pag -->
+      <div class="container-fluid linha-menu">
+        <!-- div para estilizar e agrupar as pags do menu -->
+        <ul class="navbar-nav mx-auto">
+          <!-- abre uma lista para cada opção do menu -->
+          <li class="nav-item">
+            <!-- item da lista -->
+            <a class="nav-link" id="seguindoMenu" href="#" style="text-decoration: underline">Seguindo</a>
+            <!-- titulo e link da lista -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="seguidoresMenu" href="#">Seguidores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="minhasReceitasMenu" href="#">Minhas Receitas</a>
+          </li>
+          <li class="nav-item onlyAdmin">
+            <!-- item que sera mostrado apenas para o adm como sujere a classe -->
+            <a class="nav-link" id="categoriaReceitaMenu" href="#">Categoria Receita</a>
+          </li>
+          <li class="nav-item onlyAdmin">
+            <a class="nav-link" id="categoriasIngredientesMenu" href="#">Categorias Ingredientes</a>
+          </li>
+          <li class="nav-item onlyAdmin">
+            <a class="nav-link" id="ingredientesMenu" href="#">Ingredientes</a>
+          </li>
+          <li class="nav-item onlyAdmin">
+            <a class="nav-link" id="solicitacoesMenu" href="#">Solicitações</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+  <!-- SEÇÃO DE SEGUINDO -->
+  <section id="seguindo">
+    <div class="text-center m-5 p-5">
+      <!-- esconda essa div caso essa aba tenha algum conteudo -->
+      <h1>Você não esta seguindo ninguem</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+        viewBox="0 0 16 16">
+        <path
+          d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+      </svg>
+    </div>
+    <div class="conteudo-seguindo" style="display: none">
+      <!-- conteudo de seguindo -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE SEGUIDORES -->
+  <section id="seguidores" style="display: none">
+    <div class="text-center m-5 p-5">
+      <!-- esconda essa div caso essa aba tenha algum conteudo -->
+      <h1>Nenhum seguidor encontrada</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+        viewBox="0 0 16 16">
+        <path
+          d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+      </svg>
+    </div>
+    <div class="conteudo-seguidores" style="display: none">
+      <!-- conteudo de seguidores -->
+      <!-- remova o style caso o conteudo seja diferente de vazio -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE MINHAS RECEITAS -->
+  <section id="minhasReceitas" style="display: none">
+    <div class="row">
+      <!-- div para gastar espaço -->
+      <div class="col-md-8"></div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <!-- ↓ essa aqui -->
+        <button id="abriSolicitacao" class="btn btn-verde btn-modal" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          Abrir Solicitação
+        </button>
+      </div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <button id="adicionarReceita" class="btn btn-verde btn-modal" data-bs-toggle="modal"
+          data-bs-target="#modalAddReceita">
+          Adicionar Receita
+        </button>
+      </div>
+    </div>
+    <div class="receitas">
+      <!-- div para quando não tiver receitas -->
+      <div class="text-center m-5 p-5">
+        <h1>Nenhuma receita encontrada</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+          viewBox="0 0 16 16">
+          <path
+            d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+        </svg>
+      </div>
+    </div>
+    <div style="display: none">
+      <!-- div para quando tiver receitas -->
+      <!-- conteudo aqui -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE CATEGORIAS DE RECEITAS -->
+  <section id="categoriaReceita" style="display: none">
+    <div class="row">
+      <!-- div para gastar espaço -->
+      <div class="col-md-8"></div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <!-- ↓ essa aqui -->
+      </div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <button id="adicionarCategoriaReceita" class="btn btn-verde btn-modal" data-bs-toggle="modal"
+          data-bs-target="#modalAddCategoriaReceita">
+          Adicionar Categoria
+        </button>
+      </div>
+    </div>
+    <div class="text-center m-5 p-5">
+      <!-- esconda essa div caso essa aba tenha algum conteudo -->
+      <h1>Nenhuma categoria de receita encontrada</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+        viewBox="0 0 16 16">
+        <path
+          d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+      </svg>
+    </div>
+    <div class="conteudo-categoriaReceita" style="display: none">
+      <ul class="lista-conteudo-sem-imagem">
+      </ul>
+      <!-- remova o style caso o conteudo seja diferente de vazio -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE CATEGORIAS DE INGREDIENTES -->
+  <section id="categoriasIngredientes" style="display: none">
+    <div class="row">
+      <!-- div para gastar espaço -->
+      <div class="col-md-8"></div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <!-- ↓ essa aqui -->
+      </div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <button id="adicionarCategoriaIngrediente" class="btn btn-verde btn-modal" data-bs-toggle="modal"
+          data-bs-target="#modalAddCategoriaIngrediente">
+          Adicionar Categoria
+        </button>
+      </div>
+      <div class="text-center m-5 p-5">
+        <!-- esconda essa div caso essa aba tenha algum conteudo -->
+        <h1>Nenhuma categoria de ingrediente encontrada</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+          viewBox="0 0 16 16">
+          <path
+            d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+        </svg>
+      </div>
+      <div class="conteudo-categoriasIngredientes" style="display: none">
+        <!-- conteudo de categoriasIngredientes -->
+        <!-- remova o style caso o conteudo seja diferente de vazio -->
+      </div>
+  </section>
+
+  <!-- SEÇÃO DE INGREDIENTES -->
+  <section id="ingredientes" style="display: none">
+    <div class="row">
+      <!-- div para gastar espaço -->
+      <div class="col-md-8"></div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <!-- ↓ essa aqui -->
+      </div>
+      <div class="col-md-2">
+        <!-- coluna para o botão de solicitação -->
+        <!-- botão para abrir o modal de solicitação -->
+        <button id="adicionarIngrediente" class="btn btn-verde btn-modal" data-bs-toggle="modal"
+          data-bs-target="#modalAddIngrediente">
+          Adicionar Ingrediente
+        </button>
+      </div>
+      <div class="text-center m-5 p-5">
+        <!-- esconda essa div caso essa aba tenha algum conteudo -->
+        <h1>Nenhum ingrediente encontrado</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+          viewBox="0 0 16 16">
+          <path
+            d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+        </svg>
+      </div>
+      <div class="conteudo-ingredientes" style="display: none">
+        <!-- conteudo de ingredientes -->
+        <!-- remova o style caso o conteudo seja diferente de vazio -->
+      </div>
+  </section>
+
+  <!-- SEÇÃO DE SOLICITAÇÕES -->
+  <section id="solicitacoes" style="display: none">
+    <div class="text-center m-5 p-5">
+      <!-- esconda essa div caso essa aba tenha algum conteudo -->
+      <h1>Nenhuma solicitação encontrada</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+        viewBox="0 0 16 16">
+        <path
+          d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
+      </svg>
+    </div>
+    <div class="conteudo-solicitacoes" style="display: none">
+      <!-- conteudo de solicitacoes -->
+      <!-- remova o style caso o conteudo seja diferente de vazio -->
+    </div>
+  </section>
+  <!--  -->
+  <footer>
+    <!-- roda pé -->
+    <div class="row d-flex justify-content-between">
+      <!-- div alinha os itens um ao lado do outro -->
+      <div class="col text-start">
+        <!-- coluna para a imagem do titulo -->
+        <img src="../imgs/cozinhaSustentavel.png" alt="Titulo de cozinha sustentavel" />
+      </div>
+      <div class="col text-center">
+        <!-- coluna para a imagem da colher de oregano -->
+        <img src="../imgs/colherComOregano.png" alt="Colher de oregano" />
+      </div>
+      <div class="col text-end">
+        <!-- coluna para a imagem dos alhos -->
+        <img src="../imgs/cebolas.png" alt="Dois alhos" />
+      </div>
+    </div>
+  </footer>
+
+  <!-- importa o arquivo do js (../ significa volta uma pasta) -->
+  <script src="../controlador.js"></script>
+  <!-- importa o arquivo do js do bootstrap (necessario para o modal funcionar) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- modals -->
+
+  <!-- Iniciar Solicitação -->
+  <!-- ↓ essa  -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- ↓ e essa devem ter o mesmo nome que (aperte CTRL F e procure por "essa aqui") -->
+          <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Conteúdo do modal...</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Fechar
+          </button>
+          <button type="button" class="btn btn-primary">
+            Salvar mudanças
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Receita -->
+  <div class="modal fade" id="modalAddReceita" tabindex="-1" aria-labelledby="modalAddReceita" aria-hidden="true">
+    <!-- div que inicia o modal -->
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddReceita">Adicionar Receita</h5>
+          <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- div para agrupar o conteudo do modal -->
+          <div class="row">
+            <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12">
+              <!-- cria uma coluna que ocupa toda a tela -->
+              <div class="separadorIngredientes separador">
+                <!-- div para delimitar a area do adicionador de ingredientes -->
+                <div class="row">
+                  <div class="col-md-4">
+                    <h3>Lista de Ingredientes</h3>
+                    <!-- titulo do separador -->
+                  </div>
+                  <div class="col-md-5"></div>
+                  <!-- div para dar espaço vazio com o tamanho de 5 colunas -->
+                  <div class="col-md-3">
+                    <!-- botão interativo para adicionar linhas para o ingrediente -->
+                    <button class="btn btn-verde" id="addIngrediente">
+                      Adicionar Igrediente
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- container vazio para receber a lista dinamica de ingredientes -->
+                    <div class="containerIngredientes">
+                      <!-- div vazia para receber os ingredientes quando o botão addIngrediente receber um click -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="modoPreparo">Modo de Preparo</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <textarea name="modoPreparo" id="modoPreparo" cols="20" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <!-- mesmo esquema do addIngrediente, mas dessa vez para adicionar categorias para a receita -->
+              <div class="separadorCategoria separador">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h3>Lista de Categoria</h3>
+                  </div>
+                  <div class="col-md-5"></div>
+                  <div class="col-md-3">
+                    <button class="btn btn-verde">Adicionar Categoria</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- container vazio para receber a lista dinamica de Categoria -->
+                    <div class="containerCategoria"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Fechar
+          </button>
+          <button type="button" class="btn btn-laranja" style="width: auto">
+            Adicionar Receita
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalAddCategoriaReceita" tabindex="-1" aria-labelledby="modalAddCategoriaReceita"
+    aria-hidden="true">
+
+  </div>
 </body>
 
 </html>

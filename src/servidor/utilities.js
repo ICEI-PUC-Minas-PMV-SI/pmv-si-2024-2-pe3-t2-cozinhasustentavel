@@ -4,9 +4,12 @@ import fs from "fs";
 export const performLogin = async (login) => {
   const data = await fs.promises.readFile("./database.json", "utf8");
   const parsedData = JSON.parse(data);
-
+  console.log(login)
   return parsedData.usuarios.filter((entity) => {
-    return entity.email === login.email;
+    return (
+      entity.email === login.userEmailOrName ||
+      entity.nome === login.userEmailOrName
+    );
   })[0];
 };
 
