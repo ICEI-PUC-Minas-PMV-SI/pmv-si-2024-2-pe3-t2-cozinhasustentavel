@@ -2,16 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- script para vincular o jquery -->
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+  <!-- script para vincular o jquery -->
   <script src="https://code.jquery.com/jquery-migrate-3.5.2.js"></script>
+
   <!-- CSS do Bootstrap (sem atributo integrity) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="../style.css" />
-  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- link para acessar o css -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- titulo da bajina na aba do navegador -->
+  <title>Gerenciar Usuario</title>
 </head>
 <!--  -->
 
@@ -440,30 +447,22 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalAddReceita">Adicionar Receita</h5>
-          <!-- titulo do modal -->
+          <h5 class="modal-title" id="modalAddReceita">Adicionar Receita</h5> <!-- titulo do modal -->
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <!-- div para agrupar o conteudo do modal -->
-          <div class="row">
-            <!-- linha para separar o conteudo entre linhas e colunas -->
-            <div class="col-md-12">
-              <!-- cria uma coluna que ocupa toda a tela -->
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
               <div class="separadorIngredientes separador">
                 <!-- div para delimitar a area do adicionador de ingredientes -->
                 <div class="row">
                   <div class="col-md-4">
-                    <h3>Lista de Ingredientes</h3>
-                    <!-- titulo do separador -->
+                    <h3>Lista de Ingredientes</h3> <!-- titulo do separador -->
                   </div>
-                  <div class="col-md-5"></div>
-                  <!-- div para dar espaço vazio com o tamanho de 5 colunas -->
+                  <div class="col-md-5"></div> <!-- div para dar espaço vazio com o tamanho de 5 colunas -->
                   <div class="col-md-3">
                     <!-- botão interativo para adicionar linhas para o ingrediente -->
-                    <button class="btn btn-verde" id="addIngrediente">
-                      Adicionar Igrediente
-                    </button>
+                    <button class="btn btn-verde" id="addIngrediente">Adicionar Igrediente</button>
                   </div>
                 </div>
                 <div class="row">
@@ -471,6 +470,7 @@
                     <!-- container vazio para receber a lista dinamica de ingredientes -->
                     <div class="containerIngredientes">
                       <!-- div vazia para receber os ingredientes quando o botão addIngrediente receber um click -->
+
                     </div>
                   </div>
                 </div>
@@ -494,13 +494,15 @@
                   </div>
                   <div class="col-md-5"></div>
                   <div class="col-md-3">
-                    <button class="btn btn-verde">Adicionar Categoria</button>
+                    <button class="btn btn-verde" id="addCategoria">Adicionar Categoria</button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
                     <!-- container vazio para receber a lista dinamica de Categoria -->
-                    <div class="containerCategoria"></div>
+                    <div class="containerCategoria">
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -508,12 +510,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Fechar
-          </button>
-          <button type="button" class="btn btn-laranja" style="width: auto">
-            Adicionar Receita
-          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-laranja" style="width: auto">Adicionar Receita</button>
         </div>
       </div>
     </div>
