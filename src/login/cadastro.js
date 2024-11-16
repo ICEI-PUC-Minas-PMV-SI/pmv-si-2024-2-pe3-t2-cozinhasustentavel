@@ -29,7 +29,7 @@ button.addEventListener("click", () => {
     body: JSON.stringify(user), // aqui é onde o objeto da entidade a ser adicionada é passada ou o objeto dos dados alterados de uma entidade que vai ser editada
   })
     .then(() => localStorage.setItem("user", JSON.stringify(user))) // o .then() é utilizado pra lógica que vem depois que a requisição acaba e quando não há erros
-    .then(() => (window.location.href = `${baseUrl}/index.html`)) // no meu caso utilizei o primeiro .then pra armazenar os dados do usuário no localStorage e depois mudar de página
+    .then(() => (window.location.href = `${baseUrl}index.html`)) // no meu caso utilizei o primeiro .then pra armazenar os dados do usuário no localStorage e depois mudar de página
     .catch((error) => console.error("Erro ao cadastrar usuário:", error)); // o .catch() é onde fica o tratamento de erros, se algum erro acontecer durante a requisição, a lógica
   // para tratar o erro fica dentro dele.
 });

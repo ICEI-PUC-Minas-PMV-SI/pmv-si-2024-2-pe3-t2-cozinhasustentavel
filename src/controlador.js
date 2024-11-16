@@ -32,12 +32,47 @@ async function getCategorias() {
     })
   }
 }
+
+async function deleteEntity(id, entity) {
+  const popUp = document.getElementById("mensagem-requisicao");
+  try {
+    const res = await fetch(`http://localhost:3003/${entity}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+
+    popUp.style.display = "flex";
+    popUp.innerHTML = `<p>${res}</p>
+    <img src="../imgs/sucesso.svg" alt="icone de sucesso">`;
+    setTimeout(() => {
+      popUp.style.display = "none";
+    }, 3000);
+  } catch (error) {
+    console.error(error);
+    popUp.style.display = "flex";
+    popUp.innerHTML = `<p>${error}</p>
+    <img src="../imgs/erro.svg" alt="icone de erro">`;
+    setTimeout(() => {
+      popUp.style.display = "none";
+    }, 3000);
+  }
+};
+
 const currentUrl = window.location.href;
 let arrayUrl = currentUrl.split(/(?<=\/)/)
-arrayUrl = arrayUrl.slice(0, arrayUrl.length - 2)
+console.log(arrayUrl)
+if (arrayUrl[arrayUrl.length - 1] === "index.html") {
+  arrayUrl = arrayUrl.slice(0, arrayUrl.length - 1)
+
+} else {
+  arrayUrl = arrayUrl.slice(0, arrayUrl.length - 2)
+}
 const baseUrl = arrayUrl.join().replaceAll(',', '')
 // const slashWherePathBegins = currentUrl.indexOf("/");
 // const baseUrl = currentUrl.slice(0, slashWherePathBegins);
+console.log(baseUrl)
 
 // estrutura do jQuery:
 // $('seletor do elemnto').funçãoParaExecutar('parametro quando necessario')
@@ -68,7 +103,7 @@ console.log(usuario)
 $(document).ready(async function () {
 
   if (!usuario) {
-    window.location.href = `${baseUrl}/login/login.html`
+    window.location.href = `${baseUrl}login/login.html`
   }
 
   if (usuario.papel == "admin") {
@@ -87,9 +122,9 @@ $(document).ready(async function () {
   })
 
   // Logout:
-  $("#menu").click(() => {
+  $("#logout").click(() => {
     localStorage.removeItem("user");
-    window.location.href = `${baseUrl}/login/login.html`;
+    window.location.href = `${baseUrl}login/login.html`;
   })
 
   $("#addIngrediente").click(async (e) => {
@@ -211,19 +246,57 @@ $(document).ready(async function () {
   });
 
   // mostrar listagem de categorias de receitas
-  $("#categoriaReceita").find("#categoriaReceitaVazio").hide();
-  const categoriaReceitasConteudo = $(".conteudo-categoriaReceita").show();
-  let categoriasReceita = (await getCategorias()).recipeCategories
+  let categoriasReceita = (await getCategorias()).recipeCategories;
+  if (categoriasReceita.length > 0) {
+    $("#categoriaReceitaVazio").hide();
+    const categoriaReceitasConteudo = $(".conteudo-categoriaReceita").show();
+    categoriaReceitasConteudo.append(mapListData(categoriasReceita, "editarCategoriaReceita", "deletarCategoriaReceita"))
+  }
 
-  categoriaReceitasConteudo.append(mapListData(categoriasReceita, "editarCategoriaReceita", "deletarCategoriaReceita"))
+  // mostrar listagem de categorias de ingredientes
+  let categoriasIngrediente = (await getCategorias()).ingredientCategories;
+  if (categoriasIngrediente.length > 0) {
+    $("#categoriaIngredienteVazio").hide();
+    const categoriaIngredientesConteudo = $(".conteudo-categoriasIngredientes").show();
+    categoriaIngredientesConteudo.append(mapListData(categoriasIngrediente, "editarCategoriaIngrediente", "deletarCategoriaIngrediente"))
+  }
 
+  // mostrar listagem de categorias de ingredientes
+  let ingredientes = (await getIngredientes());
+  if (ingredientes.length > 0) {
+    $("#ingredienteVazio").hide();
+    const ingredientesConteudo = $(".conteudo-ingredientes").show();
+    ingredientesConteudo.append(mapListData(ingredientes, "editarIngrediente", "deletarIngrediente"))
+  }
+
+  // deletar categoria de receita
+  $("#deletarCategoriaReceita").on('click', async function (event) {
+    event.preventDefault(); // não deixa a página recarrega
+    let id = $(this).closest('li').attr('id');
+    console.log(id);
+    await deleteEntity(id, "categorias");
+  });
+
+  // deletar categoria de receita
+  $("#deletarCategoriaIngrediente").on('click', async function () {
+    let id = $(this).closest('li').attr('id');
+    console.log(id);
+    await deleteEntity(id, "categorias");
+  });
+
+  // deletar categoria de receita
+  $("#deletarIngrediente").on('click', async function () {
+    let id = $(this).closest('li').attr('id');
+    console.log(id);
+    await deleteEntity(id, "ingredientes");
+  });
   // controlador do menu
   $("#seguindoMenu").click(() => {
     $(".nav-link").removeAttr("style"); // remove o atribulto passado como parametro
     $("#seguindo").show(); // mostra o elemento removendo o "display: none" no style
     $("#seguidores").hide(); // esconde o elemento inserindo o "display: none" no style
     $("#minhasReceitas").hide();
-    $("#categoriaReceita").hide();
+    $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
     $("#solicitacoes").hide();
@@ -235,7 +308,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").show();
     $("#minhasReceitas").hide();
-    $("#categoriaReceita").hide();
+    $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
     $("#solicitacoes").hide();
@@ -246,7 +319,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").show();
-    $("#categoriaReceita").hide();
+    $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
     $("#solicitacoes").hide();
@@ -257,7 +330,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
-    $("#categoriaReceita").show();
+    $("#categoriaReceitas").show();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
     $("#solicitacoes").hide();
@@ -268,7 +341,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
-    $("#categoriaReceita").hide();
+    $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").show();
     $("#ingredientes").hide();
     $("#solicitacoes").hide();
@@ -282,7 +355,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
-    $("#categoriaReceita").hide();
+    $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").show();
     $("#solicitacoes").hide();
@@ -293,7 +366,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
-    $("#categoriaReceita").hide();
+    $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
     $("#solicitacoes").show();
@@ -321,15 +394,14 @@ $(document).ready(async function () {
 function mapListData(array, editButtonId, deleteButtonId) {
 
   const list = array.map((item) => {
-    return `<li>
+    return `<li id="${item.id}">
         <p>${item.nome}</p>
         <div>
           <button id="${editButtonId}" class="btn btn-verde btn-modal" data-bs-toggle="modal"
             data-bs-target="#${editButtonId}">
             Editar
           </button>
-          <button id="${deleteButtonId}" class="btn btn-laranja btn-modal" data-bs-toggle="modal"
-            data-bs-target="#${deleteButtonId}">
+          <button id="${deleteButtonId}" class="btn btn-laranja">
             Deletar
           </button>
         </div>

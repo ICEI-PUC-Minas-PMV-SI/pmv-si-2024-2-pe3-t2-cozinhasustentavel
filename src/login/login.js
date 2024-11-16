@@ -22,6 +22,6 @@ button.addEventListener("click", () => {
   })
     .then((response) => response.json())
     .then((data) => localStorage.setItem("user", JSON.stringify(data.usuario)))
-    .then(() => (window.location.href = `${baseUrl}/index.html`))
+    .then(() => (window.location.href = `${baseUrl}index.html`))
     .catch((error) => console.error("Erro ao logar:", error));
 });

@@ -105,7 +105,7 @@
               </a>
             </li>
             <li class="nav-item nav-divider"></li>
-            <li>
+            <li id="logout">
               <a href="#">
                 &nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                   color="#FF7F85" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -221,7 +221,7 @@
   <section id="seguidores" style="display: none">
     <div class="text-center m-5 p-5">
       <!-- esconda essa div caso essa aba tenha algum conteudo -->
-      <h1>Nenhum seguidor encontrada</h1>
+      <h1>Nenhum seguidor encontrado</h1>
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
         viewBox="0 0 16 16">
         <path
@@ -275,7 +275,7 @@
   </section>
 
   <!-- SEÇÃO DE CATEGORIAS DE RECEITAS -->
-  <section id="categoriaReceita" style="display: none">
+  <section id="categoriaReceitas" style="display: none">
     <div class="row">
       <!-- div para gastar espaço -->
       <div class="col-md-8"></div>
@@ -305,7 +305,6 @@
     <div class="conteudo-categoriaReceita" style="display: none">
       <ul class="lista-conteudo-sem-imagem">
       </ul>
-      <!-- remova o style caso o conteudo seja diferente de vazio -->
     </div>
   </section>
 
@@ -327,7 +326,7 @@
           Adicionar Categoria
         </button>
       </div>
-      <div class="text-center m-5 p-5">
+      <div id="categoriaIngredienteVazio" class="text-center m-5 p-5">
         <!-- esconda essa div caso essa aba tenha algum conteudo -->
         <h1>Nenhuma categoria de ingrediente encontrada</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
@@ -337,8 +336,8 @@
         </svg>
       </div>
       <div class="conteudo-categoriasIngredientes" style="display: none">
-        <!-- conteudo de categoriasIngredientes -->
-        <!-- remova o style caso o conteudo seja diferente de vazio -->
+        <ul class="lista-conteudo-sem-imagem">
+        </ul>
       </div>
   </section>
 
@@ -360,7 +359,7 @@
           Adicionar Ingrediente
         </button>
       </div>
-      <div class="text-center m-5 p-5">
+      <div id="ingredienteVazio" class="text-center m-5 p-5">
         <!-- esconda essa div caso essa aba tenha algum conteudo -->
         <h1>Nenhum ingrediente encontrado</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
@@ -370,8 +369,8 @@
         </svg>
       </div>
       <div class="conteudo-ingredientes" style="display: none">
-        <!-- conteudo de ingredientes -->
-        <!-- remova o style caso o conteudo seja diferente de vazio -->
+        <ul class="lista-conteudo-sem-imagem">
+        </ul>
       </div>
   </section>
 
@@ -520,6 +519,9 @@
   <div class="modal fade" id="modalAddCategoriaReceita" tabindex="-1" aria-labelledby="modalAddCategoriaReceita"
     aria-hidden="true">
 
+  </div>
+
+  <div id="mensagem-requisicao" class="sucesso" style="display: none">
   </div>
 </body>
 
