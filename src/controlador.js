@@ -33,31 +33,33 @@ async function getCategorias() {
   }
 }
 
-async function deleteEntity(id, entity) {
+async function deleteEntity(id, entitiesArray) {
   const popUp = document.getElementById("mensagem-requisicao");
   try {
-    const res = await fetch(`http://localhost:3003/${entity}/${id}`, {
+    const res = await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       }
     });
-
-    popUp.style.display = "flex";
-    popUp.innerHTML = `<p>${res}</p>
-    <img src="../imgs/sucesso.svg" alt="icone de sucesso">`;
-    setTimeout(() => {
-      popUp.style.display = "none";
-    }, 3000);
   } catch (error) {
     console.error(error);
     popUp.style.display = "flex";
-    popUp.innerHTML = `<p>${error}</p>
+    popUp.className = "erro";
+    popUp.innerHTML = `<p>Falha ao deletar</p>
     <img src="../imgs/erro.svg" alt="icone de erro">`;
     setTimeout(() => {
       popUp.style.display = "none";
-    }, 3000);
+    }, 5000);
   }
+};
+
+async function addEntity(entity, entitiesArray) {
+
+};
+
+async function editEntity(id, entity, entitiesArray) {
+
 };
 
 const currentUrl = window.location.href;
@@ -250,7 +252,12 @@ $(document).ready(async function () {
   if (categoriasReceita.length > 0) {
     $("#categoriaReceitaVazio").hide();
     const categoriaReceitasConteudo = $(".conteudo-categoriaReceita").show();
-    categoriaReceitasConteudo.append(mapListData(categoriasReceita, "editarCategoriaReceita", "deletarCategoriaReceita"))
+    categoriaReceitasConteudo.append(mapListData(
+      categoriasReceita,
+      "editarCategoriaReceita",
+      "deletarCategoriaReceita",
+      "modalEditarCategoriaReceita"
+    ))
   }
 
   // mostrar listagem de categorias de ingredientes
@@ -258,7 +265,12 @@ $(document).ready(async function () {
   if (categoriasIngrediente.length > 0) {
     $("#categoriaIngredienteVazio").hide();
     const categoriaIngredientesConteudo = $(".conteudo-categoriasIngredientes").show();
-    categoriaIngredientesConteudo.append(mapListData(categoriasIngrediente, "editarCategoriaIngrediente", "deletarCategoriaIngrediente"))
+    categoriaIngredientesConteudo.append(mapListData(
+      categoriasIngrediente,
+      "editarCategoriaIngrediente",
+      "deletarCategoriaIngrediente",
+      "modalEditarCategoriaIngrediente"
+    ))
   }
 
   // mostrar listagem de categorias de ingredientes
@@ -266,26 +278,49 @@ $(document).ready(async function () {
   if (ingredientes.length > 0) {
     $("#ingredienteVazio").hide();
     const ingredientesConteudo = $(".conteudo-ingredientes").show();
-    ingredientesConteudo.append(mapListData(ingredientes, "editarIngrediente", "deletarIngrediente"))
+    ingredientesConteudo.append(mapListData(
+      ingredientes,
+      "editarIngrediente",
+      "deletarIngrediente",
+      "modalEditarIngrediente"
+    ))
   }
 
+  // Limpar inputs dos modais quando eles são fechados
+  $(".cancelar").on("click", function () {
+    $(this).parent().prev().find("input").val('');
+  })
+
+  // Adicionar categorias e ingredientes
+  $(".salvar-adicionar").on('click', async function () {
+    const inputValue = $(this).parent().prev().find("input").val();
+
+    console.log(inputValue)
+  });
+
+  // Editar categorias e ingredientes
+  $(".salvar-editar").on('click', async function () {
+    const inputValue = $(this).parent().prev().find("input").val();
+
+    console.log(inputValue)
+  });
+
   // deletar categoria de receita
-  $("#deletarCategoriaReceita").on('click', async function (event) {
-    event.preventDefault(); // não deixa a página recarrega
+  $(".deletarCategoriaReceita").on('click', async function () {
     let id = $(this).closest('li').attr('id');
     console.log(id);
     await deleteEntity(id, "categorias");
   });
 
   // deletar categoria de receita
-  $("#deletarCategoriaIngrediente").on('click', async function () {
+  $(".deletarCategoriaIngrediente").on('click', async function () {
     let id = $(this).closest('li').attr('id');
     console.log(id);
     await deleteEntity(id, "categorias");
   });
 
   // deletar categoria de receita
-  $("#deletarIngrediente").on('click', async function () {
+  $(".deletarIngrediente").on('click', async function () {
     let id = $(this).closest('li').attr('id');
     console.log(id);
     await deleteEntity(id, "ingredientes");
@@ -391,20 +426,20 @@ $(document).ready(async function () {
 
 // ala
 
-function mapListData(array, editButtonId, deleteButtonId) {
+function mapListData(array, editButtonId, deleteButtonId, modalName) {
 
   const list = array.map((item) => {
     return `<li id="${item.id}">
         <p>${item.nome}</p>
-        <div>
-          <button id="${editButtonId}" class="btn btn-verde btn-modal" data-bs-toggle="modal"
-            data-bs-target="#${editButtonId}">
+        <form>
+          <button class="btn btn-verde btn-modal ${editButtonId}" data-bs-toggle="modal"
+            data-bs-target="#${modalName}">
             Editar
           </button>
-          <button id="${deleteButtonId}" class="btn btn-laranja">
+          <button type="submit" class="btn btn-laranja ${deleteButtonId}">
             Deletar
           </button>
-        </div>
+        </form>
       </li> `
   });
 

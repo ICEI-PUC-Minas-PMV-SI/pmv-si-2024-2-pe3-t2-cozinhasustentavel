@@ -153,7 +153,7 @@ footer {
             margin: 0;
         }
 
-        div {
+        form {
             display: flex;
             justify-content: space-around;
             min-width: 300px;
@@ -178,10 +178,6 @@ footer {
     p {
         margin: 0 8px 0 0;
     }
-}
-
-.sucesso {
-    background-color: #1D8844;
 }
 
 .erro {
