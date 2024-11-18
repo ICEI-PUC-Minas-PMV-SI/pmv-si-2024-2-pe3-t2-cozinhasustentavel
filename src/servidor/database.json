@@ -63,30 +63,33 @@
         5
       ],
       "categorias": [
-        "id-0.476843976376315", "id-0.8620386304963"
+        "id-0.476843976376315",
+        "id-0.8620386304963"
       ],
-      "ingredientes": [{
-        "ingrediente": {
+      "ingredientes": [
+        {
+          "ingrediente": {
             "id": "id-0.7589235723985",
             "nome": "Casca de banana",
             "categoria": [
-                "id-0.4564655313"
+              "id-0.4564655313"
             ]
+          },
+          "medida": "unidades",
+          "quantidade": 3
         },
-        "medida": "unidades",
-        "quantidade": 3
-    },
-    {
-        "ingrediente": {
+        {
+          "ingrediente": {
             "id": "id-0.7589235723985",
             "nome": "Casca de banana",
             "categoria": [
-                "id-0.4564655313"
+              "id-0.4564655313"
             ]
-        },
-        "medida": "unidades",
-        "quantidade": 3
-    }],
+          },
+          "medida": "unidades",
+          "quantidade": 3
+        }
+      ],
       "idDoAutor": "id-0.1564564123435"
     },
     {
@@ -99,18 +102,16 @@
         4,
         5
       ],
-      "categorias": [
-      ],
-      "ingredientes": [
-      ],
+      "categorias": [],
+      "ingredientes": [],
       "idDoAutor": "id-0.1564564123435"
     }
   ],
   "categorias": [
     {
-    "nome": "Bolos",
-    "tipo": "Receita",
-    "id": "id-0.8620386304963"
+      "nome": "Bolos",
+      "tipo": "Receita",
+      "id": "id-0.8620386304963"
     },
     {
       "id": "id-0.4564655313",

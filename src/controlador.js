@@ -271,6 +271,8 @@ $(document).ready(async function () {
       "deletarCategoriaIngrediente",
       "modalEditarCategoriaIngrediente"
     ))
+
+    $(".select-categorias-ingredientes").append(mapIngredientsSelect(categoriasIngrediente));
   }
 
   // mostrar listagem de categorias de ingredientes
@@ -294,15 +296,66 @@ $(document).ready(async function () {
   // Adicionar categorias e ingredientes
   $(".salvar-adicionar").on('click', async function () {
     const inputValue = $(this).parent().prev().find("input").val();
+    const selectValue = $(this).parent().prev().find("select").val();
+    const header = $(this).parent().prev().prev().text().trim();
+    const removeFromHeader = "Adicionar ";
+    const entityType = header.substring(removeFromHeader.length);
 
-    console.log(inputValue)
+    let body = {
+      id: `id-${Math.random()}`,
+      nome: inputValue
+    }
+    let entitiesArray;
+    if (entityType === "Categoria de Receita") {
+      body.tipo = "Receita";
+      entitiesArray = "categorias";
+    } else if (entityType === "Categoria de Ingrediente") {
+      body.tipo = "ingrediente";
+      entitiesArray = "categorias";
+    } else {
+      body.categorias = [selectValue];
+      entitiesArray = "ingredientes";
+    }
+
+    await fetch(`http://localhost:3003/${entitiesArray}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body)
+    })
   });
 
   // Editar categorias e ingredientes
   $(".salvar-editar").on('click', async function () {
     const inputValue = $(this).parent().prev().find("input").val();
+    const id = $(this).attr("id");
+    const selectValue = $(this).parent().prev().find("select").val();
+    const header = $(this).parent().prev().prev().text().trim();
+    const removeFromHeader = "Adicionar ";
+    const entityType = header.substring(removeFromHeader.length);
 
-    console.log(inputValue)
+    console.log(id, inputValue, selectValue);
+    let body = {
+      nome: inputValue
+    }
+    let entitiesArray;
+    if (entityType === "Categoria de Receita") {
+      entitiesArray = "categorias";
+    } else if (entityType === "Categoria de Ingrediente") {
+      entitiesArray = "categorias";
+    } else {
+      body.categorias = [selectValue];
+      entitiesArray = "ingredientes";
+    }
+
+    await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body)
+    })
   });
 
   // deletar categoria de receita
@@ -446,5 +499,13 @@ function mapListData(array, editButtonId, deleteButtonId, modalName) {
   // transformar array em string e remover a virgula entre os <li>
   const strigifiedList = list.join().replaceAll(",", "")
 
-  return ` <ul class="lista-conteudo-sem-imagem">${strigifiedList}</ul>`;
+  return `<ul class="lista-conteudo-sem-imagem">${strigifiedList}</ul>`;
+}
+
+function mapIngredientsSelect(ingredients) {
+  const list = ingredients.map((ingredient) => {
+    return `<option value="${ingredient.id}">${ingredient.nome}</option>`
+  })
+
+  return list.join().replaceAll(",", "");
 }
