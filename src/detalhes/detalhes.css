@@ -43,9 +43,44 @@ header {
 
 /* fim cabecalho */
 
-body {
-    text-align: center;
-}
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .icon-heart {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .icon-heart.clicked {
+    color: red; 
+  }
+
+  .icon-heart:hover {
+    transform: scale(1.1);
+  }
+  
+  .review-button {
+    background-color: #1D8844;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-right: 20px;
+  }
+  
+  .review-button:hover {
+    background-color: #176734;
+  } 
 
 .nomeDaReceita {
     text-align: center;
@@ -55,6 +90,11 @@ body {
 .imagem {
     text-align: center;
     margin-top: 10px;
+}
+
+.nomeDoCriador {
+    text-align: left;
+    margin-left: 450px;
 }
 
 .ingredientes {
@@ -75,6 +115,11 @@ body {
 .modoDePreparoLista {
     display: inline-block;
     text-align: left;
+}
+
+.tempoDaReceita {
+    text-align: left;
+    margin-left: 450px;
 }
 
 .categorias-container {
@@ -122,65 +167,61 @@ body {
     transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
 }
 
+.comentariosNome {
+    text-align: center;
+    margin-top: 30px;
+}
+
 .comentariosBody {
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+}
+
+.comment-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
 
-.comentarios {
-    background: white;
-    width: 90%;
-    max-width: 600px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.comentario {
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.comentario:last-child {
-    border-bottom: none;
-}
-
-.perfil {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.icone {
+  .avatar {
     width: 40px;
     height: 40px;
-    background-color: #ccc;
+    background: #ccc;
     border-radius: 50%;
-    margin-right: 10px;
-}
+  }
 
-.nome {
+  .comment-content {
+    flex: 1;
+  }
+
+  .username {
     font-weight: bold;
-    color: #555;
-}
-
-.texto {
-    font-size: 16px;
     color: #333;
-    margin: 5px 0;
-}
-
-.data {
     font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .comment-text {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .comment-date {
+    font-size: 12px;
     color: #999;
-    align-self: flex-end;
-}
+    text-align: right;
+  }
 
 body,
 html {

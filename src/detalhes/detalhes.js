@@ -1,3 +1,9 @@
+const heartIcon = document.getElementById('heart-icon');
+
+heartIcon.addEventListener('click', () => {
+  heartIcon.classList.toggle('clicked');
+});
+
 $(document).ready(async function(){
     const receita = await buscarDadosDaReceita()
     console.log(receita)
