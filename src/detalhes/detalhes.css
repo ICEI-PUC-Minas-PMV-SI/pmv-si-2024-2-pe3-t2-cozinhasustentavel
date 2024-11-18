@@ -43,6 +43,45 @@ header {
 
 /* fim cabecalho */
 
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .icon-heart {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .icon-heart.clicked {
+    color: red; 
+  }
+
+  .icon-heart:hover {
+    transform: scale(1.1);
+  }
+  
+  .review-button {
+    background-color: #1D8844;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-right: 20px;
+  }
+  
+  .review-button:hover {
+    background-color: #176734;
+  } 
+
 .nomeDaReceita {
     text-align: center;
     margin-top: 30px;
@@ -51,6 +90,11 @@ header {
 .imagem {
     text-align: center;
     margin-top: 10px;
+}
+
+.nomeDoCriador {
+    text-align: left;
+    margin-left: 450px;
 }
 
 .ingredientes {
@@ -71,6 +115,11 @@ header {
 .modoDePreparoLista {
     display: inline-block;
     text-align: left;
+}
+
+.tempoDaReceita {
+    text-align: left;
+    margin-left: 450px;
 }
 
 .categorias-container {
