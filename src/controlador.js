@@ -34,9 +34,8 @@ async function getCategorias() {
 }
 
 async function deleteEntity(id, entitiesArray) {
-  const popUp = document.getElementById("mensagem-requisicao");
   try {
-    const res = await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
+    await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -44,23 +43,20 @@ async function deleteEntity(id, entitiesArray) {
     });
   } catch (error) {
     console.error(error);
-    popUp.style.display = "flex";
-    popUp.className = "erro";
-    popUp.innerHTML = `<p>Falha ao deletar</p>
-    <img src="../imgs/erro.svg" alt="icone de erro">`;
-    setTimeout(() => {
-      popUp.style.display = "none";
-    }, 5000);
+    showErrorMessage("Falha ao deletar")
   }
 };
 
-async function addEntity(entity, entitiesArray) {
-
-};
-
-async function editEntity(id, entity, entitiesArray) {
-
-};
+function showErrorMessage(message) {
+  const popUp = document.getElementById("mensagem-requisicao");
+  popUp.style.display = "flex";
+  popUp.className = "erro";
+  popUp.innerHTML = `<p>${message}</p>
+    <img src="../imgs/erro.svg" alt="icone de erro">`;
+  setTimeout(() => {
+    popUp.style.display = "none";
+  }, 5000);
+}
 
 const currentUrl = window.location.href;
 let arrayUrl = currentUrl.split(/(?<=\/)/)
@@ -298,64 +294,96 @@ $(document).ready(async function () {
     const inputValue = $(this).parent().prev().find("input").val();
     const selectValue = $(this).parent().prev().find("select").val();
     const header = $(this).parent().prev().prev().text().trim();
-    const removeFromHeader = "Adicionar ";
-    const entityType = header.substring(removeFromHeader.length);
 
     let body = {
       id: `id-${Math.random()}`,
       nome: inputValue
     }
-    let entitiesArray;
-    if (entityType === "Categoria de Receita") {
+    let entitiesArray = "categorias";
+    if (header.indexOf("Categoria de Receita") >= 0) {
       body.tipo = "Receita";
-      entitiesArray = "categorias";
-    } else if (entityType === "Categoria de Ingrediente") {
+    } else if (header.indexOf("Categoria de Ingrediente") >= 0) {
       body.tipo = "ingrediente";
-      entitiesArray = "categorias";
     } else {
       body.categorias = [selectValue];
       entitiesArray = "ingredientes";
     }
 
-    await fetch(`http://localhost:3003/${entitiesArray}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body)
-    })
+    if (!inputValue) showErrorMessage("Campo 'nome' precisa ser preenchido");
+    else {
+      try {
+        await fetch(`http://localhost:3003/${entitiesArray}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body)
+        })
+      } catch (error) {
+        console.error(error);
+        showErrorMessage("Falha ao adicionar");
+      }
+    }
+  });
+
+  // Passa o id do elemento ao abrir o modal
+  $('#modalEditarCategoriaReceita').on('shown.bs.modal', function (e) {
+    const button = $(e.relatedTarget);
+    const itemId = button.data('id');
+    const itemName = button.data('nome');
+    $(".salvar-editar").data("item-id", itemId);
+    $(this).find("input").val(itemName);
+  });
+
+  $('#modalEditarCategoriaIngrediente').on('shown.bs.modal', function (e) {
+    const button = $(e.relatedTarget);
+    const itemId = button.data('id');
+    const itemName = button.data('nome');
+    $(".salvar-editar").data("item-id", itemId);
+    $(this).find("input").val(itemName);
+  });
+
+  $('#modalEditarIngrediente').on('shown.bs.modal', function (e) {
+    const button = $(e.relatedTarget);
+    const itemId = button.data('id');
+    const itemName = button.data('nome');
+    $(".salvar-editar").data("item-id", itemId);
+    $(this).find("input").val(itemName);
   });
 
   // Editar categorias e ingredientes
   $(".salvar-editar").on('click', async function () {
     const inputValue = $(this).parent().prev().find("input").val();
-    const id = $(this).attr("id");
+    const id = $(this).data("item-id");
     const selectValue = $(this).parent().prev().find("select").val();
     const header = $(this).parent().prev().prev().text().trim();
-    const removeFromHeader = "Adicionar ";
-    const entityType = header.substring(removeFromHeader.length);
 
-    console.log(id, inputValue, selectValue);
     let body = {
       nome: inputValue
     }
     let entitiesArray;
-    if (entityType === "Categoria de Receita") {
-      entitiesArray = "categorias";
-    } else if (entityType === "Categoria de Ingrediente") {
+    if (header.indexOf("Categoria de Receita") >= 0 || header.indexOf("Categoria de Ingrediente") >= 0) {
       entitiesArray = "categorias";
     } else {
       body.categorias = [selectValue];
       entitiesArray = "ingredientes";
     }
 
-    await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body)
-    })
+    if (!inputValue) showErrorMessage("Campo 'nome' precisa ser preenchido")
+    else {
+      try {
+        await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body)
+        })
+      } catch (error) {
+        console.error(error);
+        showErrorMessage("Falha ao editar");
+      }
+    }
   });
 
   // deletar categoria de receita
@@ -378,6 +406,7 @@ $(document).ready(async function () {
     console.log(id);
     await deleteEntity(id, "ingredientes");
   });
+
   // controlador do menu
   $("#seguindoMenu").click(() => {
     $(".nav-link").removeAttr("style"); // remove o atribulto passado como parametro
@@ -486,7 +515,7 @@ function mapListData(array, editButtonId, deleteButtonId, modalName) {
         <p>${item.nome}</p>
         <form>
           <button class="btn btn-verde btn-modal ${editButtonId}" data-bs-toggle="modal"
-            data-bs-target="#${modalName}">
+            data-bs-target="#${modalName}" data-id="${item.id}" data-nome="${item.nome}">
             Editar
           </button>
           <button type="submit" class="btn btn-laranja ${deleteButtonId}">
