@@ -1,4 +1,13 @@
+async function editarUsuario(user) {
+  console.log(user)
+  await fetch(`http://localhost:3003/usuarios/${user.id}`,{
+    method:"PUT",headers: {
+      "Content-Type": "application/json",
+    },
+    body:JSON.stringify(user)
+  })
 
+}
 
 async function getIngredientes() {
   let response = await fetch("http://localhost:3003/ingredientes", {
@@ -120,7 +129,9 @@ $(document).ready(async function () {
   })
 
   // Logout:
-  $("#logout").click(() => {
+  $("#logout").click(async() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    await editarUsuario(user)
     localStorage.removeItem("user");
     window.location.href = `${baseUrl}login/login.html`;
   })

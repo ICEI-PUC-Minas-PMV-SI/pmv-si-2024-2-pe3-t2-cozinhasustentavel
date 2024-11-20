@@ -35,6 +35,17 @@
       "senha": "1234",
       "papel": "normal",
       "receitasFavoritas": []
+    },
+    {
+      "id": "id-0.5734118903485486",
+      "nome": "luis",
+      "email": "luis@gmail.com",
+      "telefone": "975442361",
+      "senha": "senha",
+      "papel": "normal",
+      "receitasFavoritas": [
+        "id-0.643634745856"
+      ]
     }
   ],
   "receitas": [

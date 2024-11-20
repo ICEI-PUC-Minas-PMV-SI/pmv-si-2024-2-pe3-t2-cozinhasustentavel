@@ -43,6 +43,10 @@ header {
 
 /* fim cabecalho */
 
+body {
+    text-align: center;
+}
+
 .recipe-header {
     display: flex;
     justify-content: space-between;
@@ -51,18 +55,18 @@ header {
     margin-left: 20px;
   }
   
-  .icon-heart {
+  #heart-icon {
     font-size: 24px;
     color: #333;
     cursor: pointer;
     transition: transform 0.2s, color 0.2s;
   }
 
-  .icon-heart.clicked {
+  #heart-icon.clicked {
     color: red; 
   }
 
-  .icon-heart:hover {
+  #heart-icon:hover {
     transform: scale(1.1);
   }
   

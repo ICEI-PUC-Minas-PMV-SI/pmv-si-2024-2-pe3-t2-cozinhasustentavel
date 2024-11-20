@@ -1,8 +1,23 @@
 const heartIcon = document.getElementById('heart-icon');
 
-heartIcon.addEventListener('click', () => {
+heartIcon.addEventListener('click', async () => {
   heartIcon.classList.toggle('clicked');
+  const user = JSON.parse(localStorage.getItem("user"))
+  const heartClass = heartIcon.className
+  const estaClicado = heartClass.indexOf("clicked")>= 0
+  const receitaSelecionada = await buscarDadosDaReceita()
+  if (!estaClicado) {
+    user.receitasFavoritas = user.receitasFavoritas.filter((receitaID)=>{
+      return receitaID != receitaSelecionada.id
+    })
+  }
+  else {
+    user.receitasFavoritas = [...user.receitasFavoritas,receitaSelecionada.id]
+  }
+  localStorage.setItem("user",JSON.stringify(user))
 });
+
+console.log(heartIcon)
 
 $(document).ready(async function(){
     const receita = await buscarDadosDaReceita()
@@ -20,6 +35,12 @@ $(document).ready(async function(){
         return categoria.nome
     })
     $(".categorias-container").append(mapearCategoria(categoriasNomes))
+    const user = JSON.parse(localStorage.getItem("user"))
+    const coracaoIcone = $("#heart-icon")
+    const receitaFavoritada = user.receitasFavoritas.includes(receita.id)
+    if (receitaFavoritada) {
+      coracaoIcone.addClass("clicked")
+    }
 })
 
 async function buscarDadosDaReceita() {
@@ -73,3 +94,5 @@ async function getCategorias() {
     })
     return categoriasLista.join().replaceAll(",", "")
   }
+
+  
