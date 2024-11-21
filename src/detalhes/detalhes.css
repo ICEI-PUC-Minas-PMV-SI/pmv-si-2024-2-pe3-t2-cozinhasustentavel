@@ -99,7 +99,50 @@ body {
 .nomeDoCriador {
     text-align: left;
     margin-left: 450px;
+    margin-top: 7px;
 }
+
+  .recipe-info {
+    position: absolute;
+  }
+
+  .author-stars {
+    display: flex;
+    align-items: center; 
+    gap: 440px; 
+  }
+
+  .recipe-rating {
+    display: flex;
+  }
+  
+  .star {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    background-color: #ccc; 
+  }
+  
+  .star.full {
+    background-color: #FFD700; 
+  }
+  
+  .star.half {
+    background: linear-gradient(90deg, #FFD700 50%, #ccc 50%);
+  }
 
 .ingredientes {
     text-align: center;
