@@ -61,6 +61,13 @@ $(document).ready(async function(){
     if (receitaFavoritada) {
       coracaoIcone.addClass("clicked")
     }
+    const usuarios = await pegarUsuarios()
+    const autor = usuarios.filter((usuario)=> {
+      return usuario.id === receita.idDoAutor
+    })
+    console.log(autor)
+    $(".nomeDoCriador").text(autor[0].nome)
+    $(".tempoDaReceita").text(receita.tempo)
 })
 
 async function buscarDadosDaReceita() {
@@ -115,4 +122,11 @@ async function getCategorias() {
     return categoriasLista.join().replaceAll(",", "")
   }
 
-  
+  async function pegarUsuarios() {
+    const response = await fetch("http://localhost:3003/usuarios",{
+      method: "GET",headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    return await response.json();
+  }
