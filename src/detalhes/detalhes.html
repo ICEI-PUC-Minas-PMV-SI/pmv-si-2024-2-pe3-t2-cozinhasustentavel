@@ -113,12 +113,13 @@
           </div>
         </div>
     </header>
+    <main>
       <section>
         <div class="recipe-header">
           <div class="icon-heart">
             <i class="fa fa-heart" id="heart-icon"></i>
           </div>
-          <button class="review-button">Avalie essa receita</button>
+          <button id="open-modal" class="review-button">Avalie essa receita</button>
         </div> 
         <h1 class="nomeDaReceita"></h1>
       </section>
@@ -163,6 +164,33 @@
         </div>
       </div>
       </section>
+    </main>
+    <section> <!-- modal -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Comentar receita</h2>
+            <h2>Avaliar receita</h2>
+          </div>
+          <div class="modal-body">
+            <label for="comment">Comentário</label>
+            <textarea id="comment" rows="6"></textarea>
+            <p class="nota"><strong>Nota</strong></p>
+            <div class="estrelas">
+              <span class="estrela completa"></span>
+              <span class="estrela completa"></span>
+              <span class="estrela completa"></span>
+              <span class="estrela completa"></span>
+              <span class="estrela metade"></span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="cancel" class="cancel-button">Cancelar</button>
+            <button class="save-button">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer>
         <!-- roda pé -->
         <div class="row d-flex justify-content-between">

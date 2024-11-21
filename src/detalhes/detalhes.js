@@ -17,7 +17,27 @@ heartIcon.addEventListener('click', async () => {
   localStorage.setItem("user",JSON.stringify(user))
 });
 
-console.log(heartIcon)
+// Seleciona os elementos
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('open-modal');
+const cancelBtn = document.getElementById('cancel');
+
+// Abre o modal
+openModalBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+// Fecha o modal ao clicar em "Cancelar"
+cancelBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Fecha o modal ao clicar fora do conteúdo
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
 
 $(document).ready(async function(){
     const receita = await buscarDadosDaReceita()

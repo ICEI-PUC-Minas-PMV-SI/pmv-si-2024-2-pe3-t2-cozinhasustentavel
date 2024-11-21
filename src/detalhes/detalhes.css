@@ -270,6 +270,140 @@ body {
     text-align: right;
   }
 
+  .modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Conteúdo do Modal */
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s;
+  }
+  
+  /* Header do Modal */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Corpo do Modal */
+  .modal-body label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .modal-body textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .estrelas {
+    display: flex;
+  }
+  
+  .estrela {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    background-color: #ccc; 
+  }
+  
+  .estrela.completa {
+    background-color: #FFD700; 
+  }
+  
+  .estrela.metade {
+    background: linear-gradient(90deg, #FFD700 50%, #ccc 50%);
+  }
+
+  /* <p class="nota">Nota</p>
+            <div class="estrelas">
+              <span class="estrela completa"></span>
+              <span class="estrela completa"></span>
+              <span class="estrela completa"></span>
+              <span class="estrela completa"></span>
+              <span class="estrela metade"></span>
+            </div> */
+  
+  /* Rodapé do Modal */
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .cancel-button {
+    background-color: #FF7F85;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: #FF7F85;
+  }
+  
+  .save-button {
+    background-color: #1D8844;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #1D8844;
+  }
+  
+  /* Animação para o modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 body,
 html {
     overflow-x: hidden;
