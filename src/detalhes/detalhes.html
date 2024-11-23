@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.5.2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Detalhes da Receita</title>
+</head>
+<body>
+    <header>
+        <!-- cabeçalho -->
+        <div class="row align-items-center">
+          <!-- linha para organizar o conteudo do cabeçalho em linhas e colunas -->
+          <div class="col-2 div-cabecalho">
+            <!-- coluna da imagem -->
+            <img src="../imgs/logo.png" alt="imagem da logo" class="rounded mx-auto d-block" />
+            <!-- imagem da logo -->
+          </div>
+          <div class="col-7 div-cabecalho">
+            <!-- coluna do input -->
+            <input type="text" name="procurarReceita" id="procurarReceita" placeholder="Procurar Receita"
+              class="form-control" />
+            <!-- campo input para pesquisar receitas -->
+          </div>
+          <div class="col-1 div-cabecalho">
+            <!-- coluna para posicionar a lupa -->
+            <button class="btn">
+              <!-- botão para ação de clicar na lupa -->
+              <!-- imagem da lupa -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </button>
+          </div>
+          <div class="col-1 div-cabecalho">
+            <!-- coluna do botão filtrar -->
+            <button class="btn btn-laranja" id="btn-fltrar">
+              <!-- botão filtrar -->
+              Filtrar
+              <!-- icone de filtro -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
+              </svg>
+            </button>
+          </div>
+          <div class="col-1 div-cabecalho">
+            <!-- coluna do menu de hamburguer -->
+            <button class="btn hamburger" id="menu-toggle">
+              <!-- botão para mostrar o menu -->
+              <!-- icone de menu de hamburguer -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+              </svg>
+            </button>
+            <!-- conteudo mostrado pelo menu de hamburguer -->
+            <div class="container-menu" style="display: none">
+              <!-- o display none deixa ele invisivel ate receber um click no menu e remover o style -->
+              <ul id="menu" class="menu">
+                <!-- lista para montar as opções do menu -->
+                <!-- itens da lista -->
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                  <a href="#">
+                    <!-- link de redirecionamento quando receber um click -->
+                    <!-- &nbsp; nem sempre o html entendera o espaço como algo a si colocar no site, nesse 
+                                       caso utiliza uma tag para dar espaço sem necessidade de utilizar o css (gambiarra) -->
+                    &nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                      color="#FF7F85" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
+                    &nbsp;&nbsp; Perfil
+                  </a>
+                </li>
+                <li class="nav-item nav-divider"></li>
+                <!-- item de uma lista com essa classe vira uma linha separadora -->
+                <li>
+                  <a href="#">
+                    &nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                      color="#FF7F85" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
+                    &nbsp;&nbsp; Preferências &nbsp;&nbsp;
+                  </a>
+                </li>
+                <li class="nav-item nav-divider"></li>
+                <li id="logout">
+                  <a href="#">
+                    &nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                      color="#FF7F85" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                      <path fill-rule="evenodd"
+                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                    </svg>
+                    &nbsp; Sair
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </header>
+    <main>
+      <section>
+        <div class="recipe-header">
+          <div class="icon-heart">
+            <i class="fa fa-heart" id="heart-icon"></i>
+          </div>
+          <button id="open-modal" class="review-button">Avalie essa receita</button>
+        </div> 
+        <h1 class="nomeDaReceita"></h1>
+      </section>
+      <section>
+        <div class="imagem"><img src="../imgs/bolo.webp" alt=""></div>
+        <div class="recipe-info">
+        <div class="author-stars">
+        <p class="nomeDoCriador"></p>
+        <div class="recipe-rating">
+          <span class="star full"></span>
+          <span class="star full"></span>
+          <span class="star full"></span>
+          <span class="star full"></span>
+          <span class="star half"></span>
+        </div>
+        </div>
+      </div>
+      </section>
+      <section>
+        <h2 class="ingredientes">Ingredientes</h2>
+        <ul class="ingredientesLista"></ul>
+      </section>
+      <section>
+        <h2 class="modoDePreparo">Modo de Preparo</h2>
+        <p class="tempoDaReceita"></p>
+        <ol class="modoDePreparoLista"></ol>
+      </section>
+      <section>
+        <h2 class="categoriasNome">Categorias</h2>
+        <div class="categorias-container"></div>
+      </section>
+      <section>
+        <h2 class="comentariosNome">Comentários</h2>
+        <div comentariosBody>
+        <div class="comment-box">
+          <div class="avatar"></div>
+          <div class="comment-content">
+            <div class="username">Carlos Alberto</div>
+            <div class="comment-text">Eu fiz e minha família adorou</div>
+            <div class="comment-date">08/10/2024</div>
+          </div>
+        </div>
+      </div>
+      </section>
+    </main>
+    <section> <!-- modal -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Comentar receita</h2>
+            <h2>Avaliar receita</h2>
+          </div>
+          <div class="modal-body">
+            <label for="comment">Comentário</label>
+            <textarea id="comment" rows="6"></textarea>
+            <p class="nota"><strong>Nota</strong></p>
+            <div class="estrelas">
+              <span class="estrela vazia"></span>
+              <span class="estrela vazia"></span>
+              <span class="estrela vazia"></span>
+              <span class="estrela vazia"></span>
+              <span class="estrela vazia"></span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="cancel" class="cancel-button">Cancelar</button>
+            <button class="save-button">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+        <!-- roda pé -->
+        <div class="row d-flex justify-content-between">
+          <!-- div alinha os itens um ao lado do outro -->
+          <div class="col text-start">
+            <!-- coluna para a imagem do titulo -->
+            <img src="../imgs/cozinhaSustentavel.png" alt="Titulo de cozinha sustentavel" />
+          </div>
+          <div class="col text-center">
+            <!-- coluna para a imagem da colher de oregano -->
+            <img src="../imgs/colherComOregano.png" alt="Colher de oregano" />
+          </div>
+          <div class="col text-end">
+            <!-- coluna para a imagem dos alhos -->
+            <img src="../imgs/cebolas.png" alt="Dois alhos" />
+          </div>
+        </div>
+    </footer>
+    <script src="detalhes.js"></script>
+    <script src="../controlador.js"></script>
+</body>
+</html>

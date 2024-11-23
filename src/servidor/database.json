@@ -35,22 +35,74 @@
       "senha": "1234",
       "papel": "normal",
       "receitasFavoritas": []
+    },
+    {
+      "id": "id-0.5734118903485486",
+      "nome": "luis",
+      "email": "luis@gmail.com",
+      "telefone": "975442361",
+      "senha": "senha",
+      "papel": "normal",
+      "receitasFavoritas": [
+        "id-0.643634745856"
+      ]
     }
   ],
   "receitas": [
     {
       "id": "id-0.643634745856",
       "titulo": "Bolo de casca de banana",
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "modoDePreparo": [
+        "Lave as bananas e descasque.",
+        "Separe 4 xícaras de casca para fazer a massa.",
+        "Bata as claras em neve e reserve, na geladeira.",
+        "Bata no liquidificador as gemas, o leite, a margarina, o açúcar e as cascas de banana.",
+        "Despeje essa mistura em uma vasilha e acrescente a farinha de rosca.",
+        "Mexa bem.",
+        "Por último, misture delicadamente as claras em neve e o fermento.",
+        "Despeje em uma assadeira untada com margarina e farinha.",
+        "Leve ao forno médio pré-aquecido por aproximadamente 40 minutos.",
+        "Queime o açúcar em uma panela e junte a água, fazendo um caramelo.",
+        "Acrescente as bananas cortadas em rodelas e o suco de limão.",
+        "Cozinhe.",
+        "Cubra o bolo ainda quente."
+      ],
       "imagem": "",
       "avaliacao": [
         3.5,
         4,
         5
       ],
-      "categorias": [],
-      "ingredientes": [],
-      "idDoAutor": "id-0.1564564123435"
+      "categorias": [
+        "id-0.476843976376315",
+        "id-0.8620386304963"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723985",
+            "nome": "Casca de banana",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "unidades",
+          "quantidade": 3
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723985",
+            "nome": "Casca de banana",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "unidades",
+          "quantidade": 3
+        }
+      ],
+      "idDoAutor": "id-0.1564564123435",
+      "tempo":"50 minutos"
     },
     {
       "id": "id-0.645648463786",
@@ -64,10 +116,16 @@
       ],
       "categorias": [],
       "ingredientes": [],
-      "idDoAutor": "id-0.1564564123435"
+      "idDoAutor": "id-0.1564564123435",
+      "tempo": "50 minutos"
     }
   ],
   "categorias": [
+    {
+      "nome": "Bolos",
+      "tipo": "Receita",
+      "id": "id-0.8620386304963"
+    },
     {
       "id": "id-0.4564655313",
       "nome": "Frutas",

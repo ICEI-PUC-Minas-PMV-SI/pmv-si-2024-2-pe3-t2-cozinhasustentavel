@@ -13,37 +13,57 @@ export const userRouter = express.Router();
 
 // endpoint de cadastro do usuário
 userRouter.post("", (req, res) => {
-  const usuario = req.body;
-  writeOneEntity(usuario, "usuarios");
-  res.send("Usuário adicionado com sucesso");
+  try {
+    const usuario = req.body;
+    writeOneEntity(usuario, "usuarios");
+    res.send("Usuário adicionado com sucesso");
+  } catch {
+    res.send("Falha ao adicionar usuário");
+  }
 });
 
 // endpoint de visualizar dados do usuário
 userRouter.get("/:id", async (req, res) => {
-  const id = req.params.id;
-  const usuario = await readOneEntity(id, "usuarios");
-  res.send(usuario);
+  try {
+    const id = req.params.id;
+    const usuario = await readOneEntity(id, "usuarios");
+    res.send(usuario);
+  } catch {
+    res.send("Falha ao buscar usuário");
+  }
 });
 
 // endpoint de visualizar dados de todos os usuários:
 userRouter.get("", async (req, res) => {
-  const usuarios = await readAllEntities("usuarios");
-  res.send(usuarios);
+  try {
+    const usuarios = await readAllEntities("usuarios");
+    res.send(usuarios);
+  } catch {
+    res.send("Falha ao buscar usuários");
+  }
 });
 
 // endpoint de editar usuário
 userRouter.put("/:id", (req, res) => {
-  const id = req.params.id;
-  const newUserInfo = req.body;
+  try {
+    const id = req.params.id;
+    const newUserInfo = req.body;
 
-  editOneEntity(id, newUserInfo, "usuarios");
-  res.send("Usuário editado com sucesso");
+    editOneEntity(id, newUserInfo, "usuarios");
+    res.send("Usuário editado com sucesso");
+  } catch {
+    res.send("Falha ao editar usuário");
+  }
 });
 
 // endpoint de deletar usuário
 userRouter.delete("/:id", (req, res) => {
-  const id = req.params.id;
+  try {
+    const id = req.params.id;
 
-  deleteOneEntity(id, "usuarios");
-  res.send("Usuário deletado com sucesso");
+    deleteOneEntity(id, "usuarios");
+    res.send("Usuário deletado com sucesso");
+  } catch {
+    res.send("Falha ao deletar usuário");
+  }
 });

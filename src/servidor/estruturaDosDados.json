@@ -4,18 +4,27 @@
         "titulo": "string",
         "descricao": "string",
         "imagem": "",
-        "avaliacao": ["number"],
-        "categorias": ["id da categoria"],
-        "ingredientes": [{
-            "ingrediente": {
-                "id": "string",
-                "nome": "string",
-                "categoria": ["id da categoria"]
-            },
-            "medida": "xicaras",
-            "quantidade": 3
-        }],
-        "idDoAutor": "id do usuario"
+        "avaliacao": [
+            "number"
+        ],
+        "categorias": [
+            "id da categoria"
+        ],
+        "ingredientes": [
+            {
+                "ingrediente": {
+                    "id": "string",
+                    "nome": "string",
+                    "categoria": [
+                        "id da categoria"
+                    ]
+                },
+                "medida": "xicaras",
+                "quantidade": 3
+            }
+        ],
+        "idDoAutor": "id do usuario",
+        "tempo": "string"
     },
     "usuario": {
         "id": "string",
@@ -23,7 +32,9 @@
         "email": "string",
         "telefone": "string",
         "senha": "string",
-        "receitasFavoritas": ["id da receita"],
+        "receitasFavoritas": [
+            "id da receita"
+        ],
         "papel": "normal ou admin"
     },
     "categoria": {
@@ -34,6 +45,8 @@
     "ingrediente": {
         "id": "string",
         "nome": "string",
-        "categoria": ["id da categoria"]
+        "categoria": [
+            "id da categoria"
+        ]
     }
 }

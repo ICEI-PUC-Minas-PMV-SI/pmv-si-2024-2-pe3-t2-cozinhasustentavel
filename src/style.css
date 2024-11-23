@@ -153,7 +153,7 @@ footer {
             margin: 0;
         }
 
-        div {
+        form {
             display: flex;
             justify-content: space-around;
             min-width: 300px;
@@ -163,4 +163,23 @@ footer {
             }
         }
     }
+}
+
+#mensagem-requisicao {
+    color: #F7FFF7;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    align-items: center;
+    border-radius: 8px;
+
+    p {
+        margin: 0 8px 0 0;
+    }
+}
+
+.erro {
+    background-color: #FF7F85;
 }

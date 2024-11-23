@@ -105,7 +105,7 @@
               </a>
             </li>
             <li class="nav-item nav-divider"></li>
-            <li>
+            <li id="logout">
               <a href="#">
                 &nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                   color="#FF7F85" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -221,7 +221,7 @@
   <section id="seguidores" style="display: none">
     <div class="text-center m-5 p-5">
       <!-- esconda essa div caso essa aba tenha algum conteudo -->
-      <h1>Nenhum seguidor encontrada</h1>
+      <h1>Nenhum seguidor encontrado</h1>
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
         viewBox="0 0 16 16">
         <path
@@ -275,7 +275,7 @@
   </section>
 
   <!-- SEÇÃO DE CATEGORIAS DE RECEITAS -->
-  <section id="categoriaReceita" style="display: none">
+  <section id="categoriaReceitas" style="display: none">
     <div class="row">
       <!-- div para gastar espaço -->
       <div class="col-md-8"></div>
@@ -293,7 +293,7 @@
         </button>
       </div>
     </div>
-    <div class="text-center m-5 p-5">
+    <div id="categoriaReceitaVazio" class="text-center m-5 p-5">
       <!-- esconda essa div caso essa aba tenha algum conteudo -->
       <h1>Nenhuma categoria de receita encontrada</h1>
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
@@ -305,7 +305,6 @@
     <div class="conteudo-categoriaReceita" style="display: none">
       <ul class="lista-conteudo-sem-imagem">
       </ul>
-      <!-- remova o style caso o conteudo seja diferente de vazio -->
     </div>
   </section>
 
@@ -327,7 +326,7 @@
           Adicionar Categoria
         </button>
       </div>
-      <div class="text-center m-5 p-5">
+      <div id="categoriaIngredienteVazio" class="text-center m-5 p-5">
         <!-- esconda essa div caso essa aba tenha algum conteudo -->
         <h1>Nenhuma categoria de ingrediente encontrada</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
@@ -337,8 +336,8 @@
         </svg>
       </div>
       <div class="conteudo-categoriasIngredientes" style="display: none">
-        <!-- conteudo de categoriasIngredientes -->
-        <!-- remova o style caso o conteudo seja diferente de vazio -->
+        <ul class="lista-conteudo-sem-imagem">
+        </ul>
       </div>
   </section>
 
@@ -360,7 +359,7 @@
           Adicionar Ingrediente
         </button>
       </div>
-      <div class="text-center m-5 p-5">
+      <div id="ingredienteVazio" class="text-center m-5 p-5">
         <!-- esconda essa div caso essa aba tenha algum conteudo -->
         <h1>Nenhum ingrediente encontrado</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
@@ -370,8 +369,8 @@
         </svg>
       </div>
       <div class="conteudo-ingredientes" style="display: none">
-        <!-- conteudo de ingredientes -->
-        <!-- remova o style caso o conteudo seja diferente de vazio -->
+        <ul class="lista-conteudo-sem-imagem">
+        </ul>
       </div>
   </section>
 
@@ -527,9 +526,233 @@
     </div>
   </div>
 
+  <div class="modal fade" id="modalEditarCategoriaReceita" tabindex="-1" aria-labelledby="modalEditarCategoriaReceita"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarCategoriaReceita">Editar Categoria de Receita</h5>
+          <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="editarNomeCategoriaReceita">Nome da Categoria:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <input name="editarNomeCategoriaReceita" id="editarNomeCategoriaReceita" cols="20" class="form-control"
+                style="margin-top: 12px"></input>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelar btn btn-laranja" data-bs-dismiss="modal"
+            style="width: auto">Cancelar</button>
+          <button type="button" class="btn btn-verde salvar-editar" style="width: auto">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalEditarCategoriaIngrediente" tabindex="-1"
+    aria-labelledby="modalEditarCategoriaIngrediente" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarCategoriaIngrediente">Editar Categoria de Ingrediente</h5>
+          <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="editarNomeCategoriaIngrediente">Nome da Categoria:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <input name="editarNomeCategoriaIngrediente" id="editarNomeCategoriaIngrediente" cols="20"
+                class="form-control" style="margin-top: 12px"></input>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelar btn btn-laranja" data-bs-dismiss="modal"
+            style="width: auto">Cancelar</button>
+          <button type="button" class="btn btn-verde salvar-editar" style="width: auto">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalEditarIngrediente" tabindex="-1" aria-labelledby="modalEditarIngrediente"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarIngrediente">Editar Ingrediente</h5> <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="editarNomeIngrediente">Nome do Ingrediente:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <input name="editarNomeIngrediente" id="editarNomeIngrediente" cols="20" class="form-control"
+                style="margin-top: 12px"></input>
+            </div>
+          </div>
+
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="adicionarCategoriaIngrediente">Categoria do Ingrediente:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <select name="adicionarCategoriaIngrediente"
+                class="form-control categoriaIngrediente select-categorias-ingredientes">
+
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelar btn btn-laranja" data-bs-dismiss="modal"
+            style="width: auto">Cancelar</button>
+          <button type="button" class="btn btn-verde salvar-editar" style="width: auto">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="modalAddCategoriaReceita" tabindex="-1" aria-labelledby="modalAddCategoriaReceita"
     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddCategoriaReceita">Adicionar Categoria de Receita</h5>
+          <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="adicionarNomeCategoriaReceita">Nome da Categoria:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <input name="adicionarNomeCategoriaReceita" id="adicionarNomeCategoriaReceita" cols="20"
+                class="form-control" style="margin-top: 12px"></input>
+            </div>
+          </div>
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelar btn btn-laranja" data-bs-dismiss="modal"
+            style="width: auto">Cancelar</button>
+          <button type="button" class="btn btn-verde salvar-adicionar" style="width: auto">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalAddCategoriaIngrediente" tabindex="-1" aria-labelledby="modalAddCategoriaIngrediente"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddCategoriaIngrediente">Adicionar Categoria de Ingrediente</h5>
+          <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="adicionarNomeCategoriaIngrediente">Nome da Categoria:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <input name="adicionarNomeCategoriaIngrediente" id="adicionarNomeCategoriaIngrediente" cols="20"
+                class="form-control" style="margin-top: 12px"></input>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelar btn btn-laranja" data-bs-dismiss="modal"
+            style="width: auto">Cancelar</button>
+          <button type="button" class="btn btn-verde salvar-adicionar" style="width: auto">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalAddIngrediente" tabindex="-1" aria-labelledby="modalAddIngrediente"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddIngrediente">Adicionar Ingrediente</h5> <!-- titulo do modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> <!-- div para agrupar o conteudo do modal -->
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="adicionarNomeIngrediente">Nome do Ingrediente:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <input name="adicionarNomeIngrediente" id="adicionarNomeIngrediente" cols="20" class="form-control"
+                style="margin-top: 12px"></input>
+            </div>
+          </div>
+
+          <div class="row"> <!-- linha para separar o conteudo entre linhas e colunas -->
+            <div class="col-md-12"> <!-- cria uma coluna que ocupa toda a tela -->
+            </div>
+          </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-md-12">
+              <label for="adicionarCategoriaIngrediente">Categoria do Ingrediente:</label>
+              <!-- um input de texto que ocupa uma area bem maior para textos grandes -->
+              <select name="adicionarCategoriaIngrediente"
+                class="form-control categoriaIngrediente select-categorias-ingredientes">
+
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelar btn btn-laranja" data-bs-dismiss="modal"
+            style="width: auto">Cancelar</button>
+          <button type="button" class="btn btn-verde salvar-adicionar" style="width: auto">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mensagem-requisicao" class="erro" style="display: none">
   </div>
 </body>
 
