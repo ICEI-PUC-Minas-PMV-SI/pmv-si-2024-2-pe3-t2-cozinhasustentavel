@@ -22,16 +22,45 @@ async function getCategorias() {
     )
     let data = await response.json()
 
-    return{
-        ingredientCategories : data.length > 0 && data.filter(categoria => {
+    return {
+        ingredientCategories: data.length > 0 && data.filter(categoria => {
             return categoria.tipo === "ingrediente"
         }),
-    
-        recipeCategories : data.length > 0 && data.filter(categoria => {
+
+        recipeCategories: data.length > 0 && data.filter(categoria => {
             return categoria.tipo === "Receita"
         })
     }
 
+
+    async function addReceita() {
+        let response = await fetch("http://localhost:3003/receitas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: {
+                "id": `id-${Math.random()}`,
+                "titulo": "string",
+                "descricao": "string",
+                "imagem": "",
+                "avaliacao": ["number"],
+                "categorias": ["id da categoria"],
+                "ingredientes": [{
+                    "ingrediente": {
+                        "id": "string",
+                        "nome": "string",
+                        "categoria": ["id da categoria"]
+                    },
+                    "medida": "xicaras",
+                    "quantidade": 3
+                }],
+                "idDoAutor": "id do usuario"
+            }
+        });
+
+        return await response.json();
+    }
     // console.log("ingr", ingredientCategories)
     // console.log("recipe", recipeCategories)
 
