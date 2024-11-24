@@ -165,9 +165,37 @@ $(document).ready(async function () {
     $(".container-menu").toggle();
   });
 
-  $("#criarReceita").click(() => {
+  // aqui
+  $("#criarReceita").click(async() => {
+
+    let buscaIngredientes = await getIngredientes()
+
+    
+    let ingredientes = []
+    $(".ingrediente").each((index, ingred)=>{
+      let ingredienteSelecionado = buscaIngredientes.find( ingrediente => ingrediente.id == ingred.id)
+
+      
+
+      ingredientes.push({
+                    "ingrediente": ingredienteSelecionado,
+                    "medida": $(ingred).parent().parent().find(".medidas").val(),
+                    "quantidade": $(ingred).parent().parent().find(".quantidade").val()
+                })
+    })
+
+    let categorias = []
+
+    $(".categorias").each((index, categoria)=>{
+      categorias.push($(categoria).val())
+    })
+
+    let nome = $("#nomeReceita").val()
+    let modoPreparo = $("#modoPreparo").val()
+    let nomeImg = $("#fileInput").val()
+    let idUsuario = usuario
+
     // addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario)
-    console.log("cria receita")
   })
 
   // Logout:
