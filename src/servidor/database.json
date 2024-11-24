@@ -46,6 +46,15 @@
       "receitasFavoritas": [
         "id-0.643634745856"
       ]
+    },
+    {
+      "id": "id-0.43498082151533013",
+      "nome": "Paola",
+      "email": "paolabraga@gmail.com",
+      "telefone": "31996522456",
+      "senha": "12345",
+      "papel": "normal",
+      "receitasFavoritas": []
     }
   ],
   "receitas": [
@@ -67,7 +76,7 @@
         "Cozinhe.",
         "Cubra o bolo ainda quente."
       ],
-      "imagem": "",
+      "imagem": "bolo.webp",
       "avaliacao": [
         3.5,
         4,
@@ -102,7 +111,7 @@
         }
       ],
       "idDoAutor": "id-0.1564564123435",
-      "tempo":"50 minutos"
+      "tempo": "50 minutos"
     },
     {
       "id": "id-0.645648463786",

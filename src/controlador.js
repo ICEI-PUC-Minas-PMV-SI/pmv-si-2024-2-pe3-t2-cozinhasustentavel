@@ -165,6 +165,12 @@ $(document).ready(async function () {
     $(".container-menu").toggle();
   });
 
+  $("#btn-filtrar").click(function () {
+    // Alterna a exibição da lista
+    console.log("teste")
+    $(".container-filtro").toggle();
+  });
+
   // aqui
   $("#criarReceita").click(async() => {
 

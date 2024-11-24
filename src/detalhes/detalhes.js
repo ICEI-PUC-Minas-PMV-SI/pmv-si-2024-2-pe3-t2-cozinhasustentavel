@@ -68,6 +68,8 @@ $(document).ready(async function(){
     console.log(autor)
     $(".nomeDoCriador").text(autor[0].nome)
     $(".tempoDaReceita").text(receita.tempo)
+    const imagemNome = receita.imagem
+    $("#imagemReceita").attr("src","../imgs/" + imagemNome)
 })
 
 async function buscarDadosDaReceita() {
@@ -130,3 +132,4 @@ async function getCategorias() {
     })
     return await response.json();
   }
+  
