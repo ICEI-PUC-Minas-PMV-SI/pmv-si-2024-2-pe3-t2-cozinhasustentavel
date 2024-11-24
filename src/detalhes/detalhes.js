@@ -130,3 +130,4 @@ async function getCategorias() {
     })
     return await response.json();
   }
+  

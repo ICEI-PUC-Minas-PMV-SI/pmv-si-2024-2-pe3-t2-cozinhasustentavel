@@ -48,9 +48,61 @@ header {
     right: 100px;
     background-color: #F7FFF7;
     border-radius: 10px;
+    display: none;
+    z-index: 9999;
+}
+/* fim menu de hamburguer */
+
+/* menu do filtro: */
+
+.menu {
+    display: block;
+    list-style-type: none;
+    padding: 0;
 }
 
-/* fim menu de hamburguer */
+.menu a {
+    text-decoration: none;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.filtro-checkbox {
+    /* appearance: none; */
+    margin: 0px 10px 0px 20px;
+    width: 20px;
+    height: 20px;
+    accent-color: #FF7F85;
+    background-color: #FF7F85;
+    color: #FF7F85;
+    cursor: pointer;
+}
+
+.filtro-checkbox:hover {
+    border-color: #FF7F85;
+}
+
+p {
+    margin: 10px 10px 10px 10px;
+}
+
+.filtro {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container-filtro {
+    position: absolute;
+    right: 250px;
+    background-color: #F7FFF7;
+    border-radius: 10px;
+    display: none;
+    z-index: 9999;
+}
+
+/* fim menu de filtro */
 
 /* fim cabecalho */
 
@@ -183,3 +235,77 @@ footer {
 .erro {
     background-color: #FF7F85;
 }
+
+/* Style do Card */
+
+  /* Estilo para os cards */
+  .card {
+    border: none;
+    margin-top: 20px;
+  }
+
+  .card-title {
+    font-family: 'Kokoro', sans-serif;
+    font-size: 20px;
+    color: #1D8844;
+    text-align: justify;
+    margin-top: 20px;
+    padding-left: 30px;
+  }
+
+  .card-nomedata {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+  }
+
+  .card-title2, .card-title3 {
+    font-family: 'Kokoro', sans-serif;
+    font-size: 15px;
+    color: #3F463C;
+  }
+
+  .card-title2 {
+    padding-left: 10px;
+  }
+
+  .card-title3 {
+    text-align: right;
+  }
+
+  .card-text {
+    font-family: 'Kokoro', sans-serif;
+    font-size: 16px;
+    color: #3F463C;
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 8px;
+    padding-right: 10px;
+  }
+
+  .rating {
+    display: inline-block;
+  }
+
+  .star {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #ccc;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .star.full {
+    background-color: pink;
+  }
+
+  .star.half {
+    background: linear-gradient(to right, pink 50%, #ccc 50%);
+  }
+
+  /* Responsividade para os cards */
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+
+  /* Fim style card */

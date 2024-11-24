@@ -164,7 +164,12 @@ $(document).ready(async function () {
     // Alterna a exibição da lista
     $(".container-menu").toggle();
   });
-
+  // Quando o botão de menu (filtro) for clicado
+  $("#btn-filtrar").click(function () {
+    // Alterna a exibição da lista
+    console.log("teste")
+    $(".container-filtro").toggle();
+  });
   $("#adicionarReceita").click(() => {
 
   })
