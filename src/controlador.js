@@ -42,7 +42,7 @@ async function getCategorias() {
     }
 
 
-    async function addReceita() {
+    async function addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario) {
         let response = await fetch("http://localhost:3003/receitas", {
             method: "POST",
             headers: {
@@ -53,7 +53,7 @@ async function getCategorias() {
                 "titulo": "string",
                 "descricao": "string",
                 "imagem": "",
-                "avaliacao": ["number"],
+                "avaliacao": [],
                 "categorias": ["id da categoria"],
                 "ingredientes": [{
                     "ingrediente": {
@@ -165,8 +165,9 @@ $(document).ready(async function () {
     $(".container-menu").toggle();
   });
 
-  $("#adicionarReceita").click(() => {
-
+  $("#criarReceita").click(() => {
+    // addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario)
+    console.log("cria receita")
   })
 
   // Logout:
