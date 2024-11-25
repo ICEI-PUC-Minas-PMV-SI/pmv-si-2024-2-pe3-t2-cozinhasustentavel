@@ -45,7 +45,7 @@ $(document).ready(async function(){
     $(".nomeDaReceita").append(receita.titulo)
     const ingredientesLista = mapearIngredientes(receita.ingredientes)
     $(".ingredientesLista").append(ingredientesLista)
-    const modoDePreparoLista =mapearModoDePreparo(receita.modoDePreparo)
+    const modoDePreparoLista = receita.descricao
     $(".modoDePreparoLista").append(modoDePreparoLista)
     const categorias = (await getCategorias()).recipeCategories
     const categoriasFiltradas = categorias.filter((categoria)=>{
@@ -88,12 +88,7 @@ function mapearIngredientes(ingredientes) {
     return ingredientesLista.join().replaceAll(",", "")
 }
 
-function mapearModoDePreparo(modoDePreparo) {
-    const modoDePreparoLista = modoDePreparo.map((elemento)=>{
-        return`<li>${elemento}</li>`
-    })
-    return modoDePreparoLista.join().replaceAll(",", "")
-}
+
 
 async function getCategorias() {
 

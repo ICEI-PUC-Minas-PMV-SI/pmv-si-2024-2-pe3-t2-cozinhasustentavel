@@ -61,22 +61,8 @@
     {
       "id": "id-0.643634745856",
       "titulo": "Bolo de casca de banana",
-      "modoDePreparo": [
-        "Lave as bananas e descasque.",
-        "Separe 4 xícaras de casca para fazer a massa.",
-        "Bata as claras em neve e reserve, na geladeira.",
-        "Bata no liquidificador as gemas, o leite, a margarina, o açúcar e as cascas de banana.",
-        "Despeje essa mistura em uma vasilha e acrescente a farinha de rosca.",
-        "Mexa bem.",
-        "Por último, misture delicadamente as claras em neve e o fermento.",
-        "Despeje em uma assadeira untada com margarina e farinha.",
-        "Leve ao forno médio pré-aquecido por aproximadamente 40 minutos.",
-        "Queime o açúcar em uma panela e junte a água, fazendo um caramelo.",
-        "Acrescente as bananas cortadas em rodelas e o suco de limão.",
-        "Cozinhe.",
-        "Cubra o bolo ainda quente."
-      ],
       "imagem": "bolo.webp",
+      "descricao": "misture todos os ingredientes e ferva por 40 minutos e depois deixe no congelador",
       "avaliacao": [
         3.5,
         4,
