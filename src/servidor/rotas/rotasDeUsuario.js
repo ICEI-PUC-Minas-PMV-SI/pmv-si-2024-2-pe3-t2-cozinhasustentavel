@@ -24,11 +24,15 @@ userRouter.post("", (req, res) => {
 
 // endpoint de visualizar dados do usuário
 userRouter.get("/:id", async (req, res) => {
+  console.log("usuario")
   try {
+    console.log("tudo certo usuario")
     const id = req.params.id;
+    // const id = "id-0.1564564123435";
     const usuario = await readOneEntity(id, "usuarios");
     res.send(usuario);
   } catch {
+    console.log("erro de usuario")
     res.send("Falha ao buscar usuário");
   }
 });
@@ -39,6 +43,7 @@ userRouter.get("", async (req, res) => {
     const usuarios = await readAllEntities("usuarios");
     res.send(usuarios);
   } catch {
+    
     res.send("Falha ao buscar usuários");
   }
 });

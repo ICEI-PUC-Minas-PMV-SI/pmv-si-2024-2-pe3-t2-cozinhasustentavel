@@ -1,11 +1,14 @@
 import http from "http";
 import express from "express";
 import cors from "cors";
+
 import { userRouter } from "./rotas/rotasDeUsuario.js";
 import { recipeRouter } from "./rotas/rotasDeReceita.js";
 import { ingredientsRouter } from "./rotas/rotasDeIngredientes.js";
 import { categoriesRouter } from "./rotas/rotasDeCategorias.js";
+import { uploadRouter } from './rotas/rotasUpload.cjs';
 import { performLogin } from "./utilities.js";
+
 
 const app = express();
 const server = http.createServer(app);
@@ -22,6 +25,7 @@ server.listen(port, async () => {
   }
 });
 
+app.use("/upload", uploadRouter);
 app.use("/usuarios", userRouter);
 app.use("/receitas", recipeRouter);
 app.use("/categorias", categoriesRouter);

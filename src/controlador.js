@@ -1,16 +1,40 @@
 async function editarUsuario(user) {
   console.log(user)
-  await fetch(`http://localhost:3003/usuarios/${user.id}`,{
-    method:"PUT",headers: {
+  await fetch(`http://localhost:3003/usuarios/${user.id}`, {
+    method: "PUT", headers: {
       "Content-Type": "application/json",
     },
-    body:JSON.stringify(user)
+    body: JSON.stringify(user)
   })
 
 }
 
 async function getIngredientes() {
   let response = await fetch("http://localhost:3003/ingredientes", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+
+  return await response.json();
+}
+
+async function getUsuarioById(id) {
+  console.log(id)
+  let response = await fetch(`http://localhost:3003/usuarios/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+
+  return await response.json();
+  
+}
+
+async function getReceitas() {
+  let response = await fetch("http://localhost:3003/receitas", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -31,58 +55,81 @@ async function getCategorias() {
   )
   let data = await response.json()
 
-    return {
-        ingredientCategories: data.length > 0 && data.filter(categoria => {
-            return categoria.tipo === "ingrediente"
-        }),
+  return {
+    ingredientCategories: data.length > 0 && data.filter(categoria => {
+      return categoria.tipo === "ingrediente"
+    }),
 
-        recipeCategories: data.length > 0 && data.filter(categoria => {
-            return categoria.tipo === "Receita"
-        })
-    }
-
-
-    async function addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario) {
-        let response = await fetch("http://localhost:3003/receitas", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: {
-                "id": `id-${Math.random()}`,
-                "titulo": "string",
-                "descricao": "string",
-                "imagem": "",
-                "avaliacao": [],
-                "categorias": ["id da categoria"],
-                "ingredientes": [{
-                    "ingrediente": {
-                        "id": "string",
-                        "nome": "string",
-                        "categoria": ["id da categoria"]
-                    },
-                    "medida": "xicaras",
-                    "quantidade": 3
-                }],
-                "idDoAutor": "id do usuario"
-            }
-        });
-
-        return await response.json();
-    }
-    // console.log("ingr", ingredientCategories)
-    // console.log("recipe", recipeCategories)
-
-    // const recipeCategoriesDiv = document.getElementById("categoriaReceita")
-    // const noItemsDiv = recipeCategoriesDiv.getElementsByClassName("text-center");
-    // noItemsDiv[0].style.display = "none";
-
-    // const recipeCategoriesContent = recipeCategoriesDiv.getElementsByClassName("conteudo-categoriaReceita");
-    // recipeCategoriesContent[0].style.display = "block";
-
-    // recipeCategoriesContent[0].innerHTML = mapListData(recipeCategories, "editarCategoriaReceita", "deletarCategoriaReceita");
+    recipeCategories: data.length > 0 && data.filter(categoria => {
+      return categoria.tipo === "Receita"
+    })
+  }
 }
 
+async function addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario) {
+  let response = await fetch("http://localhost:3003/receitas", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      "id": `id-${Math.random()}`,
+      "titulo": nome,
+      "descricao": modoPreparo,
+      "imagem": nomeImg,
+      "avaliacao": [],
+      "categorias": categorias,
+      "ingredientes": ingredientes,
+      "idDoAutor": idUsuario
+    })
+  });
+
+
+  return await response.json();
+}
+
+
+let nomeImagem
+async function uploadImagem() {
+  const formData = new FormData(); // Cria um objeto FormData para enviar a imagem
+
+  // Usando jQuery para pegar o input de arquivo
+  const fileInput = $('#fileInput')[0]; // Pega o input de arquivo usando jQuery e acessa o DOM real [0]
+
+  // Verifica se o usuário selecionou um arquivo
+  if (fileInput.files.length > 0) {
+    const file = fileInput.files[0]; // Pega o primeiro arquivo selecionado
+    formData.append('imagem', file); // Adiciona o arquivo ao FormData
+
+    try {
+      const response = await fetch(`http://localhost:3003/upload/upload`, {
+        method: 'POST',
+        body: formData, // Envia o FormData com a imagem
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        nomeImagem = result.filename
+        console.log('Imagem carregada com sucesso', result);
+        alert('Imagem carregada com sucesso!');
+
+
+        return true
+      } else {
+        console.error('Erro ao carregar a imagem', result);
+        alert('Erro ao carregar a imagem!');
+        return false
+      }
+    } catch (error) {
+      console.error('Erro na requisição de upload', error);
+      alert('Erro ao fazer upload da imagem');
+      return false
+    }
+  } else {
+    alert('Por favor, selecione uma imagem');
+    return false
+  }
+}
 async function deleteEntity(id, entitiesArray) {
   try {
     await fetch(`http://localhost:3003/${entitiesArray}/${id}`, {
@@ -171,41 +218,104 @@ $(document).ready(async function () {
     $(".container-filtro").toggle();
   });
 
+  $("#minhasReceitasMenu").click(async () => {
+
+    $("#conteudoReceita").empty()
+
+    let receitas = await getReceitas()
+
+    if (receitas.length > 0) {
+      $("#receitaVazio").hide()
+      $("#receitaCheio").show()
+
+      receitas.forEach(async(receita) => {
+
+        // busca o usuario pelo id
+        let usuarioSelecinado = await getUsuarioById(receita.idDoAutor)
+
+        // console.log(receita.idDoAutor)
+        console.log(usuarioSelecinado)
+        // console.log(receita)
+        $("#conteudoReceita").append(
+          `
+            <div class="row" id="conteudoReceita">
+              <div class="col-md-4">
+                <div class="card" style="width: 20rem; margin: 20px 0; border: none;">
+                  <div class="card-body">
+                    <h5 class="card-title">${receita.titulo}</h5>
+                    <div class="card-nomedata">
+                      <h6 class="card-title2">${usuarioSelecinado.nome}</h6>
+                      <h6 class="card-title3">15/10/2024</h6>
+                    </div>
+                    <img src="../imgs/${receita.imagem}" class="card-img-top" alt="Imagem receita" style="width: 100%;">
+                    <br>
+                    <p class="card-text">${receita.descricao}</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="rating">
+                          <span class="star ${receita.avaliacao}"></span>
+                          <span class="star full"></span>
+                          <span class="star full"></span>
+                          <span class="star full"></span>
+                          <span class="star half"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="btn btn-verde">Visualizar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+        )
+      })
+    } else {
+      $("#receitaVazio").show()
+      $("#receitaCheio").hide()
+    }
+  })
+
   // aqui
-  $("#criarReceita").click(async() => {
+  $("#criarReceita").click(async () => {
 
     let buscaIngredientes = await getIngredientes()
 
-    
-    let ingredientes = []
-    $(".ingrediente").each((index, ingred)=>{
-      let ingredienteSelecionado = buscaIngredientes.find( ingrediente => ingrediente.id == ingred.id)
 
-      
+    let ingredientes = []
+    $(".ingrediente").each((index, ingred) => {
+      let idIngrediente = $(ingred).val()
+      let ingredienteSelecionado = buscaIngredientes.find(ingrediente => ingrediente.id == idIngrediente)
+
+
 
       ingredientes.push({
-                    "ingrediente": ingredienteSelecionado,
-                    "medida": $(ingred).parent().parent().find(".medidas").val(),
-                    "quantidade": $(ingred).parent().parent().find(".quantidade").val()
-                })
+        "ingrediente": ingredienteSelecionado,
+        "medida": $(ingred).parent().parent().find(".medidas").val(),
+        "quantidade": $(ingred).parent().parent().find(".quantidade").val()
+      })
     })
 
     let categorias = []
 
-    $(".categorias").each((index, categoria)=>{
+    $(".categorias").each((index, categoria) => {
       categorias.push($(categoria).val())
     })
 
     let nome = $("#nomeReceita").val()
     let modoPreparo = $("#modoPreparo").val()
-    let nomeImg = $("#fileInput").val()
-    let idUsuario = usuario
 
-    // addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario)
+    if (await uploadImagem()) {
+      await addReceita(nome, modoPreparo, nomeImagem, categorias, ingredientes, usuario.id)
+      return true
+    }
+
+    alert("Receita não criada")
   })
 
   // Logout:
-  $("#logout").click(async() => {
+  $("#logout").click(async () => {
     const user = JSON.parse(localStorage.getItem("user"))
     await editarUsuario(user)
     localStorage.removeItem("user");
@@ -306,7 +416,7 @@ $(document).ready(async function () {
             <div class="row">
                 <div class="col-md-11">
                     <label for="categoria">Categoria:</label>
-                    <select name="categoria" class="form-control categoria">
+                    <select name="categorias" class="form-control categorias">
                         <option value=""></option>
                         ${option}
                     </select>
