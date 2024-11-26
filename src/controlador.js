@@ -1,10 +1,10 @@
 async function editarUsuario(user) {
   console.log(user)
-  await fetch(`http://localhost:3003/usuarios/${user.id}`,{
-    method:"PUT",headers: {
+  await fetch(`http://localhost:3003/usuarios/${user.id}`, {
+    method: "PUT", headers: {
       "Content-Type": "application/json",
     },
-    body:JSON.stringify(user)
+    body: JSON.stringify(user)
   })
 
 }
@@ -31,56 +31,56 @@ async function getCategorias() {
   )
   let data = await response.json()
 
-    return {
-        ingredientCategories: data.length > 0 && data.filter(categoria => {
-            return categoria.tipo === "ingrediente"
-        }),
+  return {
+    ingredientCategories: data.length > 0 && data.filter(categoria => {
+      return categoria.tipo === "ingrediente"
+    }),
 
-        recipeCategories: data.length > 0 && data.filter(categoria => {
-            return categoria.tipo === "Receita"
-        })
-    }
+    recipeCategories: data.length > 0 && data.filter(categoria => {
+      return categoria.tipo === "Receita"
+    })
+  }
 
 
-    async function addReceita() {
-        let response = await fetch("http://localhost:3003/receitas", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: {
-                "id": `id-${Math.random()}`,
-                "titulo": "string",
-                "descricao": "string",
-                "imagem": "",
-                "avaliacao": ["number"],
-                "categorias": ["id da categoria"],
-                "ingredientes": [{
-                    "ingrediente": {
-                        "id": "string",
-                        "nome": "string",
-                        "categoria": ["id da categoria"]
-                    },
-                    "medida": "xicaras",
-                    "quantidade": 3
-                }],
-                "idDoAutor": "id do usuario"
-            }
-        });
+  async function addReceita() {
+    let response = await fetch("http://localhost:3003/receitas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: {
+        "id": `id-${Math.random()}`,
+        "titulo": "string",
+        "descricao": "string",
+        "imagem": "",
+        "avaliacao": ["number"],
+        "categorias": ["id da categoria"],
+        "ingredientes": [{
+          "ingrediente": {
+            "id": "string",
+            "nome": "string",
+            "categoria": ["id da categoria"]
+          },
+          "medida": "xicaras",
+          "quantidade": 3
+        }],
+        "idDoAutor": "id do usuario"
+      }
+    });
 
-        return await response.json();
-    }
-    // console.log("ingr", ingredientCategories)
-    // console.log("recipe", recipeCategories)
+    return await response.json();
+  }
+  // console.log("ingr", ingredientCategories)
+  // console.log("recipe", recipeCategories)
 
-    // const recipeCategoriesDiv = document.getElementById("categoriaReceita")
-    // const noItemsDiv = recipeCategoriesDiv.getElementsByClassName("text-center");
-    // noItemsDiv[0].style.display = "none";
+  // const recipeCategoriesDiv = document.getElementById("categoriaReceita")
+  // const noItemsDiv = recipeCategoriesDiv.getElementsByClassName("text-center");
+  // noItemsDiv[0].style.display = "none";
 
-    // const recipeCategoriesContent = recipeCategoriesDiv.getElementsByClassName("conteudo-categoriaReceita");
-    // recipeCategoriesContent[0].style.display = "block";
+  // const recipeCategoriesContent = recipeCategoriesDiv.getElementsByClassName("conteudo-categoriaReceita");
+  // recipeCategoriesContent[0].style.display = "block";
 
-    // recipeCategoriesContent[0].innerHTML = mapListData(recipeCategories, "editarCategoriaReceita", "deletarCategoriaReceita");
+  // recipeCategoriesContent[0].innerHTML = mapListData(recipeCategories, "editarCategoriaReceita", "deletarCategoriaReceita");
 }
 
 async function deleteEntity(id, entitiesArray) {
@@ -118,8 +118,6 @@ if (arrayUrl[arrayUrl.length - 1] === "index.html") {
   arrayUrl = arrayUrl.slice(0, arrayUrl.length - 2)
 }
 const baseUrl = arrayUrl.join().replaceAll(',', '')
-// const slashWherePathBegins = currentUrl.indexOf("/");
-// const baseUrl = currentUrl.slice(0, slashWherePathBegins);
 console.log(baseUrl)
 
 // estrutura do jQuery:
@@ -175,7 +173,7 @@ $(document).ready(async function () {
   })
 
   // Logout:
-  $("#logout").click(async() => {
+  $("#logout").click(async () => {
     const user = JSON.parse(localStorage.getItem("user"))
     await editarUsuario(user)
     localStorage.removeItem("user");
