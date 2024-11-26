@@ -20,7 +20,7 @@
           <!-- linha para organizar o conteudo do cabeçalho em linhas e colunas -->
           <div class="col-2 div-cabecalho">
             <!-- coluna da imagem -->
-            <img src="../imgs/logo.png" alt="imagem da logo" class="rounded mx-auto d-block" />
+            <a href="../index.html"><img  src="../imgs/logo.png" alt="imagem da logo" class="rounded mx-auto d-block" /></a>
             <!-- imagem da logo -->
           </div>
           <div class="col-7 div-cabecalho">
@@ -43,7 +43,7 @@
           </div>
           <div class="col-1 div-cabecalho">
             <!-- coluna do botão filtrar -->
-            <button class="btn btn-laranja" id="btn-fltrar">
+            <button class="btn btn-laranja" id="btn-filtrar">
               <!-- botão filtrar -->
               Filtrar
               <!-- icone de filtro -->
@@ -53,6 +53,70 @@
                   d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
               </svg>
             </button>
+            <div class="container-filtro" style="display: none">
+              <!-- o display none deixa ele invisivel ate receber um click no menu e remover o style -->
+              <ul id="menu" class="menu">
+                <!-- lista para montar as opções do menu -->
+                <!-- itens da lista -->
+                <li>
+                  <p> Categorias de Receitas </p>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="carnes" id="carnes" class="filtro-checkbox">
+                   <label for="carnes"> Carnes </label>
+                </li>
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="massas" id="massas" class="filtro-checkbox">
+                   <label for="massas"> Massas </label>
+                </li>
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="sopas" id="sopas" class="filtro-checkbox">
+                   <label for="sopas"> Sopas </label>
+                </li>
+                <li class="nav-item nav-divider"></li>
+                <!-- item de uma lista com essa classe vira uma linha separadora -->
+                <li>
+                  <p> Ingredientes </p>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="cascaAbobora" id="cascaAbobora" class="filtro-checkbox">
+                   <label for="cascaAbobora"> Casca </label>
+                </li>
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="cascaBanana" id="cascaBanana" class="filtro-checkbox">
+                   <label for="cascaBanana"> Casca de Banana </label>
+                </li> 
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="cascaOvo" id="cascaOvo" class="filtro-checkbox">
+                   <label for="cascaOvo"> Casca de Ovo </label>
+                </li>
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="taloCouve" id="taloCouve" class="filtro-checkbox">
+                   <label for="taloCouve"> Talo de Couve </label>
+                </li>
+                <li class="nav-item nav-divider"></li>
+                <p> Categorias de Ingredientes </p>
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="carnes" id="carnes" class="filtro-checkbox">
+                   <label for="carnes"> Carnes </label>
+                </li> 
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="frutas" id="frutas" class="filtro-checkbox">
+                   <label for="frutas"> Frutas </label>
+                </li>
+                <li>
+                  <!-- agrupa o item de uma lista -->
+                   <input type="checkbox" name="vegetais" id="vegetais" class="filtro-checkbox">
+                   <label for="vegetais"> Vegetais </label>
+                </li>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col-1 div-cabecalho">
             <!-- coluna do menu de hamburguer -->
@@ -124,7 +188,7 @@
         <h1 class="nomeDaReceita"></h1>
       </section>
       <section>
-        <div class="imagem"><img alt="imagemDaReceita" id="imagemReceita"></div>
+        <div class="imagem"><img alt="imagemDaReceita" id="imagemReceita" style="width: 800px; height: 400px;"></div>
         <div class="recipe-info">
         <div class="author-stars">
         <p class="nomeDoCriador"></p>
@@ -145,7 +209,7 @@
       <section>
         <h2 class="modoDePreparo">Modo de Preparo</h2>
         <p class="tempoDaReceita"></p>
-        <ol class="modoDePreparoLista"></ol>
+        <p class="modoDePreparoLista" style="max-width: 600px"></p>
       </section>
       <section>
         <h2 class="categoriasNome">Categorias</h2>

@@ -165,8 +165,6 @@ if (arrayUrl[arrayUrl.length - 1] === "index.html") {
   arrayUrl = arrayUrl.slice(0, arrayUrl.length - 2)
 }
 const baseUrl = arrayUrl.join().replaceAll(',', '')
-// const slashWherePathBegins = currentUrl.indexOf("/");
-// const baseUrl = currentUrl.slice(0, slashWherePathBegins);
 console.log(baseUrl)
 
 // estrutura do jQuery:

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../style.css">
 
   <!-- titulo da bajina na aba do navegador -->
-  <title>Gerenciar Usuario</title>
+  <title>Perfil do Usuário</title>
 </head>
 <!--  -->
 
@@ -125,11 +125,11 @@
 
   <section>
     <!-- seção para editar o usuario -->
-    <div class="row aling-items-center area-dados-usuario">
+    <div class="row aling-items-center area-dados-usuario container">
       <!-- linha para separar a imagem ao lado dos inputs -->
       <div class="col-md-5 fotoUsuario">
         <!-- div que ocupa 5 espaços de 12 -->
-        <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block" />
+        <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block" width="250px" />
         <!-- imagem de usuario sem foto -->
       </div>
       <div class="col-md-7 d-flex flex-column justify-content-center">
@@ -174,14 +174,14 @@
           <!-- abre uma lista para cada opção do menu -->
           <li class="nav-item">
             <!-- item da lista -->
-            <a class="nav-link" id="seguindoMenu" href="#" style="text-decoration: underline">Seguindo</a>
+            <a class="nav-link fs-6" id="seguindoMenu" href="#" style="text-decoration: underline">Seguindo</a>
             <!-- titulo e link da lista -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="seguidoresMenu" href="#">Seguidores</a>
+            <a class="nav-link fs-6" id="seguidoresMenu" href="#">Seguidores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="minhasReceitasMenu" href="#">Minhas Receitas</a>
+            <a class="nav-link fs-6" id="minhasReceitasMenu" href="#">Minhas Receitas</a>
           </li>
           <li class="nav-item onlyAdmin">
             <!-- item que sera mostrado apenas para o adm como sujere a classe -->
@@ -203,14 +203,95 @@
 
   <!-- SEÇÃO DE SEGUINDO -->
   <section id="seguindo">
-    <div class="text-center m-5 p-5" style="display: none">
-      <!-- esconda essa div caso essa aba tenha algum conteudo -->
-      <h1>Você não esta seguindo ninguem</h1>
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
+    <div class="text-center m-3 p-1">
+      <!-- adicionar logica condicional para renderizar conteudo ou mensagem abaixo-->
+      <!-- <h3>Você não está seguindo ninguém</h3> -->
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
         viewBox="0 0 16 16">
         <path
           d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z" />
-      </svg>
+      </svg> -->
+
+      <div class="row align-items-center border border-black rounded m-3">
+        <div class="col-md-1">
+          <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block p-1" width="80px" />
+        </div>
+        <div class="col-md-7 text-start">
+          Nome do Usuário
+        </div>
+        <div class="col-md-2">
+          <button id="abriSolicitacao" class="btn btn-verde btn-modal">
+            Visualizar Perfil
+          </button>
+        </div>
+        <div class="col-md-2">
+       
+          <button id="adicionarReceita" class="btn btn-laranja btn-modal">
+            Deixar de Seguir
+          </button>
+        </div>
+      </div>
+
+      <div class="row align-items-center border border-black rounded m-3">
+        <div class="col-md-1">
+          <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block p-1" width="80px" />
+        </div>
+        <div class="col-md-7 text-start">
+          Nome do Usuário
+        </div>
+        <div class="col-md-2">
+          <button id="abriSolicitacao" class="btn btn-verde btn-modal">
+            Visualizar Perfil
+          </button>
+        </div>
+        <div class="col-md-2">
+       
+          <button id="adicionarReceita" class="btn btn-laranja btn-modal">
+            Deixar de Seguir
+          </button>
+        </div>
+      </div>
+
+      <div class="row align-items-center border border-black rounded m-3">
+        <div class="col-md-1">
+          <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block p-1" width="80px" />
+        </div>
+        <div class="col-md-7 text-start">
+          Nome do Usuário
+        </div>
+        <div class="col-md-2">
+          <button id="abriSolicitacao" class="btn btn-verde btn-modal">
+            Visualizar Perfil
+          </button>
+        </div>
+        <div class="col-md-2">
+       
+          <button id="adicionarReceita" class="btn btn-laranja btn-modal">
+            Deixar de Seguir
+          </button>
+        </div>
+      </div>
+
+      <div class="row align-items-center border border-black rounded m-3">
+        <div class="col-md-1">
+          <img src="../imgs/usuarioSemFoto.png" alt="imagem do usuario" class="rounded mx-auto d-block p-1" width="80px" />
+        </div>
+        <div class="col-md-7 text-start">
+          Nome do Usuário
+        </div>
+        <div class="col-md-2">
+          <button id="abriSolicitacao" class="btn btn-verde btn-modal">
+            Visualizar Perfil
+          </button>
+        </div>
+        <div class="col-md-2">
+       
+          <button id="adicionarReceita" class="btn btn-laranja btn-modal">
+            Deixar de Seguir
+          </button>
+        </div>
+      </div>
+
     </div>
     <div class="conteudo-seguindo" >
       <!-- conteudo de seguindo -->
@@ -222,7 +303,7 @@
   <section id="seguidores" style="display: none">
     <div class="text-center m-5 p-5">
       <!-- esconda essa div caso essa aba tenha algum conteudo -->
-      <h1>Nenhum seguidor encontrado</h1>
+      <h3>Nenhum seguidor encontrado</h3>
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
         viewBox="0 0 16 16">
         <path
@@ -261,7 +342,7 @@
     <div class="receitas">
       <!-- div para quando não tiver receitas -->
       <div id="receitaVazio" class="text-center m-5 p-5">
-        <h1>Nenhuma receita encontrada</h1>
+        <h3>Nenhuma receita encontrada</h3>
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cake"
           viewBox="0 0 16 16">
           <path

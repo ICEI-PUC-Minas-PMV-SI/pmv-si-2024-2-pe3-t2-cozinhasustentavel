@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": "id-0.1564564123435",
-      "nome": "Laura",
+      "nome": "Laura da Silva",
       "email": "laura@email.com",
       "telefone": "19 99999 1111",
       "senha": "123456",
@@ -11,7 +11,7 @@
     },
     {
       "id": "id-0.6070722677759413",
-      "nome": "Sofia",
+      "nome": "Sofia Pitta",
       "email": "sofia@email.com",
       "telefone": "9999-1111",
       "senha": "senha",
@@ -19,8 +19,8 @@
       "receitasFavoritas": []
     },
     {
-      "id": "532523525235",
-      "nome": "Teste Teste",
+      "id": "id-0.532523525235",
+      "nome": " José Pereira",
       "telefone": "3333 4444",
       "papel": "normal",
       "receitasFavoritas": [],
@@ -28,8 +28,17 @@
       "senha": "teste"
     },
     {
+      "id": "id-0.9554798696675348",
+      "nome": "Cássio",
+      "email": "cassio@gmail.com",
+      "telefone": "(31)9 7178-5971",
+      "senha": "1234",
+      "papel": "normal",
+      "receitasFavoritas": []
+    },
+    {
       "id": "id-0.5734118903485486",
-      "nome": "luis",
+      "nome": "Luís",
       "email": "luis@gmail.com",
       "telefone": "975442361",
       "senha": "senha",
@@ -59,72 +68,212 @@
   ],
   "receitas": [
     {
-      "id": "id-0.643634745856",
-      "titulo": "Bolo de casca de banana",
-      "modoDePreparo": [
-        "Lave as bananas e descasque.",
-        "Separe 4 xícaras de casca para fazer a massa.",
-        "Bata as claras em neve e reserve, na geladeira.",
-        "Bata no liquidificador as gemas, o leite, a margarina, o açúcar e as cascas de banana.",
-        "Despeje essa mistura em uma vasilha e acrescente a farinha de rosca.",
-        "Mexa bem.",
-        "Por último, misture delicadamente as claras em neve e o fermento.",
-        "Despeje em uma assadeira untada com margarina e farinha.",
-        "Leve ao forno médio pré-aquecido por aproximadamente 40 minutos.",
-        "Queime o açúcar em uma panela e junte a água, fazendo um caramelo.",
-        "Acrescente as bananas cortadas em rodelas e o suco de limão.",
-        "Cozinhe.",
-        "Cubra o bolo ainda quente."
-      ],
-      "imagem": "bolo.webp",
+      "id": "id-0.354839273894",
+      "titulo": "Pão com Sementes de Abóbora",
+      "imagem": "pao-semente-de-abobora.jpg",
+      "descricao": "As sementes de abóbora são ricas em nutrientes e adicionam um sabor único a este pão artesanal. Toste as sementes levemente antes de adicioná-las à massa para realçar o sabor. Misture todos os ingredientes, deixe a massa crescer por 1 hora e asse em forno médio por 35 minutos até dourar.",
       "avaliacao": [
-        3.5,
-        4,
-        5
+        4.5,
+        5,
+        4
       ],
       "categorias": [
-        "id-0.476843976376315",
-        "id-0.8620386304963"
+        "id-0.4564564864563",
+        "id-0.78927987692"
       ],
       "ingredientes": [
         {
           "ingrediente": {
-            "id": "id-0.7589235723985",
-            "nome": "Casca de banana",
+            "id": "id-0.7589235723986",
+            "nome": "Sementes de abóbora",
             "categoria": [
-              "id-0.4564655313"
+              "id-0.78927987692"
             ]
           },
-          "medida": "unidades",
-          "quantidade": 3
-        },
+          "medida": "xícaras",
+          "quantidade": 0.5
+        }
+      ],
+      "idDoAutor": "id-0.1564564123435",
+      "tempo": "1 hora e 45 minutos"
+    },
+    {
+      "id": "id-0.294857193849",
+      "titulo": "Bolinho de Cascas de Batata",
+      "imagem": "bolinho-de-batata.jpg",
+      "descricao": "Este bolinho crocante aproveita cascas de batata que geralmente seriam descartadas. Lave bem as cascas, tempere com ervas a gosto, misture com farinha e ovo, e frite até ficarem dourados. Ideal como aperitivo sustentável e delicioso.",
+      "avaliacao": [
+        5,
+        4.5,
+        4.8
+      ],
+      "categorias": [
+        "id-0.6579236578265",
+        "id-0.053819505902"
+      ],
+      "ingredientes": [
         {
           "ingrediente": {
-            "id": "id-0.7589235723985",
-            "nome": "Casca de banana",
+            "id": "id-0.7589235723987",
+            "nome": "Cascas de batata",
             "categoria": [
-              "id-0.4564655313"
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "gramas",
+          "quantidade": 300
+        }
+      ],
+      "idDoAutor": "id-0.6070722677759413",
+      "tempo": "30 minutos"
+    },
+    {
+      "id": "id-0.573849273894",
+      "titulo": "Sopa Cremosa de Folhas de Cenoura",
+      "imagem": "sopa-de-cenoura.webp",
+      "descricao": "Transforme folhas de cenoura em uma sopa cremosa cheia de sabor e nutrientes. Refogue as folhas com cebola e alho, adicione batata para engrossar e finalize com creme de leite. Sirva com croutons para um toque especial.",
+      "avaliacao": [
+        4,
+        4.5,
+        5
+      ],
+      "categorias": [
+        "id-0.758293672893629",
+        "id-0.053819505902"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723989",
+            "nome": "Folhas de cenoura",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "xícaras",
+          "quantidade": 2
+        }
+      ],
+      "idDoAutor": "id-0.532523525235",
+      "tempo": "40 minutos"
+    },
+    {
+      "id": "id-0.823957139485",
+      "titulo": "Pesto de Talos de Brócolis",
+      "imagem": "pesto-de-brocolis.jfif",
+      "descricao": "Reaproveite talos de brócolis para fazer um pesto saboroso. Bata os talos no liquidificador com azeite, alho, castanhas e queijo parmesão. Sirva como molho para massas ou acompanhando torradas.",
+      "avaliacao": [
+        4.5,
+        5,
+        4
+      ],
+      "categorias": [
+        "id-0.4564564864563",
+        "id-0.053819505902"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723990",
+            "nome": "Talos de brócolis",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "xícaras",
+          "quantidade": 1
+        }
+      ],
+      "idDoAutor": "id-0.9554798696675348",
+      "tempo": "20 minutos"
+    },
+    {
+      "id": "id-0.937485273894",
+      "titulo": "Hambúrguer de Casca de Banana",
+      "imagem": "hamburguer-casca-de-banana.jfif",
+      "descricao": "Uma alternativa sustentável e deliciosa ao hambúrguer tradicional. Use cascas de banana bem lavadas, processe com temperos, cebola e alho. Misture com aveia para dar liga, modele os hambúrgueres e grelhe até dourar. Sirva no pão com seus acompanhamentos favoritos.",
+      "avaliacao": [
+        4.8,
+        5,
+        4.7
+      ],
+      "categorias": [
+        "id-0.6579236578265",
+        "id-0.053819505902"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723991",
+            "nome": "Cascas de banana",
+            "categoria": [
+              "id-0.053819505902"
             ]
           },
           "medida": "unidades",
           "quantidade": 3
         }
       ],
-      "idDoAutor": "id-0.1564564123435",
-      "tempo": "50 minutos"
+      "idDoAutor": "id-0.5734118903485486",
+      "tempo": "45 minutos"
     },
     {
-      "id": "id-0.645648463786",
-      "titulo": "Teste 1234",
-      "descricao": "Descrição da receita teste",
-      "imagem": "",
+      "id": "id-0.493849273994",
+      "titulo": "Farofa de Casca de Melancia",
+      "imagem": "farofa-de-melancia.jfif",
+      "descricao": "Transforme cascas de melancia em uma farofa crocante e nutritiva. Rale as cascas, refogue com cebola, alho, cenoura e adicione farinha de mandioca. Tempere com sal, pimenta e finalize com cheiro-verde.",
       "avaliacao": [
-        3.5,
-        4,
-        5
+        5,
+        4.8,
+        4.9
       ],
-      "categorias": [],
-      "ingredientes": [],
+      "categorias": [
+        "id-0.758293672893629",
+        "id-0.053819505902"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723992",
+            "nome": "Cascas de melancia",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "xícaras",
+          "quantidade": 2
+        }
+      ],
+      "idDoAutor": "id-0.43498082151533013",
+      "tempo": "30 minutos"
+    },
+    {
+      "id": "id-0.293857193823",
+      "titulo": "Doce de Casca de Laranja",
+      "imagem": "doce-de-laranja.jfif",
+      "descricao": "Um doce caseiro que reaproveita as cascas de laranja. Ferva as cascas para retirar o amargor, cozinhe com açúcar e cravo-da-índia até formar uma calda. Sirva como sobremesa ou acompanhamento para bolos e pães.",
+      "avaliacao": [
+        4.7,
+        5,
+        4.9
+      ],
+      "categorias": [
+        "id-0.4564564864563",
+        "id-0.053819505902"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723993",
+            "nome": "Cascas de laranja",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "unidades",
+          "quantidade": 4
+        }
+      ],
       "idDoAutor": "id-0.1564564123435",
       "tempo": "50 minutos"
     },
