@@ -90,7 +90,7 @@
               "id-0.78927987692"
             ]
           },
-          "medida": "xícaras",
+          "medida": "Xícara",
           "quantidade": 0.5
         }
       ],
@@ -150,7 +150,7 @@
               "id-0.053819505902"
             ]
           },
-          "medida": "xícaras",
+          "medida": "Xícara",
           "quantidade": 2
         }
       ],
@@ -180,7 +180,7 @@
               "id-0.053819505902"
             ]
           },
-          "medida": "xícaras",
+          "medida": "Xícara",
           "quantidade": 1
         }
       ],
@@ -240,7 +240,7 @@
               "id-0.053819505902"
             ]
           },
-          "medida": "xícaras",
+          "medida": "Xícara",
           "quantidade": 2
         }
       ],
@@ -250,77 +250,24 @@
     {
       "id": "id-0.293857193823",
       "titulo": "Doce de Casca de Laranja",
-      "imagem": "doce-de-laranja.jfif",
       "descricao": "Um doce caseiro que reaproveita as cascas de laranja. Ferva as cascas para retirar o amargor, cozinhe com açúcar e cravo-da-índia até formar uma calda. Sirva como sobremesa ou acompanhamento para bolos e pães.",
-      "avaliacao": [
-        4.7,
-        5,
-        4.9
-      ],
+      "imagem": "doce-de-laranja.jfif",
+      "avaliacao": [],
       "categorias": [
         "id-0.4564564864563",
-        "id-0.053819505902"
+        "id-0.78950175199613"
       ],
       "ingredientes": [
         {
           "ingrediente": {
             "id": "id-0.7589235723993",
-            "nome": "Cascas de laranja",
+            "nome": "Cogumelos comestíveis",
             "categoria": [
               "id-0.053819505902"
             ]
           },
-          "medida": "unidades",
-          "quantidade": 4
-        }
-      ],
-      "idDoAutor": "id-0.1564564123435",
-      "tempo": "50 minutos"
-    },
-    {
-      "id": "id-0.8704352945536913",
-      "titulo": "saguado",
-      "descricao": "mistura tudo e joga no forno",
-      "imagem": "1732491268637.png",
-      "avaliacao": [],
-      "categorias": [
-        "id-0.758293672893629",
-        "id-0.659165782165871",
-        "id-0.6579236578265"
-      ],
-      "ingredientes": [
-        {
-          "ingrediente": {
-            "id": "id-0.7589235724001",
-            "nome": "Laranja",
-            "categoria": [
-              "id-0.4564655313"
-            ]
-          },
-          "medida": "Mililitro",
-          "quantidade": "3"
-        },
-        {
-          "ingrediente": {
-            "id": "id-0.7589235723999",
-            "nome": "Frutas maduras",
-            "categoria": [
-              "id-0.4564655313"
-            ]
-          },
-          "medida": "1/3 de xícara",
-          "quantidade": "6"
-        },
-        {
-          "ingrediente": {
-            "id": "id-0.7589235723995",
-            "nome": "Sementes de girassol",
-            "categoria": [
-              "id-0.78927987692"
-            ]
-          },
-          "medida": "Centilitro",
-          "quantidade": "3"
+          "medida": null,
+          "quantidade": "4"
         }
       ],
       "idDoAutor": "id-0.9554798696675348"

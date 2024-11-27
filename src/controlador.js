@@ -30,11 +30,22 @@ async function getUsuarioById(id) {
   });
 
   return await response.json();
-  
+
 }
 
 async function getReceitas() {
   let response = await fetch("http://localhost:3003/receitas", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+
+  return await response.json();
+}
+
+async function getReceitaById(id) {
+  let response = await fetch(`http://localhost:3003/receitas/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -82,6 +93,40 @@ async function addReceita(nome, modoPreparo, nomeImg, categorias, ingredientes, 
       "ingredientes": ingredientes,
       "idDoAutor": idUsuario
     })
+  });
+
+
+  return await response.json();
+}
+
+async function editReceita(id, nome, modoPreparo, nomeImg, categorias, ingredientes, idUsuario) {
+  let response = await fetch(`http://localhost:3003/receitas/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      "id": `id-${Math.random()}`,
+      "titulo": nome,
+      "descricao": modoPreparo,
+      "imagem": nomeImg,
+      "avaliacao": [],
+      "categorias": categorias,
+      "ingredientes": ingredientes,
+      "idDoAutor": idUsuario
+    })
+  });
+
+
+  return await response.json();
+}
+
+async function delReceita(id) {
+  let response = await fetch(`http://localhost:3003/receitas/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    }
   });
 
 
@@ -167,6 +212,15 @@ if (arrayUrl[arrayUrl.length - 1] === "index.html") {
 const baseUrl = arrayUrl.join().replaceAll(',', '')
 console.log(baseUrl)
 
+// limpa campos receita 
+function limpaReceita() {
+  $("#nomeReceita").val("")
+  $("#modoPreparo").val("")
+  $("#fileInput").val("")
+  $(".containerIngredientes").empty()
+  $(".containerCategoria").empty()
+}
+
 // estrutura do jQuery:
 // $('seletor do elemnto').funçãoParaExecutar('parametro quando necessario')
 // ex.:
@@ -191,6 +245,11 @@ console.log(baseUrl)
 // alterne entre "admin" e "normal"
 let usuario = JSON.parse(localStorage.getItem("user"));
 console.log(usuario)
+
+// gambiarra para decidir se edita ou cria uma receita
+let statusReceita = ""
+let idReceitaEdit = ""
+let caminhoImagem = ""
 
 // Quando o document estiver totalmente carregado ele executara
 $(document).ready(async function () {
@@ -226,7 +285,10 @@ $(document).ready(async function () {
       $("#receitaVazio").hide()
       $("#receitaCheio").show()
 
-      receitas.forEach(async(receita) => {
+      receitas.forEach(async (receita) => {
+
+        // media da receita para avaliação
+        let avaliacao = receita.avaliacao.reduce((acc, val) => acc + val, 0) / receita.avaliacao.length
 
         // busca o usuario pelo id
         let usuarioSelecinado = await getUsuarioById(receita.idDoAutor)
@@ -236,31 +298,36 @@ $(document).ready(async function () {
         // console.log(receita)
         $("#conteudoReceita").append(
           `
-            <div class="row" id="conteudoReceita">
-              <div class="col-md-4">
-                <div class="card" style="width: 20rem; margin: 20px 0; border: none;">
-                  <div class="card-body">
-                    <h5 class="card-title">${receita.titulo}</h5>
-                    <div class="card-nomedata">
-                      <h6 class="card-title2">${usuarioSelecinado.nome}</h6>
-                      <h6 class="card-title3">15/10/2024</h6>
+            <div class="col-md-4 d-flex justify-content-center">
+              <div class="card" style="width: 20rem; margin: 20px 0; border: none;">
+                <div class="card-body">
+                  <h5 class="card-title">${receita.titulo}</h5>
+                  <div class="card-nomedata">
+                    <h6 class="card-title2">${usuarioSelecinado.nome}</h6>
+                    <h6 class="card-title3">15/10/2024</h6>
+                  </div>
+                  <img src="../imgs/${receita.imagem}" class="card-img-top" alt="Imagem receita" style="width: 100%;">
+                  <br>
+                  <p class="card-text">${receita.descricao}</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="rating">
+                        <span class="star ${avaliacao >= 1 ? "full" : avaliacao >= 0.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 2 ? "full" : avaliacao >= 1.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 3 ? "full" : avaliacao >= 2.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 4 ? "full" : avaliacao >= 3.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 5 ? "full" : avaliacao >= 4.5 ? "half" : ""}"></span>
+                      </div>
                     </div>
-                    <img src="../imgs/${receita.imagem}" class="card-img-top" alt="Imagem receita" style="width: 100%;">
-                    <br>
-                    <p class="card-text">${receita.descricao}</p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="rating">
-                          <span class="star ${receita.avaliacao}"></span>
-                          <span class="star full"></span>
-                          <span class="star full"></span>
-                          <span class="star full"></span>
-                          <span class="star half"></span>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <button class="btn btn-verde">Visualizar</button>
-                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button data-id="${receita.id}" class="btn btn-verde editReceita btn-modal" data-bs-toggle="modal"
+                        data-bs-target="#modalAddReceita">Editar</button>
+                    </div>
+                    <div class="col-md-6">
+                      <button data-id="${receita.id}" class="btn btn-laranja delReceita">Excluir</button>
                     </div>
                   </div>
                 </div>
@@ -273,6 +340,151 @@ $(document).ready(async function () {
       $("#receitaVazio").show()
       $("#receitaCheio").hide()
     }
+  })
+
+  // editar receita 
+  $(document).on("click", ".delReceita", async (e) => {
+    const btn = e.target
+
+    let id = $(btn).attr("data-id")
+
+    delReceita(id)
+
+    $("#minhasReceitasMenu").trigger("click")
+  })
+  // editar receita 
+  $(document).on("click", ".editReceita", async (e) => {
+
+    statusReceita = "edit"
+    limpaReceita()
+
+    const btn = e.target
+
+    let id = $(btn).attr("data-id")
+
+    idReceitaEdit = id
+
+    const receita = await getReceitaById(id)
+
+    $("#nomeReceita").val(receita.titulo)
+    $("#modoPreparo").val(receita.descricao)
+    caminhoImagem = receita.imagem
+
+    receita.ingredientes.forEach(async (ingrediente) => {
+
+      let option = "";
+
+      let ingredientes = await getIngredientes()
+
+      // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
+      ingredientes.forEach((ingrediente) => {
+        option += `
+            <option value="${ingrediente.id}">${ingrediente.nome}</option>
+            `;
+      });
+
+      $(".containerIngredientes").append(`
+          <div class="row">
+              <div class="col-md-7">
+                  <label for="ingrediente">Ingrediente:</label>
+                  <select name="ingrediente" class="form-control ingrediente">
+                      <option value=""></option>
+                      ${option}
+                  </select>
+              </div>
+              <div class="col-md-2">
+                  <label for="quantidade">Quantidade:</label>
+                  <input type="number" name="quantidade"
+                      class="form-control quantidade">
+              </div>
+              <div class="col-md-2">
+                  <label for="medidas">Medidas:</label>
+                  <select name="medidas" class="form-control medidas">
+                      <option value=""></option>
+                      <option value="Litro">Litro</option>
+                      <option value="Mililitro">Mililitro</option>
+                      <option value="Xícara">Xícara</option>
+                      <option value="Meia xícara">Meia xícara</option>
+                      <option value="1/3 de xícara">1/3 de xícara</option>
+                      <option value="1/4 de xícara">1/4 de xícara</option>
+                      <option value="Medidas de Colheres">Medidas de Colheres</option>
+                      <option value="Colher de sopa">Colher de sopa</option>
+                      <option value="Colher de sobremesa">Colher de sobremesa</option>
+                      <option value="Colher de chá">Colher de chá</option>
+                      <option value="Colher de café">Colher de café</option>
+                      <option value="Pitada">Pitada</option>
+                      <option value="Punhado">Punhado</option>
+                      <option value="Barrica">Barrica</option>
+                      <option value="Mililitro">Mililitro</option>
+                      <option value="Centilitro">Centilitro</option>
+                      <option value="Decilitro">Decilitro</option>
+                      <option value="Gramas">Gramas</option>
+                      <option value="Quilograma">Quilograma</option>
+                  </select>
+              </div>
+              <div class="col-md-1">
+                  <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <button class="btn btn-danger deleteRow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                      </svg>
+                  </button>
+              </div>
+          </div>
+      `)
+      $(".ingrediente").last().val(ingrediente.ingrediente.id)
+      $(".quantidade").last().val(ingrediente.quantidade)
+      $(".medidas").last().val(ingrediente.medida)
+    })
+
+    receita.categorias.forEach(async (categoria) => {
+
+      let option = ""
+
+      let categorias = (await getCategorias()).recipeCategories
+      // laço de repetição que navega para cada um dos itens da lista e adiciona na opção
+      categorias.forEach((categoria) => {
+        option += `
+              <option value="${categoria.id}">${categoria.nome}</option>
+              `
+      })
+
+      // navega ate a div que recebera os categorias e adiciona os inputs necessarios para preenchimento
+      // $(btn): localiza quem recebeu o clik para rodar a função
+      // .parent(): pega o pai do elemento selecionado
+      // .next(): pega o proximo irmão do elemento selecionado
+      // .find(PARAMETRO): procura dentro do elemento selecionado todos os filhos que correspondem ao parametro (filho, neto, bisneto...)
+      // .append(HTML): insere no final do elemento selecionado o html que for passado como paramentro (não sobrescreve o conteudo ja contido no elemnto)
+      $('.containerCategoria').append(`
+              <div class="row">
+                  <div class="col-md-11">
+                      <label for="categoria">Categoria:</label>
+                      <select name="categorias" class="form-control categorias">
+                          <option value=""></option>
+                          ${option}
+                      </select>
+                  </div>
+                  <div class="col-md-1">
+                      <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <button class="btn btn-danger deleteRow">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                          <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+          `)
+
+      $(".categorias").last().val(categoria)
+
+    })
+
+
+  })
+
+  $(document).on("click", "#adicionarReceita", () => {
+    statusReceita = "add"
+    limpaReceita()
   })
 
   // aqui
@@ -304,12 +516,19 @@ $(document).ready(async function () {
     let nome = $("#nomeReceita").val()
     let modoPreparo = $("#modoPreparo").val()
 
-    if (await uploadImagem()) {
-      await addReceita(nome, modoPreparo, nomeImagem, categorias, ingredientes, usuario.id)
-      return true
-    }
+    if (statusReceita == "add") {
 
-    alert("Receita não criada")
+      if (await uploadImagem()) {
+        await addReceita(nome, modoPreparo, nomeImagem, categorias, ingredientes, usuario.id)
+        $("#modalAddReceita").modal('hide')
+        return true
+      }
+
+      alert("Receita não criada")
+    } else {
+      await editReceita(idReceitaEdit, nome, modoPreparo, caminhoImagem, categorias, ingredientes, usuario.id)
+      $("#modalAddReceita").modal('hide')
+    }
   })
 
   // Logout:
