@@ -410,8 +410,7 @@ $(document).ready(async function () {
                   <img src="../imgs/${receita.imagem}" class="card-img-top" alt="Imagem receita" style="width: 100%;">
                   <br>
                   <p class="card-text">${receita.descricao}</p>
-                  <div class="row">
-                    <div class="col-md-6">
+                    <div style="display: flex; align-items: center; justify-content: space-around; width: 100%">
                       <div class="rating">
                         <span class="star ${avaliacao >= 1 ? "full" : avaliacao >= 0.5 ? "half" : ""}"></span>
                         <span class="star ${avaliacao >= 2 ? "full" : avaliacao >= 1.5 ? "half" : ""}"></span>
@@ -419,18 +418,11 @@ $(document).ready(async function () {
                         <span class="star ${avaliacao >= 4 ? "full" : avaliacao >= 3.5 ? "half" : ""}"></span>
                         <span class="star ${avaliacao >= 5 ? "full" : avaliacao >= 4.5 ? "half" : ""}"></span>
                       </div>
+                      <a href="${baseUrl}detalhes/detalhes.html">
+                        <button data-id="${receita.id}" class="btn btn-verde visualizar">Visualizar</button>
+                      </a>
                     </div>
-                  </div>
                   <br>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <button data-id="${receita.id}" class="btn btn-verde editReceita btn-modal" data-bs-toggle="modal"
-                        data-bs-target="#modalAddReceita">Editar</button>
-                    </div>
-                    <div class="col-md-6">
-                      <button data-id="${receita.id}" class="btn btn-laranja delReceita">Excluir</button>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
