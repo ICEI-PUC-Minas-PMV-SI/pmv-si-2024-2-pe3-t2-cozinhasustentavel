@@ -5,7 +5,8 @@ heartIcon.addEventListener('click', async () => {
   const user = JSON.parse(localStorage.getItem("user"))
   const heartClass = heartIcon.className
   const estaClicado = heartClass.indexOf("clicked") >= 0
-  const receitaSelecionada = await buscarDadosDaReceita()
+  const idDaReceita = localStorage.getItem("receitaSelecionada")
+  const receitaSelecionada = await buscarDadosDaReceita(idDaReceita)
   if (!estaClicado) {
     user.receitasFavoritas = user.receitasFavoritas.filter((receitaID) => {
       return receitaID != receitaSelecionada.id

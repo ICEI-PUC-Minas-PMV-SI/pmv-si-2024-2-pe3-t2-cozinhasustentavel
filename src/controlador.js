@@ -372,6 +372,77 @@ $(document).ready(async function () {
     }
   })
 
+  $("#receitasFavoritasMenu").click(async () => {
+
+    $("#conteudoReceitasFavoritas").empty()
+
+    let receitas = await getReceitas()
+    receitas = receitas.filter((receita) => {
+      return usuario.receitasFavoritas.includes(receita.id);
+    })
+    console.log(receitas)
+
+    if (receitas.length > 0) {
+      $("#receitasFavoritasVazio").hide()
+      $("#receitasFavoritasCheio").show()
+
+      receitas.forEach(async (receita) => {
+
+        // media da receita para avaliação
+        let avaliacao = receita.avaliacao.reduce((acc, val) => acc + val, 0) / receita.avaliacao.length
+
+        // busca o usuario pelo id
+        let usuarioSelecinado = await getUsuarioById(receita.idDoAutor)
+
+        // console.log(receita.idDoAutor)
+        console.log(usuarioSelecinado)
+        // console.log(receita)
+        $("#conteudoReceitasFavoritas").append(
+          `
+            <div class="col-md-4 d-flex justify-content-center">
+              <div class="card" style="width: 20rem; margin: 20px 0; border: none;">
+                <div class="card-body">
+                  <h5 class="card-title">${receita.titulo}</h5>
+                  <div class="card-nomedata">
+                    <h6 class="card-title2">${usuarioSelecinado.nome}</h6>
+                    <h6 class="card-title3">15/10/2024</h6>
+                  </div>
+                  <img src="../imgs/${receita.imagem}" class="card-img-top" alt="Imagem receita" style="width: 100%;">
+                  <br>
+                  <p class="card-text">${receita.descricao}</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="rating">
+                        <span class="star ${avaliacao >= 1 ? "full" : avaliacao >= 0.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 2 ? "full" : avaliacao >= 1.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 3 ? "full" : avaliacao >= 2.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 4 ? "full" : avaliacao >= 3.5 ? "half" : ""}"></span>
+                        <span class="star ${avaliacao >= 5 ? "full" : avaliacao >= 4.5 ? "half" : ""}"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button data-id="${receita.id}" class="btn btn-verde editReceita btn-modal" data-bs-toggle="modal"
+                        data-bs-target="#modalAddReceita">Editar</button>
+                    </div>
+                    <div class="col-md-6">
+                      <button data-id="${receita.id}" class="btn btn-laranja delReceita">Excluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+        )
+      })
+    } else {
+      $("#receitasFavoritasVazio").show()
+      $("#receitasFavoritasCheio").hide()
+    }
+  })
+
   // editar receita 
   $(document).on("click", ".delReceita", async (e) => {
     const btn = e.target
@@ -858,6 +929,7 @@ $(document).ready(async function () {
     $("#seguindo").show(); // mostra o elemento removendo o "display: none" no style
     $("#seguidores").hide(); // esconde o elemento inserindo o "display: none" no style
     $("#minhasReceitas").hide();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
@@ -870,6 +942,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").show();
     $("#minhasReceitas").hide();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
@@ -881,17 +954,31 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").show();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
     $("#solicitacoes").hide();
     $("#minhasReceitasMenu").attr("style", "text-decoration: underline;");
   });
+  $("#receitasFavoritasMenu").click(() => {
+    $(".nav-link").removeAttr("style");
+    $("#seguindo").hide();
+    $("#seguidores").hide();
+    $("#minhasReceitas").hide();
+    $("#receitasFavoritas").show();
+    $("#categoriaReceitas").hide();
+    $("#categoriasIngredientes").hide();
+    $("#ingredientes").hide();
+    $("#solicitacoes").hide();
+    $("#receitasFavoritasMenu").attr("style", "text-decoration: underline;");
+  });
   $("#categoriaReceitaMenu").click(() => {
     $(".nav-link").removeAttr("style");
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").show();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
@@ -903,6 +990,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").show();
     $("#ingredientes").hide();
@@ -917,6 +1005,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").show();
@@ -928,6 +1017,7 @@ $(document).ready(async function () {
     $("#seguindo").hide();
     $("#seguidores").hide();
     $("#minhasReceitas").hide();
+    $("#receitasFavoritas").hide();
     $("#categoriaReceitas").hide();
     $("#categoriasIngredientes").hide();
     $("#ingredientes").hide();
