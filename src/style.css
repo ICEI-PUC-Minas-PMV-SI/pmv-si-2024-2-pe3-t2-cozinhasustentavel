@@ -317,3 +317,11 @@ footer {
 }
 
 /* Fim style card */
+
+/* Seguidores */
+.container-seguidor {
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}

@@ -64,6 +64,15 @@
       "senha": "1234",
       "papel": "normal",
       "receitasFavoritas": []
+    },
+    {
+      "id": "id-0.29605446221440435",
+      "nome": "salandrino",
+      "email": "salandrino@zedamanga.com",
+      "telefone": "123456789",
+      "senha": "1",
+      "papel": "normal",
+      "receitasFavoritas": []
     }
   ],
   "receitas": [
