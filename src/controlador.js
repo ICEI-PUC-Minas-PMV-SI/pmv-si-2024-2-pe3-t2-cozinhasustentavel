@@ -1,5 +1,4 @@
 async function editarUsuario(user) {
-  console.log(user)
   await fetch(`http://localhost:3003/usuarios/${user.id}`, {
     method: "PUT", headers: {
       "Content-Type": "application/json",
@@ -263,6 +262,34 @@ $(document).ready(async function () {
   } else {
     $(".onlyAdmin").hide();
   }
+
+  // Adiciona informações do usuário nos inputs
+  $("#nomeUsuario").val(usuario.nome);
+  $("#emailUsuario").val(usuario.email);
+  $("#telefoneUsuario").val(usuario.telefone);
+
+  // Editar dados do usuário ao clicar botão
+  $("#editar-dados-usuario").on("click", async function () {
+
+    const nome = $("#nomeUsuario").val();
+    const email = $("#emailUsuario").val();
+    const telefone = $("#telefoneUsuario").val();
+
+    if (!nome || !email || !telefone) {
+      showErrorMessage("Campos devem ser preenchidos")
+    } else {
+      const novoUsuario = {
+        ...usuario,
+        nome,
+        email,
+        telefone,
+      }
+
+      localStorage.setItem("user", JSON.stringify(novoUsuario));
+      await editarUsuario(novoUsuario);
+    }
+  });
+
   // Quando o botão de menu (hamburger) for clicado
   $("#menu-toggle").click(function () {
     // Alterna a exibição da lista
@@ -280,6 +307,9 @@ $(document).ready(async function () {
     $("#conteudoReceita").empty()
 
     let receitas = await getReceitas()
+    receitas = receitas.filter((receita) => {
+      return receita.idDoAutor === usuario.id
+    })
 
     if (receitas.length > 0) {
       $("#receitaVazio").hide()
@@ -403,6 +433,7 @@ $(document).ready(async function () {
                       <option value=""></option>
                       <option value="Litro">Litro</option>
                       <option value="Mililitro">Mililitro</option>
+                      <option value="Unidade">Unidade</option>
                       <option value="Xícara">Xícara</option>
                       <option value="Meia xícara">Meia xícara</option>
                       <option value="1/3 de xícara">1/3 de xícara</option>

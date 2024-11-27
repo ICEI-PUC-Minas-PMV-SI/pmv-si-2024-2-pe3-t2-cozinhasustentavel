@@ -48,24 +48,6 @@
       "receitasFavoritas": []
     },
     {
-      "id": "id-0.9554798696675348",
-      "nome": "cassio",
-      "email": "cassio@gmail.com",
-      "telefone": "(31)9 7178-5971",
-      "senha": "1234",
-      "papel": "normal",
-      "receitasFavoritas": []
-    },
-    {
-      "id": "id-0.29605446221440435",
-      "nome": "salandrino",
-      "email": "salandrino@zedamanga.com",
-      "telefone": "123456789",
-      "senha": "1",
-      "papel": "normal",
-      "receitasFavoritas": []
-    },
-    {
       "id": "id-0.6070722677759413",
       "nome": "Sofia Pitta",
       "email": "sofia@email.com.br",
@@ -130,7 +112,7 @@
           "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.532523525235"
     },
     {
       "id": "id-0.294857193849",
@@ -177,7 +159,7 @@
           "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.1564564123435"
     },
     {
       "id": "id-0.823957139485",
@@ -235,7 +217,7 @@
           "quantidade": "200"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.9554798696675348"
     },
     {
       "id": "id-0.823457193891",
@@ -280,7 +262,7 @@
           "quantidade": "50"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.5734118903485486"
     },
     {
       "id": "id-0.937485273894",
@@ -324,7 +306,7 @@
           "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.43498082151533013"
     },
     {
       "id": "id-0.493849273994",
@@ -449,7 +431,7 @@
           "quantidade": "300"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.1564564123435"
     },
     {
       "id": "id-0.573849273894",
@@ -506,7 +488,7 @@
           "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.6070722677759413"
+      "idDoAutor": "id-0.532523525235"
     }
   ],
   "categorias": [

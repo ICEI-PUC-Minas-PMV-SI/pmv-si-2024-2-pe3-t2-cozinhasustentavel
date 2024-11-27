@@ -2,58 +2,56 @@ const indexCurrentUrl = window.location.href;
 let indexArrayUrl = indexCurrentUrl.split(/(?<=\/)/);
 
 if (indexArrayUrl[indexArrayUrl.length - 1] === "index.html") {
-    indexArrayUrl = indexArrayUrl.slice(0, indexArrayUrl.length - 1);
+  indexArrayUrl = indexArrayUrl.slice(0, indexArrayUrl.length - 1);
 
 } else {
-    indexArrayUrl = indexArrayUrl.slice(0, indexArrayUrl.length - 2);
+  indexArrayUrl = indexArrayUrl.slice(0, indexArrayUrl.length - 2);
 }
 const indexBaseUrl = indexArrayUrl.join().replaceAll(',', '');
 
 $(document).ready(async function () {
-    const receitas = await getReceitas();
+  const receitas = await getRecipes();
+  const usuarios = await getUsuarios();
+  const receitasComNomeDoAutor = receitas.map((receita) => {
+    return {
+      ...receita,
+      nomeDoAutor: usuarios.filter(u => u.id === receita.idDoAutor)[0].nome
+    }
+  })
 
-    const usuarios = await getUsuarios();
+  $("#receitas-container").append(mapReceitas(receitasComNomeDoAutor));
 
-    const receitasComNomeDoAutor = receitas.map((receita) => {
-        return {
-            ...receita,
-            nomeDoAutor: usuarios.filter(u => u.id === receita.idDoAutor)[0].nome
-        }
-    })
-
-    $("#receitas-container").append(mapReceitas(receitasComNomeDoAutor));
-
-    $(".visualizar").on("click", function () {
-        const id = $(this).data("id");
-        localStorage.setItem("receitaSelecionada", id);
-    })
+  $(".visualizar").on("click", function () {
+    const id = $(this).data("id");
+    localStorage.setItem("receitaSelecionada", id);
+  })
 });
 
-const getReceitas = async () => {
-    const response = await fetch("http://localhost:3003/receitas", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
+const getRecipes = async () => {
+  const response = await fetch("http://localhost:3003/receitas", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
 
-    return await response.json();
+  return await response.json();
 }
 
 const getUsuarios = async () => {
-    const response = await fetch("http://localhost:3003/usuarios", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
+  const response = await fetch("http://localhost:3003/usuarios", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
 
-    return await response.json();
+  return await response.json();
 }
 
 const mapReceitas = (receitas) => {
-    const receitasList = receitas.map((receita) => {
-        return `<div class="col-md-4">
+  const receitasList = receitas.map((receita) => {
+    return `<div class="col-md-4">
         <div class="card" style="width: 20rem; margin: 20px 0; border: none;">
           <div class="card-body">
             <h5 class="card-title">${receita.titulo}</h5>
@@ -83,7 +81,7 @@ const mapReceitas = (receitas) => {
           </div>
         </div>        
       </div>`
-    })
+  })
 
-    return receitasList.join().replaceAll(",", "");
+  return receitasList.join().replaceAll(",", "");
 }

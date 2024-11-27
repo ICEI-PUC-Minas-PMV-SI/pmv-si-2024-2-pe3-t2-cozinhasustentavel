@@ -159,6 +159,12 @@ p {
 
 .nav-item {
     border: 1px solid black;
+    border-right: none;
+    border-bottom: none;
+}
+
+.nav-item:last-child {
+    border-right: 1px solid black;
 }
 
 .nav-link {
