@@ -10,15 +10,6 @@
       "papel": "normal"
     },
     {
-      "id": "id-0.6070722677759413",
-      "nome": "Sofia Pitta",
-      "email": "sofia@email.com",
-      "telefone": "9999-1111",
-      "senha": "senha",
-      "papel": "admin",
-      "receitasFavoritas": []
-    },
-    {
       "id": "id-0.532523525235",
       "nome": " José Pereira",
       "telefone": "3333 4444",
@@ -73,22 +64,27 @@
       "senha": "1",
       "papel": "normal",
       "receitasFavoritas": []
+    },
+    {
+      "id": "id-0.6070722677759413",
+      "nome": "Sofia Pitta",
+      "email": "sofia@email.com.br",
+      "telefone": "19 99999 1111",
+      "senha": "senha",
+      "papel": "admin",
+      "receitasFavoritas": []
     }
   ],
   "receitas": [
     {
       "id": "id-0.354839273894",
       "titulo": "Pão com Sementes de Abóbora",
-      "imagem": "pao-semente-de-abobora.jpg",
       "descricao": "As sementes de abóbora são ricas em nutrientes e adicionam um sabor único a este pão artesanal. Toste as sementes levemente antes de adicioná-las à massa para realçar o sabor. Misture todos os ingredientes, deixe a massa crescer por 1 hora e asse em forno médio por 35 minutos até dourar.",
-      "avaliacao": [
-        4.5,
-        5,
-        4
-      ],
+      "imagem": "pao-semente-de-abobora.jpg",
+      "avaliacao": [],
       "categorias": [
         "id-0.4564564864563",
-        "id-0.78927987692"
+        "id-0.6579236578265"
       ],
       "ingredientes": [
         {
@@ -100,25 +96,51 @@
             ]
           },
           "medida": "Xícara",
-          "quantidade": 0.5
+          "quantidade": "0.5"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723991",
+            "nome": "Sementes de chia",
+            "categoria": [
+              "id-0.78927987692"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "0.5"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723997",
+            "nome": "Farinha de grilo",
+            "categoria": []
+          },
+          "medida": "Xícara",
+          "quantidade": "2"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724032",
+            "nome": "Leite de amêndoas",
+            "categoria": [
+              "id-0.453456465878"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.1564564123435",
-      "tempo": "1 hora e 45 minutos"
+      "idDoAutor": "id-0.6070722677759413"
     },
     {
       "id": "id-0.294857193849",
       "titulo": "Bolinho de Cascas de Batata",
-      "imagem": "bolinho-de-batata.jpg",
       "descricao": "Este bolinho crocante aproveita cascas de batata que geralmente seriam descartadas. Lave bem as cascas, tempere com ervas a gosto, misture com farinha e ovo, e frite até ficarem dourados. Ideal como aperitivo sustentável e delicioso.",
-      "avaliacao": [
-        5,
-        4.5,
-        4.8
-      ],
+      "imagem": "bolinho-de-batata.jpg",
+      "avaliacao": [],
       "categorias": [
         "id-0.6579236578265",
-        "id-0.053819505902"
+        "id-0.659165782165871"
       ],
       "ingredientes": [
         {
@@ -129,56 +151,43 @@
               "id-0.053819505902"
             ]
           },
-          "medida": "gramas",
-          "quantidade": 300
-        }
-      ],
-      "idDoAutor": "id-0.6070722677759413",
-      "tempo": "30 minutos"
-    },
-    {
-      "id": "id-0.573849273894",
-      "titulo": "Sopa Cremosa de Folhas de Cenoura",
-      "imagem": "sopa-de-cenoura.webp",
-      "descricao": "Transforme folhas de cenoura em uma sopa cremosa cheia de sabor e nutrientes. Refogue as folhas com cebola e alho, adicione batata para engrossar e finalize com creme de leite. Sirva com croutons para um toque especial.",
-      "avaliacao": [
-        4,
-        4.5,
-        5
-      ],
-      "categorias": [
-        "id-0.758293672893629",
-        "id-0.053819505902"
-      ],
-      "ingredientes": [
+          "medida": "Gramas",
+          "quantidade": "500"
+        },
         {
           "ingrediente": {
-            "id": "id-0.7589235723989",
-            "nome": "Folhas de cenoura",
+            "id": "id-0.7589235723993",
+            "nome": "Cogumelos comestíveis",
             "categoria": [
               "id-0.053819505902"
             ]
           },
-          "medida": "Xícara",
-          "quantidade": 2
+          "medida": "Gramas",
+          "quantidade": "200"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724005",
+            "nome": "Alho-poró",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "Meia xícara",
+          "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.532523525235",
-      "tempo": "40 minutos"
+      "idDoAutor": "id-0.6070722677759413"
     },
     {
       "id": "id-0.823957139485",
       "titulo": "Pesto de Talos de Brócolis",
-      "imagem": "pesto-de-brocolis.jfif",
       "descricao": "Reaproveite talos de brócolis para fazer um pesto saboroso. Bata os talos no liquidificador com azeite, alho, castanhas e queijo parmesão. Sirva como molho para massas ou acompanhando torradas.",
-      "avaliacao": [
-        4.5,
-        5,
-        4
-      ],
+      "imagem": "pesto-de-brocolis.jfif",
+      "avaliacao": [],
       "categorias": [
-        "id-0.4564564864563",
-        "id-0.053819505902"
+        "id-0.85273895728957928",
+        null
       ],
       "ingredientes": [
         {
@@ -190,71 +199,213 @@
             ]
           },
           "medida": "Xícara",
-          "quantidade": 1
-        }
-      ],
-      "idDoAutor": "id-0.9554798696675348",
-      "tempo": "20 minutos"
-    },
-    {
-      "id": "id-0.937485273894",
-      "titulo": "Hambúrguer de Casca de Banana",
-      "imagem": "hamburguer-casca-de-banana.jfif",
-      "descricao": "Uma alternativa sustentável e deliciosa ao hambúrguer tradicional. Use cascas de banana bem lavadas, processe com temperos, cebola e alho. Misture com aveia para dar liga, modele os hambúrgueres e grelhe até dourar. Sirva no pão com seus acompanhamentos favoritos.",
-      "avaliacao": [
-        4.8,
-        5,
-        4.7
-      ],
-      "categorias": [
-        "id-0.6579236578265",
-        "id-0.053819505902"
-      ],
-      "ingredientes": [
+          "quantidade": "1"
+        },
         {
           "ingrediente": {
-            "id": "id-0.7589235723991",
-            "nome": "Cascas de banana",
-            "categoria": [
-              "id-0.053819505902"
-            ]
-          },
-          "medida": "unidades",
-          "quantidade": 3
-        }
-      ],
-      "idDoAutor": "id-0.5734118903485486",
-      "tempo": "45 minutos"
-    },
-    {
-      "id": "id-0.493849273994",
-      "titulo": "Farofa de Casca de Melancia",
-      "imagem": "farofa-de-melancia.jfif",
-      "descricao": "Transforme cascas de melancia em uma farofa crocante e nutritiva. Rale as cascas, refogue com cebola, alho, cenoura e adicione farinha de mandioca. Tempere com sal, pimenta e finalize com cheiro-verde.",
-      "avaliacao": [
-        5,
-        4.8,
-        4.9
-      ],
-      "categorias": [
-        "id-0.758293672893629",
-        "id-0.053819505902"
-      ],
-      "ingredientes": [
-        {
-          "ingrediente": {
-            "id": "id-0.7589235723992",
-            "nome": "Cascas de melancia",
+            "id": "id-0.7589235724002",
+            "nome": "Acelga",
             "categoria": [
               "id-0.053819505902"
             ]
           },
           "medida": "Xícara",
-          "quantidade": 2
+          "quantidade": "1"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723992",
+            "nome": "Alga marinha",
+            "categoria": [
+              "id-0.456453135484641"
+            ]
+          },
+          "medida": "Gramas",
+          "quantidade": "100"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724033",
+            "nome": "Castanha de caju",
+            "categoria": [
+              "id-0.453456465878"
+            ]
+          },
+          "medida": "Gramas",
+          "quantidade": "200"
         }
       ],
-      "idDoAutor": "id-0.43498082151533013",
-      "tempo": "30 minutos"
+      "idDoAutor": "id-0.6070722677759413"
+    },
+    {
+      "id": "id-0.823457193891",
+      "titulo": "Patê de Folhas de Beterraba",
+      "descricao": "Transforme folhas de beterraba em um patê rico em sabor. Refogue as folhas com alho e cebola, bata no liquidificador com cream cheese, sal e pimenta. Sirva com torradas ou como recheio de sanduíches.",
+      "imagem": "pate-beterraba.jfif",
+      "avaliacao": [],
+      "categorias": [
+        "id-0.659165782165871",
+        "id-0.85273895728957928"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724035",
+            "nome": "Batata-doce",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "1"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723988",
+            "nome": "Folhas de beterraba",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "2"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723998",
+            "nome": "Tapioca",
+            "categoria": []
+          },
+          "medida": "Gramas",
+          "quantidade": "50"
+        }
+      ],
+      "idDoAutor": "id-0.6070722677759413"
+    },
+    {
+      "id": "id-0.937485273894",
+      "titulo": "Hambúrguer de Casca de Banana",
+      "descricao": "Uma alternativa sustentável e deliciosa ao hambúrguer tradicional. Use cascas de banana bem lavadas, processe com temperos, cebola e alho. Misture com aveia para dar liga, modele os hambúrgueres e grelhe até dourar. Sirva no pão com seus acompanhamentos favoritos.",
+      "imagem": "hamburguer-casca-de-banana.jfif",
+      "avaliacao": [],
+      "categorias": [
+        "id-0.6579236578265"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723996",
+            "nome": "Feijão-mexicano",
+            "categoria": []
+          },
+          "medida": "Gramas",
+          "quantidade": "200"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723985",
+            "nome": "Casca de banana",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "Gramas",
+          "quantidade": "500"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724009",
+            "nome": "Amendoim",
+            "categoria": [
+              "id-0.453456465878"
+            ]
+          },
+          "medida": "Meia xícara",
+          "quantidade": "1"
+        }
+      ],
+      "idDoAutor": "id-0.6070722677759413"
+    },
+    {
+      "id": "id-0.493849273994",
+      "titulo": "Farofa de Casca de Melancia",
+      "descricao": "Transforme cascas de melancia em uma farofa crocante e nutritiva. Rale as cascas, refogue com cebola, alho, cenoura e adicione farinha de mandioca. Tempere com sal, pimenta e finalize com cheiro-verde.",
+      "imagem": "farofa-de-melancia.jfif",
+      "avaliacao": [],
+      "categorias": [
+        "id-0.6579236578265",
+        "id-0.758927589237958852739"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724037",
+            "nome": "Morango",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "2"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724015",
+            "nome": "Melado de cana",
+            "categoria": []
+          },
+          "medida": "Mililitro",
+          "quantidade": "200"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724000",
+            "nome": "Coco",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "1/3 de xícara",
+          "quantidade": "2"
+        }
+      ],
+      "idDoAutor": "id-0.6070722677759413"
+    },
+    {
+      "id": "id-0.853748593894",
+      "titulo": "Chips de Talos de Couve",
+      "descricao": "Faça um snack saudável e crocante com talos de couve. Corte os talos em tiras finas, tempere com azeite, sal e páprica. Asse no forno até ficarem crocantes e aproveite como um lanche rápido e nutritivo.",
+      "imagem": "chips-de-couve.jfif",
+      "avaliacao": [],
+      "categorias": [
+        "id-0.6579236578265",
+        "id-0.659165782165871"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723990",
+            "nome": "Talos de brócolis",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "2"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723992",
+            "nome": "Alga marinha",
+            "categoria": [
+              "id-0.456453135484641"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "2"
+        }
+      ],
+      "idDoAutor": "id-0.6070722677759413"
     },
     {
       "id": "id-0.293857193823",
@@ -263,26 +414,117 @@
       "imagem": "doce-de-laranja.jfif",
       "avaliacao": [],
       "categorias": [
-        "id-0.4564564864563",
-        "id-0.78950175199613"
+        "id-0.476843976376315"
       ],
       "ingredientes": [
         {
           "ingrediente": {
-            "id": "id-0.7589235723993",
-            "nome": "Cogumelos comestíveis",
+            "id": "id-0.7589235724001",
+            "nome": "Laranja",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "Unidade",
+          "quantidade": "4"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724019",
+            "nome": "Açúcar mascavo",
+            "categoria": []
+          },
+          "medida": "Xícara",
+          "quantidade": "2"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724000",
+            "nome": "Coco",
+            "categoria": [
+              "id-0.4564655313"
+            ]
+          },
+          "medida": "Gramas",
+          "quantidade": "300"
+        }
+      ],
+      "idDoAutor": "id-0.6070722677759413"
+    },
+    {
+      "id": "id-0.573849273894",
+      "titulo": "Sopa Cremosa de Folhas de Cenoura",
+      "descricao": "Transforme folhas de cenoura em uma sopa cremosa cheia de sabor e nutrientes. Refogue as folhas com cebola e alho, adicione batata para engrossar e finalize com creme de leite. Sirva com croutons para um toque especial.",
+      "imagem": "sopa-de-cenoura.webp",
+      "avaliacao": [],
+      "categorias": [
+        "id-0.8537589279852"
+      ],
+      "ingredientes": [
+        {
+          "ingrediente": {
+            "id": "id-0.7589235723989",
+            "nome": "Folhas de cenoura",
             "categoria": [
               "id-0.053819505902"
             ]
           },
-          "medida": null,
-          "quantidade": "4"
+          "medida": "Xícara",
+          "quantidade": "2"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724003",
+            "nome": "Couve-flor",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "Gramas",
+          "quantidade": "400"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724018",
+            "nome": "Gergelim",
+            "categoria": [
+              "id-0.78927987692"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "1"
+        },
+        {
+          "ingrediente": {
+            "id": "id-0.7589235724005",
+            "nome": "Alho-poró",
+            "categoria": [
+              "id-0.053819505902"
+            ]
+          },
+          "medida": "Xícara",
+          "quantidade": "1"
         }
       ],
-      "idDoAutor": "id-0.9554798696675348"
+      "idDoAutor": "id-0.6070722677759413"
     }
   ],
   "categorias": [
+    {
+      "nome": "Sopas",
+      "tipo": "Receita",
+      "id": "id-0.8537589279852"
+    },
+    {
+      "nome": "Acompanhamentos",
+      "tipo": "Receita",
+      "id": "id-0.758927589237958852739"
+    },
+    {
+      "nome": "Molhos",
+      "tipo": "Receita",
+      "id": "id-0.85273895728957928"
+    },
     {
       "nome": "Bolos",
       "tipo": "Receita",
