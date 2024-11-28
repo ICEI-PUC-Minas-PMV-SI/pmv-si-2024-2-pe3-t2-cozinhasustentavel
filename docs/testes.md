@@ -14,3 +14,5 @@ Material de apoio para esta etapa:
 [Relatório_de_Testes_com_Usuário.docx](https://github.com/user-attachments/files/16501456/Relatorio_de_Testes_com_Usuario.docx)
 
 [Relatório_de_Testes_com_Usuário_exemplo.docx](https://github.com/user-attachments/files/16501459/Relatorio_de_Testes_com_Usuario_exemplo.docx)
+
+[Relatorio_de_Testes_com_Usuario - Sofia Pitta Sesso.docx](https://github.com/user-attachments/files/17952442/Relatorio_de_Testes_com_Usuario.-.Sofia.Pitta.Sesso.docx)
