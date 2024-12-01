@@ -23,3 +23,4 @@ Material de apoio para esta etapa:
 
 [Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx](https://github.com/user-attachments/files/17969663/Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx)
 
+[Relatorio_de_Testes_com_Usuario_Paola.docx](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe3-t2-cozinhasustentavel/issues/1#issue-2709759842)
