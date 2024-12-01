@@ -20,3 +20,6 @@ Material de apoio para esta etapa:
 [Relatorio_de_Testes_com_Usuario.-.Luis.docx](https://github.com/user-attachments/files/17963295/Relatorio_de_Testes_com_Usuario.-.Luis.docx)
 
 [Relatorio_de_Testes_com_Usuario_Cássio.pdf](https://github.com/user-attachments/files/17969417/Relatorio_de_Testes_com_Usuario_Cassio.pdf)
+
+[Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx](https://github.com/user-attachments/files/17969663/Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx)
+
