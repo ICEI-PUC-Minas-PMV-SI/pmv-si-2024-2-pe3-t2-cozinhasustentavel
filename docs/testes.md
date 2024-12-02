@@ -24,3 +24,5 @@ Material de apoio para esta etapa:
 [Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx](https://github.com/user-attachments/files/17969663/Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx)
 
 [Relatorio_de_Testes_com_Usuario_Paola.docx](https://github.com/user-attachments/files/17970157/Relatorio_de_Testes_com_Usuario_Paola.docx)
+
+[Relatorio_de_Testes_com_Usuario_Isaque.docx](https://github.com/user-attachments/files/17971484/Relatorio_de_Testes_com_Usuario_Isaque.docx)
