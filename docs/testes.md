@@ -14,3 +14,17 @@ Material de apoio para esta etapa:
 [Relatório_de_Testes_com_Usuário.docx](https://github.com/user-attachments/files/16501456/Relatorio_de_Testes_com_Usuario.docx)
 
 [Relatório_de_Testes_com_Usuário_exemplo.docx](https://github.com/user-attachments/files/16501459/Relatorio_de_Testes_com_Usuario_exemplo.docx)
+
+[Relatorio_de_Testes_com_Usuario - Sofia Pitta Sesso.docx](https://github.com/user-attachments/files/17952442/Relatorio_de_Testes_com_Usuario.-.Sofia.Pitta.Sesso.docx)
+
+[Relatorio_de_Testes_com_Usuario.-.Luis.docx](https://github.com/user-attachments/files/17963295/Relatorio_de_Testes_com_Usuario.-.Luis.docx)
+
+[Relatorio_de_Testes_com_Usuario_Cássio.pdf](https://github.com/user-attachments/files/17969417/Relatorio_de_Testes_com_Usuario_Cassio.pdf)
+
+[Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx](https://github.com/user-attachments/files/17969663/Relatorio_de_Testes_com_Usuario.-.Maryana_Morato.docx)
+
+[Relatorio_de_Testes_com_Usuario_Paola.docx](https://github.com/user-attachments/files/17970157/Relatorio_de_Testes_com_Usuario_Paola.docx)
+
+[Relatorio_de_Testes_com_Usuario_Isaque.docx](https://github.com/user-attachments/files/17971484/Relatorio_de_Testes_com_Usuario_Isaque.docx)
+
+[Avaliacao_Heuristica - Todos.xlsx](https://github.com/user-attachments/files/17971565/Avaliacao_Heuristica.-.Todos.xlsx)
