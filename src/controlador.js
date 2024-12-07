@@ -869,9 +869,11 @@ $(document).ready(async function () {
     let body = {
       nome: inputValue
     }
-    let entitiesArray;
-    if (header.indexOf("Categoria de Receita") >= 0 || header.indexOf("Categoria de Ingrediente") >= 0) {
-      entitiesArray = "categorias";
+    let entitiesArray = "categorias";
+    if (header.indexOf("Categoria de Receita") >= 0) {
+      body.tipo = "Receita";
+    } else if (header.indexOf("Categoria de Ingrediente") >= 0) {
+      body.tipo = "ingrediente";
     } else {
       body.categorias = [selectValue];
       entitiesArray = "ingredientes";

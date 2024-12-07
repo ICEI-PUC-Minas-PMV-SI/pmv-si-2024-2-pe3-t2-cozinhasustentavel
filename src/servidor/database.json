@@ -493,11 +493,6 @@
   ],
   "categorias": [
     {
-      "nome": "Sopas",
-      "tipo": "Receita",
-      "id": "id-0.8537589279852"
-    },
-    {
       "nome": "Acompanhamentos",
       "tipo": "Receita",
       "id": "id-0.758927589237958852739"
@@ -581,6 +576,11 @@
       "nome": "Petiscos",
       "tipo": "Receita",
       "id": "id-0.659165782165871"
+    },
+    {
+      "nome": "Sopas",
+      "tipo": "Receita",
+      "id": "id-0.8537589279852"
     }
   ],
   "ingredientes": [
